@@ -1,0 +1,75 @@
+.thrive-hero {
+  padding: 120px 0;
+  text-align: center;
+  background: url("../Components/ThriveHero/Assets/artboard.png") no-repeat center / cover;
+  .row {
+    align-items: center;
+  }
+
+  &--logo-wrapper {
+    img {
+      margin: auto;
+    }
+    &_logo {
+      margin-bottom: 40px;
+      &.animation {
+        animation-duration: 1.5s;
+      }
+    }
+  }
+  &--content-wrapper {
+    @include phantom-sans-regular();
+    max-width: 514px;
+    margin: auto;
+    color: $white;
+
+    &_headline {
+      @include cornbread-honey-regular();
+      margin-bottom: 24px;
+      font-size: 48px;
+      line-height: 54px;
+      color: inherit;
+    }
+
+    &_description {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    &--btns-wrapper {
+      display: flex;
+      justify-content: center;
+      column-gap: 24px;
+
+      a {
+        @include phantom-sans-medium();
+        padding: 11px 16px 10px;
+        font-size: 18px;
+        line-height: 27px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: 0.3s;
+        &:hover {
+          scale: 1.1;
+          box-shadow: 0 4px 4px rgba($black, 0.3);
+        }
+      }
+
+      &_primary-btn {
+        color: $white;
+        background: $tide1;
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          color: $white;
+          outline: none;
+        }
+      }
+      &_secondary-btn {
+        color: $tide1;
+        background: $white;
+      }
+    }
+  }
+}

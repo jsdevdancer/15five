@@ -1,0 +1,20 @@
+.content-library-hero {
+  padding: 60px 0 48px;
+  text-align: center;
+  background: $kin-light;
+
+  h1 {
+    padding-top: 0;
+    margin-bottom: 14px;
+
+    + p {
+      max-width: 380px;
+      margin: 0 auto 48px;
+    }
+  }
+
+  img {
+    width: 669px;
+    margin: 0 auto;
+  }
+}

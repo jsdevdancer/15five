@@ -1,0 +1,32 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .two-column-resource-links {
+    .image picture {
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .resources-col.left {
+      margin-bottom: 0;
+    }
+
+    .resources-description {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .two-column-resource-links {
+    padding: 60px 0;
+
+    .title {
+      margin-bottom: 57px;
+    }
+
+    .resources-description {
+      max-width: 80%;
+    }
+  }
+}

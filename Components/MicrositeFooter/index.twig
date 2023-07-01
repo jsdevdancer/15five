@@ -1,0 +1,31 @@
+<footer class="main-footer">
+  <section class="footer-microsite {{ footer }}">
+    <div class="legal">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="copyright">
+              © {{ 'now'|date('Y') }} 15Five. All rights reserved.
+            </div>
+          </div>
+          <div class="socials col-12 col-md-6">
+            <div class="social-menu">
+              {% for social in footer_social_menu %}
+                {% if footer == 'kin' %}
+                  <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer">
+                    {{ source('Assets/' ~ social.name ~ '.svg') }}
+                  </a>
+                {% endif %}
+                {% if footer == 'tide' %}
+                  <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer">
+                    {{ source('Assets/' ~ social.name ~ '-tide.svg') }}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>

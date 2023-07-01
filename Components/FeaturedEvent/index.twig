@@ -1,0 +1,66 @@
+{% if featured_event[0] %}
+  {% set event = featured_event[0] %}
+  {% set button_label = event_button_label %}
+  {% set event_url = event.url %}
+  {% set kicker = event_kicker %}
+  {% set event_date = true %}
+  {% set image = event.meta('events_featured_image') %}
+  {% set new_tab = events_new_tab %}
+{% elseif next_event[0] %}
+  {% set event = next_event[0] %}
+  {% set button_label = event_button_label %}
+  {% set event_url = event.url %}
+  {% set kicker = event_kicker %}
+  {% set event_date = true %}
+  {% set image = event.meta('events_featured_image') %}
+  {% set new_tab = events_new_tab %}
+{% else %}
+  {% set event = latest_on_demand[0] %}
+  {% set button_label = webinar_button_label %}
+  {% set event_url = event.link %}
+  {% set kicker = webinar_kicker %}
+  {% set image = event.meta('events_on_demand_featured_image') %}
+  {% set new_tab = webinars_new_tab %}
+{% endif %}
+
+<section class="featured-event">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="box-container d-flex flex-wrap">
+          <div class="col-12 col-md-6 text-col d-flex flex-column align-items-start justify-content-center">
+            <div class="text">
+              <div class="meta-info">
+                <div class="h6 event-tag">
+                  {{ kicker }}
+                </div>
+                {% if event_date %}
+                  <div class="event-date">
+                    {{ event.event_start_date|date('F j, Y') }}
+                  </div>
+                {% endif %}
+              </div>
+              <h2 class="h2 title">
+                {{ event.title }}
+              </h2>
+              <div class="description">
+                {{ event.post_excerpt }}
+              </div>
+              <a href="{{ event_url }}"
+                class="button button--rise"
+                {{ new_tab ? 'target="_blank" rel="noopener noreferrer"' }}
+                aria-label="{{ aria_label }}">
+                {{ button_label }}
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 image-col">
+            <div class="image">
+              {{ renderComponent('Image', { image: image }) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

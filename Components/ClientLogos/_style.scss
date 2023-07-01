@@ -1,0 +1,11 @@
+.client-logos {
+  .h1 {
+    text-align: center;
+  }
+
+  @include bg-color-selector;
+
+  .title {
+    text-align: center;
+  }
+}

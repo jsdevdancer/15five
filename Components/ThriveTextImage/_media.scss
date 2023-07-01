@@ -1,0 +1,29 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .thrive-text-image {
+    padding: 75px 0 135px;
+    text-align: left;
+    .image-wrapper {
+      width: 100%;
+    }
+    .text-wrapper {
+      padding-top: 60px;
+      margin: 0;
+      .title {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .thrive-text-image {
+    .image-wrapper {
+      width: 90%;
+    }
+    .text-wrapper {
+      max-width: 520px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<section class="video-popup-text dark-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="image-wrapper d-md-flex align-items-md-center u-height-100">
+          <div class="image">
+            <div class="background-image">
+              {{ renderComponent('Image', { image: background_image }) }}
+            </div>
+            <div class="picture">
+              {{ renderComponent('Image', { image: image }) }}
+            </div>
+            <button class="play-button">{{ source('Assets/play-button.svg') }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 offset-xl-1">
+        <div class="text d-md-flex justify-content-md-center flex-md-column u-height-100">
+          <div class="h4 kicker u-no-vertical-space">
+            {{ kicker }}
+          </div>
+          <h2 class="h1 title">
+            {{ title }}
+          </h2>
+          <p class="description">
+            {{ description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ renderComponent('VideoModal', { video: video }) }}
+</section>

@@ -1,0 +1,84 @@
+// Starting at 783px (WP related)
+@media (min-width: 783px) {
+  .navbar_microsite__wrapper {
+    .navbar__logo a {
+      width: 319px;
+      height: 35px;
+    }
+
+    .navbar_microsite {
+      flex-grow: 2;
+
+      ul {
+        justify-content: flex-end;
+      }
+    }
+
+    // Navbar button
+    .navbar_microsite_button {
+      align-items: center;
+      padding: 0 0 0 45px;
+      margin: 0;
+
+      .button {
+        width: auto;
+      }
+
+      .button {
+        padding: 3px 12px 4px;
+        line-height: 23px;
+        background-color: transparent;
+        border-width: 2px;
+        &.rise {
+          color: $rise;
+          border-color: $rise;
+          &:hover,
+          &:focus {
+            color: $white;
+            background: $rise;
+          }
+        }
+        &.tide {
+          color: $tide1;
+          border-color: $tide1;
+          &:hover,
+          &:focus {
+            color: $white;
+            background: $tide1;
+          }
+        }
+        &.cornbread {
+          color: $cornbread;
+          border-color: $cornbread;
+          &:hover,
+          &:focus {
+            color: $white;
+            background: $cornbread;
+          }
+        }
+        &.motion {
+          color: $motion;
+          border-color: $motion;
+          &:hover,
+          &:focus {
+            color: $white;
+            background: $motion;
+          }
+        }
+
+      }
+    }
+
+    .navbar_microsite__wrapper .hopin-container {
+      padding-top: 67%;
+    }
+  }
+}
+
+@media (min-width: 1290px) {
+  .navbar_microsite__wrapper {
+    .navbar_microsite__wrapper .hopin-container {
+      padding-top: 50%;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .home-products {
+    padding: 40px 0 80px;
+
+    .image img {
+      max-width: 356px;
+    }
+
+    .headings {
+      text-align: center;
+    }
+
+    .product-card__description {
+      padding: 32px 16px 24px;
+    }
+
+    .product-card {
+      &:nth-child(1) .product-card__image img {
+        object-position: 0 24px;
+      }
+
+      &:nth-child(4) .product-card__image img {
+        width: calc(100% - 32px);
+        object-position: 0 -32px;
+      }
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .home-products {
+    .image {
+      justify-content: flex-end;
+    }
+
+    .headings {
+      text-align: left;
+    }
+
+    .product-cards {
+      row-gap: 32px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .home-products {
+    .product-cards {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 32px;
+    }
+
+    .product-card__description {
+      padding: 32px 16px;
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .home-products {
+    .product-cards {
+      grid-template-rows: 1fr 1fr 1fr;
+
+      &.two-rows {
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+
+    .product-card__description {
+      padding: 32px 16px 33px;
+    }
+
+    .product-card__image {
+      height: auto;
+
+      img {
+        height: auto;
+        object-fit: unset;
+      }
+    }
+
+    .product-card {
+      height: 415px;
+
+      &:nth-child(1) {
+        height: 100%;
+        grid-row-end: 3;
+        grid-row-start: 1;
+
+        .product-card__image {
+          img {
+            position: static;
+            object-position: 0;
+          }
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        .product-card__image {
+          height: 188px;
+
+          img {
+            top: auto;
+            bottom: 0;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        display: flex;
+        align-items: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        .product-card__description {
+          flex-basis: 50%;
+        }
+
+        .product-card__image {
+          flex-basis: 50%;
+
+          img {
+            position: static;
+            width: 100%;
+            object-position: 0;
+          }
+        }
+      }
+    }
+  }
+}

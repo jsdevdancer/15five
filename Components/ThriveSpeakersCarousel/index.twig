@@ -1,0 +1,23 @@
+<section class="thrive-speakers-carousel">
+  <div class="container-fluid">
+    <div class="row thrive-speakers-carousel--carousel-wrapper slides">
+      {% for slide in slides %}  
+      <div class="col-4">
+        <div class="thrive-speakers-carousel--carousel-wrapper--speaker">
+          <img src="{{ slide.portrait.src }}" alt="{{ slide.portrait.alt }}" class="thrive-speakers-carousel--carousel-wrapper--speaker_portrait">
+          <div class="thrive-speakers-carousel--carousel-wrapper--speaker--info-wrapper">
+            <p class="thrive-speakers-carousel--carousel-wrapper--speaker--info-wrapper_name">{{ slide.name }}</p>
+            <p class="thrive-speakers-carousel--carousel-wrapper--speaker--info-wrapper_position">{{ slide.position }}</p>
+          </div>
+        </div>  
+      </div>
+      {% endfor %} 
+    </div>
+    <div class="thrive-speakers-carousel--arrows-wrapper">
+      <div class="arrow arrow-prev"></div>
+      <div class="arrow arrow-next"></div>
+    </div>
+    <span class="bar left"></span>
+    <span class="bar right"></span>
+  </div>
+</section>

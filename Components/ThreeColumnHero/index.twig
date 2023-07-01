@@ -1,0 +1,45 @@
+<section class="three-column-hero">
+  <div class="container">
+    <div class="row row__title">
+      <div class="col-xl-8 col__title">
+        {% if pre_title.label %}
+          <div class="pre-title">
+            <img src="{{ pre_title.icon.src }}" alt="" class="pre-title__icon" />
+            <span class="h4 pre-title__label">{{ pre_title.label }}</span>
+          </div>
+        {% endif %}
+        <h1 class="section-title">
+          {{ title }}
+        </h1>
+      </div>
+    </div>
+    <div class="row row__content">
+      <div class="col-xl-8">
+        <div class="container">
+          <div class="row row__content-columns">
+            {% for column in columns %}
+              {% include 'Partials/_info-column.twig' with { column: column } %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row__button-image">
+      <div class="col-md-10">
+        <div class="buttons">
+          <a class="button button--rise"
+            href="{{ button.button.url }}"
+            {{ button.id ? 'id="' ~ button.id ~ '"' }}
+            {{ button.button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ button.aria_label }}">
+            {{ button.button.title }}
+          </a>
+        </div>
+
+        <div class="image">
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .thrive-speakers-carousel {
+    padding: 100px 0;
+    &--carousel-wrapper {
+      &--speaker {
+        &--info-wrapper {
+          max-width: 275px;
+        }
+      }
+    }
+    &--arrows-wrapper {
+      width: 360px;
+    }
+  }
+}
+

@@ -1,0 +1,45 @@
+<section class="content-library-featured-post {{ background_color }}">
+  <div class="container">
+    {% if kicker %}
+      <div class="row">
+        <div class="col">
+          <div class="kicker h2">
+            {{ kicker }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="images">
+          {{ renderComponent('Image', { image: pattern_image }) }}
+          {# set 'is_lazy' property to image object because images set directly on a CPT don't have this option #}
+          {% set image = featured_post.meta('image')|merge({ is_lazy: featured_post_image_is_lazy }) %}
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="taxonomies">
+          <div class="category h6">
+            {{ featured_post.terms('content-category')|join('') }}
+          </div>
+          <div class="type">
+            {{ featured_post.terms('content-type')|join('') }}
+          </div>
+        </div>
+        <h2 class="title">
+          {{ featured_post.post_title }}
+        </h2>
+        <p>
+          {{ featured_post.post_excerpt }}
+        </p>
+        <a class="button button--text {{ background_color == 'tide' ? 'button--text--white light-focus' }}"
+          href="{{ featured_post.link }}"
+          {{ new_tab ? 'target="_blank" rel="noopener noreferrer"' }}
+          aria-label="{{ aria_label }}">
+          {{ button_label ? : 'See More' }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

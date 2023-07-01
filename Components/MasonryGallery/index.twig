@@ -1,0 +1,42 @@
+<section class="masonry-gallery">
+  <div class="container">
+    {% if title %}
+      <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <h2 class="h1 title">
+            {{ title }}
+          </h2>
+        </div>
+      </div>
+    {% endif %}
+    {% if description %}
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+          <div class="description">
+            {{ description }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="masonry">
+      <div class="image1">
+        {{ renderComponent('Image', { image: image_1 }) }}
+      </div>
+      <div class="image2">
+        {{ renderComponent('Image', { image: image_2 }) }}
+      </div>
+      <div class="image3">
+        {{ renderComponent('Image', { image: image_3 }) }}
+      </div>
+      <div class="image4">
+        {{ renderComponent('Image', { image: image_4 }) }}
+      </div>
+      <div class="image5">
+        {{ renderComponent('Image', { image: image_5 }) }}
+      </div>
+      <div class="image6">
+        {{ renderComponent('Image', { image: image_6 }) }}
+      </div>
+    </div>
+  </div>
+</section>

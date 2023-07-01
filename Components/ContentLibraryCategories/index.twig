@@ -1,0 +1,24 @@
+<section class="content-library-categories">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="categories">
+          <div class="o-tabs">
+            <a href="{{ main_page.link }}"
+              class="o-tab {{ main_page.id == queried_object.ID ? 'o-tab--selected' }}"
+              aria-label="{{ __('See the main content libary page', 'flynt') }}">
+              {{ __('Explore All', 'flynt') }}
+            </a>
+            {% for category in content_categories %}
+              <a href="{{ category.link }}"
+                class="o-tab {{ category.id == queried_object.term_id ? 'o-tab--selected' }}"
+                data-category-id="{{ category.id }}">
+                {{ category.name }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

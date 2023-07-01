@@ -1,0 +1,52 @@
+<section class="podcast-guests">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+        <p class="description large">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+    <div class="guests-container">
+      {% for guest in guests %}
+        {{ loop.index == 9 ? '<div class="hidden-guests">' }}
+        {{ loop.first or loop.index0 is divisible by(4) ? '<div class="row">' }}
+        <div class="col-12 col-md-3">
+          <div class="guest">
+            <div class="image">
+              {{ renderComponent('Image', { image: guest.image }) }}
+            </div>
+            <h3 class="h2 name">
+              {{ guest.name }}
+            </h3>
+            <div class="position">
+              {{ guest.position }}
+            </div>
+            <a href="{{ guest.button.url }}"
+              class="button button--text"
+              {{ guest.button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{ guest.aria_label }}">
+              {{ guest.button.title }}
+            </a>
+          </div>
+        </div>
+        {{ loop.index is divisible by(4) ? '</div>' }}
+        {{ loop.last ? '</div></div>' }}
+      {% endfor %}
+      <div class="button-container">
+        <button id="toggle-hidden-guests"
+          class="button button--text"
+          aria-label="{{ __('Show all podcast guests') }}"
+          data-all-aria-label="{{ __('Show all podcast guests') }}"
+          data-less-aria-label="{{ __('Show less podcast guests') }}"
+          data-all-label="{{ __('Show All') }}"
+          data-less-label="{{ __('Show Less') }}">
+          {{ __('Show All', 'flynt') }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

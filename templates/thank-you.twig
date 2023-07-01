@@ -1,0 +1,51 @@
+{% extends 'templates/_document.twig' %}
+
+{% block Content %}
+  <div class="thank-you-page">
+    {% set related_posts %}
+      <section class="related-content-cards">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="c-resource-cards">
+                {% for post in related_posts %}
+                  {{ renderComponent('ResourceCard', { post: post }) }}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endset %}
+
+    {% for component in post.meta('thankYouPageComponents') %}
+      {% if component.acf_fc_layout == 'ThankYouPageHero' %}
+        {% if custom_hero %}
+          {{
+            renderComponent(
+              component,
+              {
+                custom_hero: custom_hero,
+                custom_image: custom_image,
+                custom_title: custom_title,
+                custom_description: custom_description
+              }
+            )
+          }}
+        {% else %}
+          {{ renderComponent(component) }}
+        {% endif %}
+      {% elseif component.acf_fc_layout == 'ContentLibraryFeaturedPost' %}
+        {% if previous_post_featured_post %}
+          {{ renderComponent(component, { featured_post: previous_post_featured_post }) }}
+          {{ related_posts }}
+        {% else %}
+          {{ renderComponent(component) }}
+          {{ related_posts }}
+        {% endif %}
+      {% else %}
+        {{ renderComponent(component) }}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}

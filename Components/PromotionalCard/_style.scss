@@ -1,0 +1,89 @@
+.promotional-card {
+  padding: 40px 0;
+
+  &.minimal-padding {
+    padding: 20px 0 0;
+  }
+
+  .card {
+    text-align: center;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba($tide1, 0.12);
+
+    .card__header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 24px;
+      background: $tide1;
+      border-radius: 8px 8px 0 0;
+
+      &.no-image {
+        padding: 32px 24px 0;
+        background: transparent;
+      }
+      // &.no-padding {
+      //   padding: 0;
+      //   picture {
+      //     height: 100%;
+      //     img {
+      //       height: 100%;
+      //       object-fit: cover;
+      //       border-radius: 8px 0 0 8px;
+      //     }
+      //   }
+      // }
+    }
+
+    .card__body {
+      padding: 24px 24px 16px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .card__footer {
+      padding: 0 0 24px;
+    }
+
+    img {
+      border-radius: 4px;
+    }
+
+    .h5 {
+      padding-top: 0;
+      margin-bottom: 0;
+
+      + p {
+        margin-bottom: 0;
+      }
+    }
+
+    .button {
+      white-space: nowrap;
+    }
+  }
+
+  &.image--no-padding {
+    .card {
+      overflow: hidden;
+
+      picture {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .card__header {
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 270px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+  }
+}

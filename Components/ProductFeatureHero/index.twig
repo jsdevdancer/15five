@@ -1,0 +1,71 @@
+<section class="product-feature-hero {% if white_background %}white-bg{% endif %}">
+  <div class="container">
+    {% if product_url.url and product_url.title and product_icon %}
+      <div class="row logo-wrapper">
+        <div class="col-12">
+          <a href="{{ product_url.url }}"
+            {{ product_url.target ? 'target="_blank" rel="noopener noreferrer"' }}
+            class="product-name-icon d-none d-lg-flex align-items-center"
+            aria-label="{{ product_url_aria_label }}">
+            <div class="icon">
+              <img src="{{ product_icon.src }}" alt="" role="presentation" />
+            </div>
+            <div class="h4 name u-no-vertical-space">
+              {{ product_url.title }}
+            </div>
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="row content-wrapper">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+        <div class="h3 o-kicker kicker">
+          {{ kicker }}
+        </div>
+        <h1 class="{{ speaker ? 'h1' : 'h2' }} o-title title">
+          {{ title }}
+        </h1>
+        {% if button.url and button.title %}
+          <a href="{{ button.url }}"
+            class="button button--rise"
+            {{ button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+            {{ button_aria_label ? 'aria-label="' ~ button_aria_label ~ '"' }}>
+            {{ button.title }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if bg_image or video %}
+      <div class="row image-video-wrapper">
+        <div class="col-12 {{ image_width ? '' : 'col-lg-10 offset-lg-1' }}">
+          <div class="feature-image-container{% if video and is_video %} video-wrapper{% endif %}{% if component_background %} component-background{% endif %}{% if overlay %} overlay{% endif %}">
+            <div class="image">
+              {{ renderComponent('Image', { image: feature_image }) }}
+            </div>
+            {% if video and is_video %}
+            <button class="play-button">
+              {{ source('assets/play-button.svg') }}
+            </button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if description %}
+      <div class="row description-wrapper">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+          <div class="h3 description">
+            {{ description }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% if video and is_video %}
+  {{ renderComponent('VideoModal', { video: video }) }}
+  {% endif %}
+
+</section>

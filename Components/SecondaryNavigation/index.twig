@@ -1,0 +1,20 @@
+<section class="secondar-navigation">
+  {% if menu %}
+    <nav class="nav-wrapper">
+      <a href="{{ menu[0]['url'] }}" class="nav-item nav__arrow nav__arrow--prev {{ menu[0]['class'] }}">
+        {{ source('Assets/arrow.svg') }}
+      </a>
+      <a href="{{ menu[1]['url'] }}" class="nav-item  {{ menu[1]['class'] }}">{{ menu[1]['title'] }}</a>
+      <a href="{{ menu[2]['url'] }}" class="nav-item  {{ menu[2]['class'] }}">{{ menu[2]['title'] }}</a>
+
+      {% if menu[3]['url'] %}
+        <a href="{{ menu[3]['url'] }}" class="nav-item  {{ menu[3]['class'] }}">{{ menu[3]['title'] }}</a>
+      {% endif %}
+      <a href="{{ menu[4]['url'] }}" class="nav-item nav__arrow nav__arrow--next {{ menu[4]['class'] }}">
+        {{ source('Assets/arrow.svg') }}
+      </a>
+    </nav>
+  {% elseif nav_enabled %}
+    <strong style="padding: 100px; color: red;">{{ warning }}</strong>s
+  {% endif %}
+</section>

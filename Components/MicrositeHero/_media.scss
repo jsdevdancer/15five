@@ -1,0 +1,57 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .microsite-hero {
+    padding: 72px 0;
+    text-align: left;
+
+    &.has-bg-image {
+      background-image: var(--hero-bg-image-desktop);
+    }
+
+    .title {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .section-logo {
+      img {
+        margin: 0;
+      }
+    }
+
+    .description {
+      max-width: calc(100% - 29px);
+      margin-top: 10px;
+    }
+
+    .image {
+      margin-top: 10px;
+    }
+  }
+}
+
+// Starting at 1400px
+@media (min-width: $breakpoint-extra-extra-large) {
+  .microsite-hero {
+    .image-hero {
+      .image, .video-wrapper {
+
+        &::before {
+          background:url('../Components/MicrositeHero/Assets/confetti-bottom.png') no-repeat bottom / cover;
+          top: 60%;
+          left: -16%;
+          width: 480px;
+          height: 250px;
+        }
+
+        &::after {
+          background:url('../Components/MicrositeHero/Assets/confetti-top.png') no-repeat top / cover;
+          top: -135px;
+          left: 60%;
+          width: 368px;
+          height: 267px;
+        }
+      }
+    }
+  }
+}

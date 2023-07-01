@@ -1,0 +1,47 @@
+<div class="content-library-sliders">
+  <div class="container">
+    {% if not is_category_page %}
+      {% if content_library_posts %}
+        {% for list in content_library_posts %}
+          <div class="content-library-category">
+            <div class="row align-items-end">
+              <div class="col-lg-8">
+                <h3 class="title h2">
+                  {{ list.category.name }}
+                </h3>
+                <div class="description">
+                  {{ list.category.description }}
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="slider-controls">
+                  <a href="{{ list.category.link }}" class="show-all">
+                    {{ __('Show All', 'flynt') }} ({{ list.total_posts }})
+                  </a>
+                  {{ renderComponent('NavigationArrows') }}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="c-resource-cards">
+                  {% for post in list.posts %}
+                    {{ renderComponent('ResourceCard', { post: post }) }}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      {% include 'Partials/_taxonomy-content-category.twig' with {
+        category: content_category,
+        posts: content_category_posts,
+        types: content_types,
+        roles: content_roles,
+        nonce: nonce
+      } %}
+    {% endif %}
+  </div>
+</div>

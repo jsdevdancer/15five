@@ -1,0 +1,9 @@
+@import "styles/variables", "styles/fonts", "styles/base", "styles/grid", "styles/utils", "styles/nice-select", "styles/animations";
+
+@import "styles/content-single/style", "styles/content-single/media";
+@import "styles/thank-you-page/style", "styles/thank-you-page/media";
+@import "styles/featured-event/style", "styles/featured-event/media";
+
+// Component's sass
+@import "../Components/**/_style.scss";
+@import "../Components/**/_media.scss";

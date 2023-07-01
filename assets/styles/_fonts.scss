@@ -1,0 +1,84 @@
+// Cornbread Honey
+
+/* prettier-ignore */
+@font-face {
+  font-family: "Cornbread Honey Semibold";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local("Cornbread Honey Semibold"), url("../assets/fonts/CornbreadHoney-SemiBold.woff2") format("woff2"), url("../assets/fonts/CornbreadHoney-SemiBold.woff") format("woff");
+}
+
+/* prettier-ignore */
+@font-face {
+  font-family: "Cornbread Honey Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local("Cornbread Honey Semibold"), url("../assets/fonts/CornbreadHoney-Regular.woff2") format("woff2"), url("../assets/fonts/CornbreadHoney-Regular.woff") format("woff");
+}
+
+// Phantom Sans
+
+/* prettier-ignore */
+@font-face {
+  font-family: "Phantom Sans Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local("Phantom Sans Regular"), url("../assets/fonts/PhantomSans-Regular.woff2") format("woff2"), url("../assets/fonts/PhantomSans-Regular.woff") format("woff");
+}
+
+/* prettier-ignore */
+@font-face {
+  font-family: "Phantom Sans Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local("Phantom Sans Medium"), url("../assets/fonts/PhantomSans-Medium.woff2") format("woff2"), url("../assets/fonts/PhantomSans-Medium.woff") format("woff");
+}
+
+/* prettier-ignore */
+@font-face {
+  font-family: "Phantom Sans SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  src: local("Phantom Sans SemiBold"), url("../assets/fonts/PhantomSans-SemiBold.woff2") format("woff2"), url("../assets/fonts/PhantomSans-SemiBold.woff") format("woff");
+}
+
+/* Placeholders */
+@mixin cornbread-honey {
+  font-family: "Cornbread Honey Semibold", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin cornbread-honey-regular {
+  font-family: "Cornbread Honey Regular", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin phantom-sans-regular {
+  font-family: "Phantom Sans Regular", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin phantom-sans-medium {
+  font-family: "Phantom Sans Medium", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin phantom-sans-semibold {
+  font-family: "Phantom Sans Semibold", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}

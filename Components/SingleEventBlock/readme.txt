@@ -1,0 +1,1 @@
+Styles can be found on styles/featured-event and are being used in Featured Event

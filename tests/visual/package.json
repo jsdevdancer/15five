@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "snapshotsProd": "percy exec -- node snapshotsProd.js",
+    "snapshotsLocal": "percy exec -- node snapshotsLocal.js"
+  },
+  "dependencies": {
+    "@percy/script": "^1.0.0",
+    "http-server": "^0.12.3",
+    "node-fetch": "^2.6.1"
+  }
+}

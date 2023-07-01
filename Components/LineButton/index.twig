@@ -1,0 +1,21 @@
+<section class="line-button {{ background_color }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="buttons-container d-flex justify-content-{{ position }}{{ lines == 1 ?  ' line' }}">
+          <div class="line-wrapper {{ position == 'start' ? 'pl-0' }}{{ position == 'end' ? 'pr-0' }}">
+            {% if type_content == 1 %}
+              <a href="{{ button.url }}" class="button button--rise" aria-label="{{ button.aria_label }}">
+                <div class="button-wrapper">
+                  {{ button.title }}
+                </div>
+              </a>
+            {% else %}
+              <p class="mb-0 px-2">{{ text_label }}</p>
+            {% endif %}
+          </div>            
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

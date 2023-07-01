@@ -1,0 +1,15 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .checklist-card {
+    padding: 60px 0;
+
+    .checklist {
+      max-width: 79%;
+      margin-top: 50px;
+
+      .check-item {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

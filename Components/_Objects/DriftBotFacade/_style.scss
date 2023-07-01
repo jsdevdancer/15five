@@ -1,0 +1,121 @@
+.drift-facade {
+  position: fixed;
+  right: 48px;
+  bottom: 48px;
+  z-index: 10;
+
+  display: none;
+  align-items: flex-end;
+
+  button {
+    cursor: pointer;
+  }
+
+  #drift-trigger--main {
+    display: block;
+    width: 56px;
+    height: 56px;
+
+    padding: 8px;
+    background-color: #fef2e8;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 7px 6px 1px rgba(0, 0, 0, 0.16);
+
+    appearance: none;
+
+    &::before {
+      display: block;
+      width: 40px;
+      height: 40px;
+
+      margin-top: -3px;
+      content: "";
+      background-image: url("../Components/_Objects/DriftBotFacade/assets/loader.svg");
+
+      background-repeat: no-repeat;
+
+      background-position: center center;
+      background-size: 100%;
+
+      transform-origin: 20px 22px;
+    }
+
+    &.loading {
+      &::before {
+        animation: rotate 5s infinite running linear;
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(1000deg);
+      }
+    }
+  }
+
+  .text-bubble {
+    padding: 10px;
+    margin-right: 16px;
+
+    background-color: $white;
+
+    border-radius: 4px;
+    box-shadow: 0 7px 6px 1px rgba(0, 0, 0, 0.16);
+
+    &::after {
+      position: absolute;
+      right: 52px;
+      bottom: 12px;
+
+      width: 0;
+      height: 0;
+      content: "";
+      border: 10px solid transparent;
+      border-left-color: $white;
+    }
+
+    #pop-bubble {
+      position: absolute;
+      top: -1px;
+      left: -12px;
+      z-index: 1;
+
+      width: 20px;
+      height: 20px;
+
+      padding: 4px;
+      padding-top: 3px;
+      margin: 2px 0 0;
+      margin-left: -14px;
+
+      line-height: 12px;
+      background: #687882;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px 0 rgba(53, 63, 69, 15%), 0 1px 2px 0 rgba(0, 0, 0, 20%);
+      opacity: 1;
+    }
+
+    p {
+      display: block;
+      max-width: 220px;
+      max-height: 96px;
+      margin: 0;
+      margin-bottom: 0;
+
+      font-family: Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      color: #212021;
+
+      text-align: left;
+      text-align: initial;
+      border: 2px solid transparent;
+    }
+  }
+}

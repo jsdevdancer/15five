@@ -1,0 +1,57 @@
+<section class="homepage-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>
+          {{ title }}
+        </h1>
+        <p class="large--desktop">
+          {{ subtitle }}
+        </p>
+        <div class="buttons">
+          <a class="button button--rise"
+            href="{{ button.url }}"
+            {% if primary_button_id %}
+              id="{{ primary_button_id }}"
+            {% endif %}
+            {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ aria_label }}">
+            {{ button.title }}
+          </a>
+          {% if button_secondary %}
+            <a class="button button--rise secondary"
+              href="{{ button_secondary.url }}"
+              {% if secondary_button_id %}
+                id="{{ secondary_button_id }}"
+              {% endif %}
+              {{ button_secondary.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{ aria_label_secondary }}">
+              {{ button_secondary.title }}
+            </a>
+          {% endif %}
+        </div>
+        {% if wysiwyg %}
+          <div class="wysiwyg">
+            {{ wysiwyg }}
+          </div>
+        {% endif %}
+        <div class="image">
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+        <div class="slides">
+          {% for slide in slides %}
+            <div class="slide">
+              <img src="{{ slide.logo.src }}" class="slide__image" alt="{{ slide.logo.alt }}" />
+              <div class="slide__quote h2">
+                {{ slide.quote }}
+              </div>
+              <div class="slide__person">
+                {{ slide.person }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

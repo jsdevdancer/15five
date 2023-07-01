@@ -1,0 +1,41 @@
+.thrive-agenda-hero {
+  position: relative;
+  padding: 130px 0;
+  color: $white;
+  text-align: center;
+  background-image: url("../Components/ThriveAgendaHero/Assets/background.png");
+  background-size: cover;
+  .col {
+    max-width: 746px;
+    margin: auto;
+  }
+  .o-title {
+    @include cornbread-honey-regular;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    color: inherit;
+  }
+  .description {
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .button {
+    @include phantom-sans-medium();
+    display: block;
+    width: max-content;
+    padding: 11px 16px 10px;
+    margin: auto;
+    line-height: 1.5;
+    color: $white;
+    text-decoration: none;
+    background: $tide1;
+    border-radius: 4px;
+    transition: 0.3s;
+    &:hover {
+      scale: 1.1;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{% set card_title = (card.source|upper) ~ ': ' ~ card.post_excerpt %}
+
+{% if is_mobile() %}
+  {% set title_length = 75 %}
+{% else %}
+  {% set title_length = 90 %}
+{% endif %}
+
+<article class="press-item">
+  <a href="{{ card.url }}" target="_blank" rel="noopener noreferrer">
+    <div class="h6 press-category">
+      {{ card.terms('news-category')|join(', ') }}
+    </div>
+    <div class="press-date">
+      {{ card.date('F j, Y') }}
+    </div>
+    <div class="press-title">
+      {{ card_title[0:title_length] }}{{ (card_title|length) > title_length ? '…' }}
+    </div>
+  </a>
+</article>

@@ -1,0 +1,35 @@
+<header class="main-header">
+  {# Navbar #}
+  <div class="navbar__wrapper {{ not is_mobile() ? 'is-desktop' }}">
+    <div class="container-lg">
+      <div class="row">
+        <div class="col">
+          <div class="navbar">
+            <div class="navbar__logo">
+              <a href="{{ site.link }}" aria-label="{{ __('Go to homepage', 'flynt') }}">
+                <img src="{{ logo.src }}" alt="{{ __('15Five', 'flynt') }}" />
+              </a>
+            </div>
+            {% if not is_mobile() %}
+              {% include 'Partials/_menu.twig' with { main_menu: main_menu } %}
+            {% endif %}
+            <button type="button"
+              class="navbar__burger button--plain"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="navbar__menu">
+              <img src="{{ burger.src }}" alt="{{ __('Burger Icon', 'flynt') }}" class="burger-icon" />
+              <img src="{{ burger_close.src }}"
+                alt="{{ __('Burger Close Icon', 'flynt') }}"
+                class="burger-icon--close" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {# Mobile Menu #}
+  {% if is_mobile() %}
+    {% include 'Partials/_menu.twig' with { main_menu: main_menu } %}
+  {% endif %}
+</header>

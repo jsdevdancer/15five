@@ -1,0 +1,213 @@
+.plans-pricing-new {
+  padding: 60px 0 0;
+  background: rgba($kin, 0.6);
+
+  h1 {
+    max-width: 840px;
+    padding-top: 0;
+    margin: 0 auto;
+    text-align: center;
+
+    .desktop {
+      display: none;
+    }
+  }
+
+  .plans {
+    margin: 48px 0 40px;
+  }
+
+  .plan {
+    height: 100%;
+    padding: 0 20px;
+    background: $white;
+    border-radius: 0 0 8px 8px;
+
+    hr {
+      width: 85%;
+      margin: 32px 0;
+      background-color: rgba($tide1, 0.2);
+    }
+  }
+
+  .plan__label {
+    @include phantom-sans-medium();
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100% + 40px);
+    height: 31px;
+    padding-top: 0;
+    margin: 0 0 32px -20px;
+
+    font-size: 12px;
+    line-height: 20px;
+    color: $tide1;
+    background: $mind;
+  }
+
+  .slick-slide,
+  .plan {
+    &:nth-child(3) .plan__label {
+      background: $cornbread;
+    }
+  }
+
+  .slick-slide,
+  .plan {
+    &:nth-child(4) .plan__label {
+      background: $heart;
+    }
+  }
+
+  .plan__title {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .plan__price {
+    display: flex;
+    align-items: center;
+
+    .value {
+      @include cornbread-honey();
+
+      margin-right: 5px;
+      font-size: 48px;
+      line-height: 54px;
+    }
+
+    .description {
+      transform: translateY(4px);
+
+      &.only-description {
+        display: flex;
+        align-items: center;
+        height: 54px;
+        transform: none;
+      }
+    }
+  }
+
+  .plan__description {
+    display: none;
+  }
+
+  .plan__link {
+    margin-top: 24px;
+  }
+
+  .plan__body {
+    margin: 33px 0 34px;
+  }
+
+  .plan__features {
+    p:first-of-type {
+      margin-bottom: 32px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    ul {
+      padding-left: 40px;
+      margin: 0 0 0 -4px;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: -40px;
+
+        width: 24px;
+        height: 24px;
+
+        content: "";
+        background: url("../Components/PlansPricing/Assets/check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  .plan__features_section.empty {
+    display: none;
+  }
+
+  .plans-link {
+    padding-top: 0;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .slick-list {
+    margin: 0 -16px;
+    overflow: unset;
+    cursor: grab;
+
+    .slick-track {
+      display: flex;
+
+      .slick-slide {
+        padding: 0 16px;
+
+        > div {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 32px 0 0;
+    list-style: none;
+
+    button {
+      position: relative;
+
+      display: block;
+      width: 14px;
+      height: 14px;
+      padding: 0;
+
+      font-size: 0;
+      line-height: 0;
+
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+
+      &::before {
+        position: absolute;
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+
+        width: 6px;
+        height: 6px;
+        text-align: center;
+
+        content: "";
+        background: rgba($tide1, 0.2);
+        border-radius: 50%;
+      }
+    }
+
+    .slick-active button::before {
+      background: $tide1;
+    }
+  }
+}

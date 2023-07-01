@@ -1,0 +1,12 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .image-title-image {
+    padding: 80px 0;
+
+    .title {
+      padding-top: 0;
+      font-size: 42px;
+      line-height: 48px;
+    }
+  }
+}

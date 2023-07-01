@@ -1,0 +1,15 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .homepage-hero {
+    padding: 80px 0;
+
+    // Slides
+    .slide__quote {
+      padding-top: 27px;
+    }
+
+    .slick-dots {
+      margin: 28px 0 0;
+    }
+  }
+}

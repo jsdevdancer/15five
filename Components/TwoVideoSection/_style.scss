@@ -1,0 +1,65 @@
+.two-video-section {
+  padding: 50px 0;
+  text-align: center;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 55px;
+  }
+
+  .video-wrapper {
+    text-align: left;
+  }
+
+  .video-title {
+    padding-top: 32px;
+    margin-bottom: 0;
+  }
+
+  .right-video {
+    margin-top: 60px;
+  }
+
+  .image {
+    position: relative;
+    margin-bottom: 8px;
+    margin-left: 8px;
+
+    .background-image {
+      position: absolute;
+      bottom: -8px;
+      left: -8px;
+      width: 100%;
+    }
+
+    .picture {
+      position: relative;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transform: translate(-50%, -50%);
+      appearance: none;
+
+      &:hover {
+        svg circle {
+          fill: $motion;
+          stroke: $motion;
+        }
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

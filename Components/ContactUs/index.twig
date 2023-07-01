@@ -1,0 +1,94 @@
+<section class="contact-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col__content">
+        <div class="content">
+          {% if is_mobile() and thank_you %}
+            <div class="success" role="alert">
+              <span>{{ success_message }}</span>
+              <button type="button" class="button--plain" aria-label="{{ __('Close this notice.', 'flynt') }}">
+                {{ source('Assets/close.svg') }}
+              </button>
+            </div>
+          {% endif %}
+          {% if kicker %}
+            <div class="h4 o-kicker">
+              {{ kicker }}
+            </div>
+          {% endif %}
+          <h1 class="title">
+            {{ title }}
+          </h1>
+          <div class="description u-wysiwyg">
+            {{ description }}
+          </div>
+          <div class="list">
+            {% for bullet in list.list_items %}
+              <div class="list-item d-flex align-items-start">
+                <img class="list-icon" src="{{ bullet.icon.src }}" alt="" role="presentation" aria-hidden="true" />
+                <div>
+                  <strong>{{ bullet.label }}</strong>
+                  <p class="d-none d-xl-block d-lg-block">
+                    {{ bullet.description }}
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          {% if links.show_links %}
+            <div class="image-links-wrapper d-none d-xl-flex d-lg-flex align-items-start">
+              <div class="image">
+                <img src="{{ links.image.src }}" alt="" role="presentation" aria-hidden="true" />
+              </div>
+              <div class="links-wrapper">
+                <div class="h6">
+                  {{ links.title }}
+                </div>
+                <div class="links">
+                  {% for item in links.links %}
+                    <a class="button button--text"
+                      href="{{ item.link.url }}"
+                      {{ item.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                      aria-label="{{ item.aria_label }}">
+                      {{ item.link.title }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if logos.show_logos %}
+            <div class="d-none d-xl-block d-lg-block">
+              {% if logos.headline %}
+                {{ logos.headline }}
+              {% endif %}
+              <div class="logos-section">
+                {% for logo in logos.logos %}
+                  <div class="logo">
+                    <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" />
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1 col__form">
+        <div class="u-gravity-form">
+          {% if not is_mobile() and thank_you %}
+            <div class="success {{ not is_mobile() ? 'is-desktop' }}" role="alert">
+              <span>{{ success_message }}</span>
+              <button type="button" class="button--plain" aria-label="{{ __('Close this notice.', 'flynt') }}">
+                {{ source('Assets/close.svg') }}
+              </button>
+            </div>
+          {% endif %}
+          <div class="form-title h3">
+            {{ form.gravity_form_title }}
+          </div>
+          {{ gravityForm(form.gravity_form, 'false', 'false', 'true') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

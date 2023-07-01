@@ -1,0 +1,19 @@
+// Starting at 768px
+@media (min-width: $breakpoint-large) {
+  .values-benefits {
+    padding: 80px 0;
+
+    .description {
+      width: 80%;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .values-benefits {
+    .title-column {
+      margin-bottom: 0;
+    }
+  }
+}

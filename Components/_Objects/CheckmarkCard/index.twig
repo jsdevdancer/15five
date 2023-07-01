@@ -1,0 +1,32 @@
+{# 
+** Receives:
+** has_image - Should the card have an image on the left
+** image - Image content
+** title - Title content
+** description - Description content
+#}
+
+{% if has_image %}
+  {% set image_element %}
+    {% if display == true %}
+      <div class="image">
+        {{ renderComponent('Image', { image: image }) }}
+      </div>
+    {% endif %}
+  {% endset %}
+{% endif %}
+
+<div class="checkmark-card d-flex{{ display == true ? ' has-image flex-column flex-md-row align-items-md-center' }}">
+  {{ image_element }}
+  <div class="text-content">
+    <div class="icon">
+      {{ source('Assets/check.svg') }}
+    </div>
+    <div class="h2 title">
+      {{ title }}
+    </div>
+    <div class="description">
+      {{ description }}
+    </div>
+  </div>
+</div>

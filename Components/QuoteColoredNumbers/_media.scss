@@ -1,0 +1,42 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .quote-colored-numbers {
+    .number-container .colored-number {
+      width: 50%;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .quote-colored-numbers {
+    .quote-container {
+      margin-right: -50px;
+      margin-left: 50px;
+    }
+
+    .number-container {
+      padding: 0 66px;
+      margin: 92px -25px 0;
+
+      .colored-number {
+        padding: 0 25px;
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .quote-colored-numbers {
+    padding: 60px 0 145px;
+
+    .number-container .colored-number {
+      width: 25%;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

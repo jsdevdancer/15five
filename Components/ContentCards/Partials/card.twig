@@ -1,0 +1,22 @@
+<article class="c-resource-card">
+  <a href="{{ card.link }}">
+    <div class="c-resource-card__header">
+      <div class="c-resource-card__image">
+        {{ renderComponent('Image', { image: card.meta('image') }) }}
+      </div>
+    </div>
+    <div class="c-resource-card__body">
+      <div class="c-resource-card__taxonomies">
+        <div class="c-resource-card__category h6">
+          {{ card.terms('content-category')|join('') }}
+        </div>
+        <div class="c-resource-card__type">
+          {{ card.terms('content-type')|join('') }}
+        </div>
+      </div>
+      <div class="c-resource-card__title">
+        {{ card.title }}
+      </div>
+    </div>
+  </a>
+</article>

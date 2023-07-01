@@ -1,0 +1,56 @@
+<section class="news-tabs">
+  <div class="tabs-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="o-tabs">
+            {% for cat in categories %}
+              <button class="o-tab{{ loop.index == 1 ? ' o-tab--selected' }}" data-tab-id="{{ loop.index }}">
+                {{ cat.name }}
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="tab-content-container">
+          {% for cat in categories %}
+            <div class="tab-content{{ loop.index == 1 ? ' active' }}" data-tab-content-id="{{ loop.index }}">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="h2 news-title">
+                    {{ cat.name }}
+                  </h2>
+                  {{ function('term_description', cat.id) }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="cards-wrapper">
+                    {% for card in cat.posts %}
+                    {% if loop.index > 4 %}
+                    {% set hidden = true %}
+                    {% endif %}
+                      {% include 'Partials/card.twig' with { card: card, label: cat.name, hide: hidden } %}
+                    {% endfor %}
+                  </div>
+                  <div class="view-more-wrapper">
+                    <a href="{{ view_more.url }}" class="button button--text"
+                    {% if view_more_aria_label %}
+                    aria-label="{{ view_more_aria_label }}"
+                    {% endif %}
+                    >{{ view_more.title }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

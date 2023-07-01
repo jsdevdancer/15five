@@ -1,0 +1,70 @@
+.video-popup-text {
+  padding: 80px 0;
+  background-color: mix($tide1, $black, 80%);
+
+  .image {
+    position: relative;
+    margin-bottom: 8px;
+    margin-left: 8px;
+
+    .background-image {
+      position: absolute;
+      bottom: -8px;
+      left: -8px;
+      width: 100%;
+
+      img {
+        border-radius:4px;
+      }
+    }
+
+    .picture {
+      position: relative;
+
+      img {
+        border-radius:4px;
+      }
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transform: translate(-50%, -50%);
+      appearance: none;
+
+      &:hover {
+        svg circle {
+          fill: $motion;
+          stroke: $motion;
+        }
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  .text {
+    margin-top: 60px;
+  }
+
+  .kicker,
+  .description {
+    color: $white;
+  }
+
+  .title {
+    padding-top: 12px;
+    margin-bottom: 16px;
+    color: $white;
+  }
+
+  .description {
+    margin-bottom: 0;
+  }
+}

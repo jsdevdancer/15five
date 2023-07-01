@@ -1,0 +1,28 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .confetti-banner {
+    padding: 80px 0;
+  
+    .banner-wrapper {
+      &::before, &::after {
+        content:"";
+        height:100%;
+      }
+      
+      &::before {
+        background: url("../Components/ConfettiBanner/Partials/confetti-left.png") no-repeat center / cover;
+        width:38%;
+      }
+
+      &::after {
+        display:block;
+        width:28%;
+      }
+
+      .text-wrapper {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<section class="breadcrumb d-none d-md-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a href="{{ url.url }}"
+          class="button button--text"
+          {{ url.target ? 'target="_blank" rel="noopener noreferrer"' }}
+          aria-label="{{ aria_label }}">
+          {{ url.title }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

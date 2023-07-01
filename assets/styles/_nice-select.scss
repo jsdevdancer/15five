@@ -1,0 +1,76 @@
+// Style the dropdown
+.nice-select {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+
+  // Arrow
+  &::after {
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 16px;
+
+    display: block;
+    width: 9px;
+    height: 6px;
+
+    content: "";
+    background: url("../assets/icons/chevron-down.svg") no-repeat center;
+  }
+
+  &.open {
+    &::after {
+      transform: rotate(180deg);
+    }
+
+    .list {
+      pointer-events: auto;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  // List and options
+  .list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    width: calc(100% + 4px);
+    padding: 0;
+    margin: 8px -2px 0;
+    overflow: hidden;
+
+    pointer-events: none;
+    background: $white;
+    border: 2px solid $white;
+    border-radius: 4px;
+
+    box-shadow: 0 8px 40px rgba($tide1, 0.12);
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    transform-origin: 50% 0;
+  }
+
+  .option {
+    padding: 11px 16px 10px;
+    list-style: none;
+    cursor: pointer;
+
+    &:first-child {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      background: rgba($tide1, 0.1);
+    }
+
+    &.selected {
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.thrive-sponsor-logos {
+  padding: 50px 0;
+  .h1 {
+    padding: 0;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  @include bg-color-selector;
+
+  .title {
+    text-align: center;
+    @include cornbread-honey-regular;
+  }
+
+  .logos-row {
+    min-height: 50px;
+    padding: 0;
+    column-gap: 35px;
+    row-gap: 25px;
+    .logo {
+      flex: unset;
+      padding: 0;
+      img {
+        max-width: 175px;
+        margin: 0;
+      }
+    }
+  }
+}

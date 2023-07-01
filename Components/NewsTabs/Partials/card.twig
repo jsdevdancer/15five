@@ -1,0 +1,22 @@
+<article class="c-resource-card{{ hidden ? ' d-none d-md-block' }}">
+  <a href="{{ card.url }}" target="_blank" rel="noopener noreferrer">
+    <div class="c-resource-card__header">
+      <div class="c-resource-card__image">
+        {{ renderComponent('Image', { image: card.meta('news_image') }) }}
+      </div>
+    </div>
+    <div class="c-resource-card__body">
+      <div class="c-resource-card__taxonomies">
+        <div class="c-resource-card__category h6">
+          {{ label }}
+        </div>
+        <div class="c-resource-card__type">
+          {{ card.date('F j, Y') }}
+        </div>
+      </div>
+      <div class="c-resource-card__title">
+        {{ card.post_excerpt[0:90] }}{{ (card.post_excerpt|length) > 90 ? '…' }}
+      </div>
+    </div>
+  </a>
+</article>

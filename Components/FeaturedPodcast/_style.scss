@@ -1,0 +1,65 @@
+.featured-podcast {
+  padding: 32px 0;
+  background-color: $tide1;
+
+  .section-title,
+  .category,
+  .episode-title,
+  .episode-description {
+    color: $white;
+  }
+
+  .section-title {
+    padding-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .image {
+    padding: 25px;
+    margin-bottom: 24px;
+    background-color: rgba($white, 0.1);
+    border-radius: 4px;
+
+    * {
+      width: 100%;
+    }
+  }
+
+  .meta-info {
+    margin-bottom: 16px;
+  }
+
+  .category {
+    padding-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .season {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba($white, 0.6);
+  }
+
+  .episode-title {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .episode-description {
+    margin-bottom: 35px;
+  }
+
+  .reference {
+    picture {
+      width: 25%;
+      margin-right:16px;
+      img {
+        border-radius:100%;
+      }
+    }
+
+    .text-block {
+      width: 75%;
+    }
+  }
+}

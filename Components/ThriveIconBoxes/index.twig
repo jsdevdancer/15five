@@ -1,0 +1,115 @@
+{% if our_platform1.link.url and our_platform1.link.title %}
+  {% set card1_open_tag %}
+    <a class="card"
+    href="{{ our_platform1.link.url }}"
+    {{ our_platform1.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+  {% endset %}
+  {% set card1_close_tag = '/a' %}
+{% else %}
+  {% set card1_open_tag = '<div class="card">' %}
+  {% set card1_close_tag = '/div' %}
+{% endif %}
+
+{% if our_platform2.link.url and our_platform2.link.title %}
+  {% set card2_open_tag %}
+    <a class="card"
+    href="{{ our_platform2.link.url }}"
+    {{ our_platform2.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+  {% endset %}
+  {% set card2_close_tag = '/a' %}
+{% else %}
+  {% set card2_open_tag = '<div class="card">' %}
+  {% set card2_close_tag = '/div' %}
+{% endif %}
+
+{% if our_platform3.link.url and our_platform3.link.title %}
+  {% set card3_open_tag %}
+    <a class="card"
+    href="{{ our_platform3.link.url }}"
+    {{ our_platform3.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+  {% endset %}
+  {% set card3_close_tag = '/a' %}
+{% else %}
+  {% set card3_open_tag = '<div class="card">' %}
+  {% set card3_close_tag = '/div' %}
+{% endif %}
+
+<section class="thrive-icon-boxes" {% if section_id %}id="{{ section_id }}"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+      {% if kicker %}
+        <div class="o-kicker h4">
+          {{ kicker }}
+        </div>
+      {% endif %}
+      {% if title %}
+        <h2 class="o-title h1">
+          {{ title }}
+        </h2>
+      {% endif %}
+      {% if button.url and button.title %}
+        <div class="row pt-4">
+          <div class="col-12">
+            <a class="button button--rise"
+              href="{{ button.url }}"
+              {% if primary_button_id %}
+                id="{{ primary_button_id }}"
+              {% endif %}
+              {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+              {{ button.title }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-4">
+        {{ card1_open_tag }}
+          {{ renderComponent('Image', { image: our_platform1.image }) }}
+          <div class="title">
+            {{ our_platform1.title }}
+          </div>
+          <p>
+            {{ our_platform1.description }}
+          </p>
+          {% if our_platform1.link.url and our_platform1.link.title %}
+            <span class="button button--text">{{ our_platform1.link.title }}</span>
+          {% endif %}
+        <{{ card1_close_tag }}>
+      </div>
+      <div class="col-md-4">
+        {{ card2_open_tag }}
+          {{ renderComponent('Image', { image: our_platform2.image }) }}
+          <div class="title">
+            {{ our_platform2.title }}
+          </div>
+          <p>
+            {{ our_platform2.description }}
+          </p>
+          {% if our_platform2.link.url and our_platform2.link.title %}
+            <span class="button button--text">{{ our_platform2.link.title }}</span>
+          {% endif %}
+        <{{ card2_close_tag }}>
+      </div>
+      {% if our_platform3.title %}
+        <div class="col-md-4">
+          {{ card3_open_tag }}
+            {{ renderComponent('Image', { image: our_platform3.image }) }}
+            <div class="title">
+              {{ our_platform3.title }}
+            </div>
+            <p>
+              {{ our_platform3.description }}
+            </p>
+            {% if our_platform3.link.url and our_platform3.link.title %}
+              <span class="button button--text">{{ our_platform3.link.title }}</span>
+            {% endif %}
+          <{{ card3_close_tag }}>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

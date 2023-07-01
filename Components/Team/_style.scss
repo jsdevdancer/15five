@@ -1,0 +1,67 @@
+.team {
+  padding: 80px 0 0;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .team-members-container {
+    margin: 0 20px 0 28px;
+  }
+
+  .team-member {
+    margin-bottom: 60px;
+
+    .image {
+      position: relative;
+      margin-bottom: 15px;
+
+      * {
+        width: 100%;
+      }
+
+      .colored-frame {
+        position: absolute;
+        bottom: -8px;
+        left: -8px;
+        height: 100%;
+        content: "";
+        border-radius: 4px;
+
+        &.rise {
+          background-color: $rise;
+        }
+
+        &.motion {
+          background-color: $motion;
+        }
+
+        &.cornbread {
+          background-color: $cornbread;
+        }
+
+        &.heart {
+          background-color: $heart;
+        }
+
+        &.mind {
+          background-color: $mind;
+        }
+
+        &.tide {
+          background-color: $tide1;
+        }
+      }
+
+      picture {
+        position: relative;
+
+        * {
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

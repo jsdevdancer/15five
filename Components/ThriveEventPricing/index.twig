@@ -1,0 +1,45 @@
+
+<section class="thrive-event-pricing" {% if section_id %}id="{{ section_id }}"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="thrive-event-pricing--content-wrapper">
+          <h2 class="thrive-event-pricing--content-wrapper_headline">{{ headline }}</h2>
+          <p class="thrive-event-pricing--content-wrapper_description">{{ description }}</p>
+          <a href="{{ button.url }}" class="thrive-event-pricing--content-wrapper_button" href="{{ buttom.url }}"
+          {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>{{ button.title }}</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="thrive-event-pricing--price-wrapper">
+          <div class="thrive-event-pricing--price-wrapper--tickets-wrapper">
+          {% for ticket in tickets %}
+
+            {% if ticket.purchase_link %}
+            <a href='{{ ticket.purchase_link.url }}' class="thrive-event-pricing--price-wrapper--tickets-wrapper--ticket {{ ticket.border }}"
+            {{ ticket.purchase_link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}">
+            {% else %}
+            <div class="thrive-event-pricing--price-wrapper--tickets-wrapper--ticket {{ ticket.border }}">
+            {% endif %}
+              <div>
+                <h4 class="thrive-event-pricing--price-wrapper--tickets-wrapper--ticket_title">{{ ticket.title }}</h4>
+                {{ content.ticket.schedule.icon }}
+                {% if ticket.schedule.date %}
+                <p class="thrive-event-pricing--price-wrapper--tickets-wrapper--ticket_date"><span class="icon"></span>{{ ticket.schedule.date }}</p>
+                {% endif %}
+              </div>
+              <p class="thrive-event-pricing--price-wrapper--tickets-wrapper--ticket_price">{{ ticket.price }}</p>
+            {% if ticket.purchase_link %}
+            </a>
+            {% else %}
+            </div>
+            {% endif %}
+
+          {% endfor %}
+
+          <p class="thrive-event-pricing--price-wrapper_disclaimer">{{ disclaimer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

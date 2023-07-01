@@ -1,0 +1,19 @@
+<a class="product-card"
+  href="{{ product.link.url }}"
+  {{ product.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+  <div class="product-card__description">
+    <div class="c-product-label">
+      <img src="{{ product.icon.src }}" alt="{{ product.icon.alt }}" />
+      <span>{{ product.label }}</span>
+    </div>
+    <h3 class="product-card__title h2">
+      {{ product.title }}
+    </h3>
+    <div class="button button--text">
+      {{ product.link.title }}
+    </div>
+  </div>
+  <div class="product-card__image">
+    {{ renderComponent('Image', { image: product.image }) }}
+  </div>
+</a>

@@ -1,0 +1,100 @@
+.case-study {
+  padding: 30px 0;
+
+  .kicker {
+    padding-top: 0;
+    margin-bottom: 15px;
+    color: rgba($tide1, 0.6);
+  }
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 25px;
+  }
+
+  .quote {
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .quote-company {
+    color: rgba(26, 13, 63, 0.6);
+  }
+
+  .button {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    line-height: 27px;
+  }
+
+  .case-study-card {
+    padding: 43px 50px;
+    border-radius: 4px;
+
+    .card-container {
+      height: 311px;
+      padding: 21px 19px;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px 0 rgba(27, 14, 63, 0.12);
+    }
+
+    .card-logo,
+    .card-label {
+      width: 50%;
+    }
+
+    .card-logo img {
+      max-width: 65%;
+    }
+
+    .card-label {
+      font-size: 9px;
+      text-align: right;
+    }
+
+    .card-title {
+      margin-bottom: 0;
+      font-size: 23px;
+      line-height: 28px;
+    }
+
+    &.tide1_kin {
+      background-color: $tide1;
+
+      .card-container {
+        background-color: $kin;
+      }
+    }
+
+    &.tide10_tide1 {
+      background-color: rgba($tide1, 0.1);
+
+      .card-container {
+        background-color: $tide1;
+
+        .card-label,
+        .card-title {
+          color: $white;
+        }
+      }
+    }
+
+    &.tide10_rise_ext {
+      background-color: rgba($tide1, 0.1);
+
+      .card-container {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), $rise-extended;
+
+        .card-label,
+        .card-title {
+          color: $white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<section class="transform-pricing cols-size-{{ col_size }}">
+  <div class="container">
+    <div class="row plans">
+        {% for plan in plans %}
+          {# plan.plan to keep original backoffice structure #}
+          {% set plan = plan.plan %}
+          <article class="plan col-lg-{{ col_size }}">
+            <div class="plan__header">
+              <div class="plan__title h2">
+                {{ plan.title }}
+              </div>
+              <div class="plan__price">
+                {% if plan.price %}
+                  <div class="value">
+                    ${{ plan.price }}/
+                  </div>
+                {% endif %}
+                <div class="description {{ not plan.price ? 'only-description' }}">
+                  {{ plan.price_description }}
+                </div>
+              </div>
+              <div class="plan__description">
+                {{ plan.description }}
+              </div>
+            </div>
+            <div class="plan__body">
+              <div class="plan__features">
+                <div class="plan__features_section">
+                  {{ plan.features.features }}
+                </div>
+              </div>
+            </div>
+            <div class="plan__button">
+              <a class="plan__link button button--rise"
+                href="{{ plan.button.url }}"
+                {{ plan.button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                aria-label="{{ plan.aria_label }}">
+                {{ plan.button.title }}
+              </a>
+            </div>
+            <hr>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .text-image {
+    &:not(.center) .description {
+      margin-bottom: 0;
+    }
+
+    &.left .image picture * {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    &.right .image picture * {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    &.large-spacing {
+      padding: 40px 0;
+    }
+
+    .flex-column-reverse .image {
+      margin-bottom: 0;
+    }
+
+    .description {
+      max-width: 80%;
+      margin-bottom: 24px;
+
+      &.full-width {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .text-image:not(.center) .text:not(.justify-content-center) .title {
+    padding-top: 75px;
+  }
+}

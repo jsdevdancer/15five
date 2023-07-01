@@ -1,0 +1,34 @@
+.thank-you-page {
+  .content-library-featured-post {
+    padding: 32px 0;
+
+    .row:first-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .related-content-cards {
+    padding: 0 0 40px;
+
+    .c-resource-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      padding: 24px 0;
+      margin: 0;
+      overflow-x: visible;
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+
+    .c-resource-card,
+    .c-resource-card:last-child {
+      width: auto;
+      margin: 0;
+
+      a {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{% if not custom_size %}
+  {% set d_one_x = image.desktop.one_x.avif.src %} {# Desktop @1x #}
+  {% set d_two_x = image.desktop.two_x.avif.src %} {# Desktop @2x #}
+  {% set m_one_x = image.mobile.one_x.avif.src %} {# Mobile @1x #}
+  {% set m_two_x = image.mobile.two_x.avif.src %} {# Mobile @2x #}
+{% else %}
+  {% set d_one_x = image.desktop.one_x.avif.src|resize(custom_size.d_one_x) %} {# Desktop @1x #}
+  {% set d_two_x = image.desktop.two_x.avif.src|resize(custom_size.d_two_x) %} {# Desktop @2x #}
+  {% set m_one_x = image.mobile.one_x.avif.src|resize(custom_size.m_one_x) %} {# Mobile @1x #}
+  {% set m_two_x = image.mobile.two_x.avif.src|resize(custom_size.m_two_x) %} {# Mobile @2x #}
+{% endif %}
+
+{# Desktop #}
+{% if d_two_x and d_one_x and not m_two_x and not m_one_x %}
+  {# If there are both @2x and @1x, for desktop #}
+  {# <!-- AVIF | Desktop | @1x and @2x --> #}
+  <source type="image/avif" {{ is_lazy ? 'data-srcset' : 'srcset' }} {{ '="' ~ d_one_x ~ ' 1x,' ~ d_two_x ~ ' 2x"' }} />
+{% elseif d_two_x and d_one_x %}
+  {# If there are both @2x and @1x, for desktop #}
+  {# <!-- AVIF | Desktop | @1x and @2x --> #}
+  <source type="image/avif"
+    media="(min-width: {{ mobile_breakpoint }})"
+    {{ is_lazy ? 'data-srcset' : 'srcset' }}
+    {{ '="' ~ d_one_x ~ ' 1x,' ~ d_two_x ~ ' 2x"' }} />
+{% elseif (d_one_x or d_two_x) and not m_two_x and not m_one_x %}
+  {# If there is @2x or @1x, for desktop #}
+  {# <!-- AVIF | Desktop | @1x or @2x --> #}
+  <source type="image/avif" {{ is_lazy ? 'data-srcset' : 'srcset' }} {{ '="' ~ d_one_x ?? d_two_x ~ '"' }} />
+{% elseif d_one_x or d_two_x %}
+  {# If there is @2x or @1x, for desktop #}
+  {# <!-- AVIF | Desktop | @1x or @2x --> #}
+  <source type="image/avif"
+    media="(min-width: {{ mobile_breakpoint }})"
+    {{ is_lazy ? 'data-srcset' : 'srcset' }}
+    {{ '="' ~ d_one_x ?? d_two_x ~ '"' }} />
+{% endif %}
+
+{# Mobile #}
+{% if m_two_x and m_one_x %}
+  {# If there are both @2x and @1x, for mobile #}
+  {# <!-- AVIF | Mobile | @1x and @2x --> #}
+  <source type="image/avif"
+    media="(max-width: {{ mobile_breakpoint }})"
+    {{ is_lazy ? 'data-srcset' : 'srcset' }}
+    {{ '="' ~ m_one_x ~ ' 1x,' ~ m_two_x ~ ' 2x"' }} />
+{% elseif m_one_x or m_two_x %}
+  {# If there is @2x or @1x, for mobile #}
+  {# <!-- AVIF | Mobile | @1x or @2x --> #}
+  <source type="image/avif"
+    media="(max-width: {{ mobile_breakpoint }})"
+    {{ is_lazy ? 'data-srcset' : 'srcset' }}
+    {{ '="' ~ m_one_x ?? m_two_x ~ '"' }} />
+{% endif %}

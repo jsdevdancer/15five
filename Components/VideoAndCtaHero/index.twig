@@ -1,0 +1,61 @@
+<section class="video-and-cta-hero {{ background_color }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-5 col-offset-7 col__text">
+        <h1 class="section-title">
+          {{ title }}
+        </h1>
+        <p class="subtitle large--desktop">
+          {{ subtitle }}
+        </p>
+        <div class="buttons">
+          <a class="button button--rise"
+            href="{{ button.link.url }}"
+            {% if button.id %}
+              id="{{ button.id }}"
+            {% endif %}
+            {{ button.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ button.aria_label }}">
+            {{ button.link.title }}
+          </a>
+          {% if secondary_button.link.title %}
+            <a class="button button--rise secondary"
+              href="{{ secondary_button.link.url }}"
+              {% if secondary_button.id %}
+                id="{{ secondary_button.id }}"
+              {% endif %}
+              {{ secondary_button.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{ secondary_button.aria_label}}">
+              {{ secondary_button.link.title }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-12 col-md-7 col__video col__video--desktop">
+        <div class="image__wrapper">
+          <div class="background-image">
+            {{ renderComponent('Image', { image: bg_image }) }}
+          </div>
+          <button 
+            class="play-button {{ image_overlay != 'false' ? image_overlay : '' }}"
+          >
+            {{ source('Assets/play-button.svg') }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col__video col__video--mobile">
+    <div class="image__wrapper">
+      <div class="background-image"> 
+        
+      
+        {{ renderComponent('Image', { image: bg_image }) }}
+      </div>
+      <button class="play-button {{ image_overlay != 'false' ? image_overlay : '' }}">{{ source('Assets/play-button.svg') }}</button>
+    </div>
+  </div>
+
+  {{ renderComponent('VideoModal', { video: video }) }}
+</section>

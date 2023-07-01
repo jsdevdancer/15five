@@ -1,0 +1,83 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .text-image-floating-bar {
+    .section-title {
+      margin-bottom: 8px;
+    }
+
+    .section-description {
+      margin-bottom: 24px;
+    }
+
+    .text-column {
+      padding: 80px 40px;
+    }
+
+    .image {
+      &.left .photo picture * {
+        border-radius: 0 4px 0 0;
+      }
+
+      .background-illustration picture * {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+
+    .tooltip {
+      right: auto;
+      left: -24px;
+
+      &.top {
+        top: 30px;
+      }
+
+      &.bottom {
+        top: auto;
+        bottom: 30px;
+      }
+
+      &.inside {
+        top: 30px;
+        right: 30px;
+        left: auto;
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .text-image-floating-bar {
+    .text-column {
+      padding: 80px 60px 80px 100px;
+    }
+
+    .tooltip {
+      left: -54px;
+
+      &.top {
+        top: 49px;
+      }
+
+      &.bottom {
+        top: auto;
+        bottom: 51px;
+      }
+
+      &.inside {
+        top: 55px;
+        right: 60px;
+        left: auto;
+      }
+    }
+  }
+}
+
+// Starting at 1400px
+@media (min-width: $breakpoint-extra-extra-large) {
+  .text-image-floating-bar {
+    .text-column {
+      padding: 80px 80px 80px 154px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{% set image = award.meta('badge') %}
+<a href="{{ award.url }}" class="award d-flex align-items-center" target="_blank" rel="noopener noreferrer">
+  <div class="badge">
+    {{ renderComponent('Image', { image: image }) }}
+  </div>
+  <div class="text d-flex flex-column justify-content-center">
+    <div class="title h4 u-text-white">
+      {{ award.title }}
+    </div>
+    <div class="source">
+      {{ award.source }}
+    </div>
+  </div>
+</a>

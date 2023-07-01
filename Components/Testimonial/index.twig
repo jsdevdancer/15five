@@ -1,0 +1,72 @@
+{% if (testimonials|length) > 1 %}
+  {% set slider_var = ' slider' %}
+{% endif %}
+{% if hide_mobile %}
+  {% set hide_mobile_var = ' mobile-hidden' %}
+{% endif %}
+
+<section class="testimonial {{ slider_var }} {{ hide_mobile_var }} {{ theme }} {{ position }}{{
+  background_color
+    ? ' background'
+  }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="testimonial-container d-flex flex-column {{
+          position == 'right'
+            ? 'flex-md-row right'
+            : 'flex-md-row-reverse left'
+          }}">
+          <div class="testimonial-image">
+            <div class="background-image">
+              {{ renderComponent('Image', { image: background_image }) }}
+            </div>
+            <div class="image">
+              {% for testimonial in testimonials %}
+                {{ renderComponent('Image', { image: testimonial.quote_author_photo }) }}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="testimonial-content d-flex {{
+            (testimonials|length) > 1
+              ? 'flex-column align-items-start'
+              : 'align-items-center'
+            }}">
+            {% for testimonial in testimonials %}
+              <blockquote>
+                <div class="quotes-logo">
+                  {% if testimonial.company_logo %}
+                    <img src="{{ testimonial.company_logo.src }}" alt="{{ testimonial.company_logo.alt }}" />
+                  {% else %}
+                    {{ source('Assets/quotes.svg') }}
+                  {% endif %}
+                </div>
+                <div class="quote">
+                  {{ testimonial.quote }}
+                </div>
+                {% if testimonial.button.url and testimonial.button.title %}
+                  <a href="{{ testimonial.button.url }}"
+                    class="button button--text"
+                    {{ testimonial.button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+                    aria-label="{{ testimonial.button_aria_label }}">
+                    {{ testimonial.button.title }}
+                  </a>
+                {% endif %}
+                <footer>
+                  <cite>
+                    <div class="author-name">
+                      {{ testimonial.author_name }}
+                    </div>
+                    <div class="author-position">
+                      {{ testimonial.author_position }}
+                    </div>
+                  </cite>
+                </footer>
+              </blockquote>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

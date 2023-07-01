@@ -1,0 +1,22 @@
+{% if mobile.increase_reduce == 'increase' and mobile.increase %}
+  {% set mobile_class = ' mobile-increase' %}
+  {% set mobile_size = '--mobileIncrease: ' ~ mobile.increase ~ 'px;' %}
+{% elseif mobile.increase_reduce and mobile.reduce %}
+  {% set mobile_class = ' mobile-reduce' %}
+  {% set mobile_size = '--mobileReduce: -' ~ mobile.reduce ~ 'px;' %}
+{% endif %}
+
+{% if desktop.increase_reduce == 'increase' and desktop.increase %}
+  {% set desktop_class = ' desktop-increase' %}
+  {% set desktop_size = '--desktopIncrease: ' ~ desktop.increase ~ 'px;' %}
+{% elseif desktop.increase_reduce and desktop.reduce %}
+  {% set desktop_class = ' desktop-reduce' %}
+  {% set desktop_size = '--desktopReduce: -' ~ desktop.reduce ~ 'px;' %}
+{% endif %}
+
+{% if desktop.increase_reduce == 'none' %}
+  {% set desktop_class = ' desktop-none' %}
+{% endif %}
+
+<section class="spacer {{ background_color }}{{ mobile_class }}{{ desktop_class }}"
+  style="{{ mobile_size }}{{ desktop_size }}"></section>

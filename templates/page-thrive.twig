@@ -1,0 +1,7 @@
+{% extends 'templates/_document.twig' %}
+
+{% block Content %}
+  {% for component in post.meta('pageComponentsThrive') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+{% endblock %}

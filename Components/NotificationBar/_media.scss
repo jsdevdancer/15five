@@ -1,0 +1,43 @@
+.notification-bar {
+  @media (min-width: 783px) {
+    .admin-bar & {
+      top: $admin-bar-height-desktop;
+    }
+  }
+
+  // Starting at 992px
+  @media (min-width: $breakpoint-large) {
+    display: block;
+    height: $navbar-height;
+    text-align: center;
+
+    &.with-bg-image {
+      background-image: var(--bg-image-desktop);
+    }
+
+    &.with-button {
+      height: $navbar-height;
+    }
+
+    .content {
+      display: inline-block;
+      width: auto;
+    }
+
+    .button--text {
+      display: inline-block;
+      padding: 0;
+      margin-left: 32px;
+    }
+
+    .close-button {
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      height: 100%;
+      margin-right: -23px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<section class="podcast-episodes">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 section-title">
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+        <p class="description large">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+    <div class="episodes-container">
+      {% for episode in episodes %}
+        <div class="episode">
+          <div class="row {{
+            episode.position == 'right'
+              ? 'normal'
+              : 'reverse flex-md-row-reverse justify-content-md-end'
+            }}">
+            {% if episode.season or episode.number or episode.publish_date %}
+              <div class="col-12 order-2 order-md-1 {{ episode.position == 'right' ?  'offset-md-6' }}">
+                <div class="meta-info d-flex flex-column flex-md-row">
+                  <div class="d-flex">
+                    {% if episode.season %}
+                      <div class="h6 season">
+                        Season {{ episode.season }},
+                      </div>
+                    {% endif %}
+                    {% if episode.number %}
+                      <div class="h6 number ml-1">
+                        Episode {{ episode.number }}
+                      </div>
+                    {% endif %}
+                  </div>
+                  {% if episode.publish_date %}
+                    <div class="date ml-md-2">
+                      {{ episode.publish_date }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+            <div class="col-12 col-md-6 col-lg-5 order-1 order-md-2 {{ episode.position == 'left' ? 'offset-lg-1' }}">
+              <div class="episode-image {{ episode.position == 'left' ? 'left' }}">
+                <div class="background-image">
+                  {{ renderComponent('Image', { image: episode.background }) }}
+                </div>
+                <div class="image">
+                  {{ renderComponent('Image', { image: episode.image }) }}
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 order-3 {{ episode.position == 'right' ? 'offset-lg-1' }}">
+              <h3 class="h2 pt-1 episode-title">
+                {{ episode.episode_title }}
+              </h3>
+              <div class="episode-description">
+                {{ episode.episode_description }}
+              </div>
+              <div class="episode-info">
+                <div class="episode-embed-code">
+                  {{ episode.embed_code }}
+                </div>
+              </div>
+              {% if episode.button %}
+              <div class="link">
+                <a href="{{ episode.button.url }}"
+                  class="button button--text d-flex align-items-center"
+                  {{ episode.button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+                  aria-label="{{ episode.aria_label }}">
+                  <i class="file-icon"></i>
+                  {{ episode.button.title }}
+                </a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+@media (min-width: $breakpoint-large) {
+  .video-and-cta-hero {
+    .col__text {
+      .button {
+        &:first-child {
+          margin-right: 21.5px;
+        }
+      }
+    }
+
+    .col__video {
+      width: 54.458%;
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .video-and-cta-hero {
+    .row {
+      flex-direction: column;
+    }
+
+    .col__text {
+      padding-top: 72px;
+      padding-bottom: 72px;
+
+      text-align: left;
+    }
+
+    .col__video {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+
+      &.col__video--mobile {
+        display: none;
+      }
+
+      &.col__video--desktop {
+        display: block;
+      }
+    }
+  }
+}

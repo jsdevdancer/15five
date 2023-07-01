@@ -1,0 +1,59 @@
+.iframe-section {
+  padding: 60px 0;
+
+  &.motion,
+  &.tide,
+  &.black {
+    .title {
+      color: $white;
+    }
+  }
+
+  &.white {
+    background-color: $white;
+  }
+
+  &.rise {
+    background-color: $rise;
+  }
+
+  &.motion {
+    background-color: $motion;
+  }
+
+  &.cornbread {
+    background-color: $cornbread;
+  }
+
+  &.heart {
+    background-color: $heart;
+  }
+
+  &.mind {
+    background-color: $mind;
+  }
+
+  &.kin {
+    background-color: $kin;
+  }
+
+  &.tide {
+    background-color: $tide1;
+  }
+
+  &.tide-light {
+    background-color: $tide-light;
+  }
+
+  &.kin-light {
+    background-color: $kin-light;
+  }
+
+  &.black {
+    background-color: $black;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}

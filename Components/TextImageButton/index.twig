@@ -1,0 +1,102 @@
+{# Set Heading Tag and hero class #}
+{% if hero_section %}
+  {% set heading = 'h1' %}
+  {% set hero = ' hero' %}
+  {% set heading_class = 'h1' %}
+{% else %}
+  {% set heading = heading_tag %}
+  {% set heading_class = heading_style %}
+{% endif %}
+
+{% set num_cols = 'col-xl-8 offset-xl-2' %}
+{% if title_width == '10' %}
+  {% set num_cols = 'col-xl-10 offset-xl-1' %}
+{% elseif title_width == '6' %}
+  {% set num_cols = 'col-xl-6 offset-xl-3' %}
+{% endif %}
+
+{% set image_var %}
+  {# TODO #}
+  {% if (image.desktop.one_x.old_format) or (image.desktop.one_x.avif) or (image.desktop.two_x.old_format) or (image.desktop.two_x.avif) or (image.mobile.one_x.old_format) or (image.mobile.one_x.avif) or (image.mobile.two_x.old_format) or (image.mobile.two_x.avif) %}
+  {% if image_position == 'bottom' and full_width_image %}</div>{% endif %}
+    <div class="row">
+      <div class="col-12">
+        <div class="image {{ image_spacing }} {{ image_position }}">
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if image_position == 'top' and full_width_image %}<div class="container">{% endif %}
+{% endset %}
+
+<section class="text-image-button{{ hero }} {{ background_color }}{{ cut_image ? ' cut-image' }}">
+  {% if (image_position == 'top' and not full_width_image) or image_position == 'bottom' %}
+    <div class="container">
+  {% endif %}
+    {% if image_position == 'top' %}
+      {{ image_var }}
+    {% endif %}
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1 {{ num_cols }}">
+        {% if kicker %}
+          <div class="h4 o-kicker">
+            {{ kicker }}
+          </div>
+        {% endif %}
+        {% if title %}
+          {{'<' ~ heading }} class="{{ heading_class }} title o-title{{ ( description ? ' has_description') ~ '">' }}
+            {{ title }}
+          {{ '</' ~ heading ~ '>' }}
+        {% endif %}
+      </div>
+    </div>
+    {% if description %}
+      <div class="row">
+        <div class="col-12 {{ title_width }}">
+          <p class="large--desktop">
+            {{ description }}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+    <div class="buttons">
+      {% if button.url and button.title %}
+        <div class="row">
+          <div class="col-12">
+            <a class="button button--{{ button_style }}{{ background_color == 'tide' ? ' light-focus' }}"
+              href="{{ button.url }}"
+              {% if primary_button_id %}
+                id="{{ primary_button_id }}"
+              {% endif %}
+              {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+              {% if button_style == 'video' %}
+                <i class="video-icon">
+                  {{ source('Assets/video-icon.svg') }}
+                </i>
+              {% endif %}
+              {{ button.title }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      {% if button_secondary %}
+        <a class="button button--rise secondary"
+          href="{{ button_secondary.url }}"
+          {% if secondary_button_id %}
+            id="{{ secondary_button_id }}"
+          {% endif %}
+          {{ button_secondary.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+          aria-label="{{ aria_label_secondary }}">
+          {{ button_secondary.title }}
+        </a>
+      {% endif %}
+    </div>
+    {% if wysiwyg %}
+      <div class="wysiwyg">
+        {{ wysiwyg }}
+      </div>
+    {% endif %}
+    {% if image_position == 'bottom' %}{{ image_var }}{% endif %}
+  {% if (image_position == 'bottom' and not full_width_image) or image_position == 'top' %}</div>{% endif %}
+</section>

@@ -1,0 +1,34 @@
+{% if card.url %}
+  {% set card_tag = 'a' %}
+  {% set card_href = 'href="' ~ card.url ~ '"' %}
+{% else %}
+  {% set card_tag = 'div' %}
+{% endif %}
+
+<{{card_tag}} {{ card_href ? card_href : null }} class="card d-flex flex-column">
+  {% if card.image %}
+    <div class="card-image-container d-flex justify-content-center align-items-end">
+      {{ renderComponent('Image', { image: card.image }) }}
+    </div>
+  {% endif %}
+  <div class="card-text  {{ card.text_position }}">
+    {% if card_layout == 'step-card' %}
+      <div class="h4 card-kicker">
+        {{ card.kicker}}
+      </div>
+    {% endif %}
+    <div class="h2 card-title">
+      {{ card.title }}
+    </div>
+
+    <div class="card-description">
+      {{ card.description }}
+    </div>
+  </div>
+
+  {% if card_layout == 'step-card' %}
+    <div {{ card_href }} class="button button--text card-button"> 
+      {{ card.url_label }}
+    </div>
+  {% endif %}
+</{{card_tag}}>

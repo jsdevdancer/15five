@@ -1,0 +1,24 @@
+.breadcrumb {
+  padding: 25px 0;
+
+  a {
+    @include phantom-sans-regular();
+
+    font-size: 16px;
+    line-height: 24px;
+
+    &::before {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      content: "";
+      background: url("../assets/icons/menu-chevron-right-dark.svg") no-repeat center;
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+}

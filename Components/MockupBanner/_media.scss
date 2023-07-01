@@ -1,0 +1,17 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .mockup-banner {
+    padding: 80px 0;
+  }
+}
+
+@media(min-width: $breakpoint-large) {
+  .mockup-banner {
+    .banner-wrapper {
+      .text-wrapper {
+        padding:0 3rem 0 0;
+        text-align:left;
+      }
+    }
+  }
+}

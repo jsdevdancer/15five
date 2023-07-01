@@ -1,0 +1,40 @@
+<section class="values-benefits">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6 col-xl-5">
+        <div class="title-column">
+          <h2 class="h1 title">
+            {{ title }}
+          </h2>
+          <p class="description">
+            {{ description }}
+          </p>
+          {% if cta.title and cta.url %}
+            <a href="{{ cta.url }}"
+              class="button button--text button--text--white light-focus"
+              {{ cta.target ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{ cta_aria_label }}">
+              {{ cta.title }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-6 offset-xl-1">
+        <div class="row">
+          {% for item in features %}
+            <div class="col-12 col-md-6">
+              <div class="feature">
+                <div class="h3 feature-title">
+                  {{ item.title }}
+                </div>
+                <div class="list">
+                  {{ item.list }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

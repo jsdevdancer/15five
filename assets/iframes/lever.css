@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Quando&display=swap");
+
+body {
+  font-family: Poppins, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.lever h3 {
+  width: 100%;
+  padding-top: 24px;
+  margin: 20px 0;
+  font-family: Quando, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  line-height: 42px;
+  border-top: solid rgba(255, 255, 255, 0.1) 1px;
+}
+
+.lever ul {
+  width: 100%;
+  padding: 24px 0 0;
+  margin: 20px 0 48px;
+  list-style: none;
+}
+
+.lever ul li {
+  margin: 5px 0;
+}
+
+.lever ul a {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 38px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.lever ul a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .lever {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .lever h3 {
+    width: calc(40% - 16px);
+    padding-right: 16px;
+  }
+
+  .lever ul {
+    width: calc(60% - 16px);
+    padding-left: 16px;
+    border-top: solid rgba(255, 255, 255, 0.1) 1px;
+  }
+}

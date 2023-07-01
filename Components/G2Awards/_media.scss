@@ -1,0 +1,32 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .g2-awards {
+    .container {
+      padding-top: 112px;
+      padding-bottom: 110px;
+    }
+
+    .section_title {
+      font-size: 48px;
+      line-height: 54px;
+    }
+
+    .section_subtitle {
+      margin-bottom: 65.82px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    .quotes-container {
+      padding-bottom: 39px;
+    }
+
+    .awards-container {
+      margin-bottom: 0;
+    }
+
+    .image_col {
+      padding-top: 36.18px;
+    }
+  }
+}

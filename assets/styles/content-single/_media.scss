@@ -1,0 +1,128 @@
+@media (min-width: $breakpoint-extra-small) {
+  .content-single-post {
+    &.gated--video,
+    &.post--video {
+      .video--mobile {
+        .video-tooltip {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .content-single-post {
+    .meta {
+      margin-top: 32px;
+    }
+
+    h1.title {
+      padding-top: 8px;
+      margin-bottom: 68px;
+    }
+
+    .gutenberg-content {
+      .wp-block-image,
+      .wp-block-embed {
+        margin: 80px 0;
+      }
+
+      blockquote {
+        margin: 80px 0;
+      }
+
+      .wp-block-table {
+        margin: 80px 0;
+      }
+    }
+
+    &.gated {
+      background: linear-gradient(to right, $white 50%, $kin-light 50%);
+    }
+
+    &.gated--video,
+    &.post--video {
+      .video--desktop {
+        display: block;
+      }
+
+      .video__wrapper {
+        height: 334px;
+        .image__wrapper {
+          img {
+            height: 334px;
+          }
+        }
+      }
+
+      .video--mobile {
+        display: none;
+      }
+
+      .authors {
+        padding-top: 0;
+        padding-bottom: 60px;
+      }
+    }
+
+    &.post--video {
+      padding-bottom: 0;
+
+      .meta {
+        margin-top: 32px;
+      }
+      .post-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .title {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+// Starting at 1400px
+@media (min-width: $breakpoint-extra-extra-large) {
+  .content-single-post {
+    padding: 24px 0 140px;
+
+    .gutenberg-content {
+      --negative-margin: -109.333333px;
+      max-width: 560px;
+
+      .wp-block-image:first-child,
+      .wp-block-embed:first-child {
+        max-width: calc(100% + -1 * var(--negative-margin) * 2);
+        margin: 0 var(--negative-margin) 80px;
+      }
+
+      .wp-block-embed:first-child {
+        .wp-block-embed__wrapper {
+          position: relative;
+          height: 0;
+          padding-bottom: 56.25%;
+        }
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      blockquote {
+        margin: 80px var(--negative-margin);
+      }
+    }
+
+    &.gated {
+      background: linear-gradient(to right, $white 50%, $kin-light 50%);
+    }
+  }
+}

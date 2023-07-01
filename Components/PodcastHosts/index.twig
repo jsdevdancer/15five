@@ -1,0 +1,59 @@
+<section class="podcast-hosts">
+  <div class="container">
+    {% if title or description %}
+      <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+          <div class="title-container">
+            {% if title %}
+              <h2 class="h1 section-title">
+                {{ title }}
+              </h2>
+            {% endif %}
+            {% if description %}
+              <p class="large section-description">
+                {{ description }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="hosts">
+      {% for host in hosts %}
+        <div class="host">
+          <div class="row {{
+            host.position == 'right'
+              ? 'normal'
+              : 'reverse flex-md-row-reverse justify-content-md-end'
+            }}">
+            <div class="col-12 col-md-6 col-lg-5 col-xl-4 offset-xl-1 {{ host.position == 'left' ? 'offset-lg-1' }}">
+              <div class="profile-image">
+                <div class="background-image">
+                  {{ renderComponent('Image', { image: host.host_picture_background }) }}
+                </div>
+                <div class="image">
+                  {{ renderComponent('Image', { image: host.host_picture }) }}
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 col-xl-5 offset-xl-1 {{ host.position == 'right' ? 'offset-lg-1' }}">
+              <div class="host-info">
+                <h3 class="h2 host-name">
+                  {{ host.name }}
+                </h3>
+                {% if host.title %}
+                  <div class="host-title">
+                    {{ host.title }}
+                  </div>
+                {% endif %}
+                <div class="description">
+                  {{ host.bio }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

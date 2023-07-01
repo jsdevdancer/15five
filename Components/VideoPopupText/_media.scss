@@ -1,0 +1,13 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .video-popup-text .text {
+    margin-top: 0;
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .video-popup-text {
+    padding: 115px 0;
+  }
+}

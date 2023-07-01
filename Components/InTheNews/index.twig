@@ -1,0 +1,28 @@
+<section class="in-the-news dark-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="text">
+          <h2 class="h1 o-title title u-text-white">
+            {{ title }}
+          </h2>
+          <a href="{{ button.url }}"
+            class="button button--text button--text--white"
+            {{ button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ aria_label }}">
+            {{ button.title }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="highlights d-flex flex-lg-wrap flex-xl-nowrap align-items-xl-end">
+          {% for item in news_highlights %}
+            {% include 'Partials/highlights.twig' with { highlight: item } %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

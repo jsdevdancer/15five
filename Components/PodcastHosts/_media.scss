@@ -1,0 +1,12 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .podcast-hosts {
+    .section-title {
+      margin-bottom: 16px;
+    }
+
+    .profile-image {
+      --profile-bg-offset: 32px;
+    }
+  }
+}

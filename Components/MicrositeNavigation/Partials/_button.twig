@@ -1,0 +1,10 @@
+<div class="navbar__buttons navbar_microsite_button">
+  {# {% set button1 = microsite_menu.meta('button1') %} #}
+
+  <a class="button button {{ button.button_color }}"
+    href="{{ button.link.url }}"
+    {{ button.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+    aria-label="{{ button.aria_label ? button.aria_label : button.link.title }}">
+    {{ button.link.title }}
+  </a>
+</div>

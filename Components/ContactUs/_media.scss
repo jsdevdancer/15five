@@ -1,0 +1,123 @@
+// Starting at 992px
+@media (max-width: $breakpoint-large) {
+  .contact-us {
+    background: $kin-light;
+
+    .content {
+      padding: 30px 0 0;
+    }
+
+    .list-item {
+      margin-bottom: 20px;
+    }
+
+    .u-gravity-form {
+      padding-top: 20px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .contact-us {
+    background: linear-gradient(to right, $white 50%, $kin-light 50%);
+
+    .content {
+      padding: 80px 0;
+    }
+
+    .title {
+      max-width: 450px;
+    }
+
+    .image-links-wrapper {
+      display: flex;
+      align-items: flex-end;
+      margin: 30px 0 50px;
+
+      .image {
+        max-width: 115px;
+      }
+
+      .links-wrapper {
+        margin-left: 64px;
+      }
+
+      .h6 {
+        padding-top: 0;
+        margin-bottom: 17px;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        a:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .logos-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 0;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px 36px 0 0;
+
+        img {
+          max-width: 150px;
+          max-height: 30px;
+        }
+      }
+    }
+
+    .col__form {
+      position: relative;
+    }
+
+    .u-gravity-form {
+      padding-top: 83px;
+
+      &.sticky {
+        position: fixed;
+        top: 0;
+        margin-top: 90px;
+      }
+
+      &.stick-to-bottom {
+        position: absolute;
+        bottom: 0;
+        margin-top: 90px;
+      }
+
+      .gform_footer {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .contact-us {
+    .u-gravity-form .gform_wrapper [type="date"],
+    .u-gravity-form .gform_wrapper [type="email"],
+    .u-gravity-form .gform_wrapper [type="number"],
+    .u-gravity-form .gform_wrapper [type="password"],
+    .u-gravity-form .gform_wrapper [type="search"],
+    .u-gravity-form .gform_wrapper [type="tel"],
+    .u-gravity-form .gform_wrapper [type="text"],
+    .u-gravity-form .gform_wrapper [type="url"],
+    .u-gravity-form .gform_wrapper select,
+    .u-gravity-form .gform_wrapper textarea {
+      width: 280px;
+    }
+  }
+}

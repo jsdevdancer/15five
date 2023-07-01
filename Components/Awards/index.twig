@@ -1,0 +1,136 @@
+{% set awards_more_exists = true %}
+{% set cat_more_exists = true %}
+
+{% if pick_awards_categories == 'awards' %}
+  {# set visible award items #}
+  {% set awards_initial %}
+    {% for award in awards[:3] %}
+      {{ renderComponent('AwardCard', { award: award.award }) }}
+    {% endfor %}
+  {% endset %}
+  {# set 'view more' award items #}
+  {% set awards_more %}
+    {% for award in awards[3:] %}
+      {{ renderComponent('AwardCard', { award: award.award }) }}
+    {% endfor %}
+  {% endset %}
+{% else %}
+  {# in case the user chooses 'categories' #}
+  {% set last_cat = 0 %}
+  {% set last_award = 0 %}
+  {% set is_last_award_in_cat = false %}
+  {% set is_last_cat = false %}
+
+  {# set visible award items #}
+  {% set awards_initial %}
+    {% set counter = 0 %}
+    {% set length = 0 %}
+
+    {# loop through all categories #}
+    {% for category in categories %}
+      {# 2 instead of 3 to prevent the next category title from appearing #}
+      {% if counter <= 2 %}
+        <div class="h4 o-kicker kicker">
+          {{ category.category.name }}
+        </div>
+        {% for award in category.posts %}
+          {% set counter = counter + 1 %}
+
+          {# make sure show max 3 awards #}
+          {% if counter <= 3 %}
+            {{ renderComponent('AwardCard', { award: award }) }}
+            {% if loop.index == loop.length %}
+              {% set is_last_award_in_cat = true %}
+              {% set awards_more_exists = false %}
+            {% endif %}
+          {% endif %}
+
+          {% set last_award = loop.index0 %}
+        {% endfor %}
+
+        {% set last_cat = loop.index %} {# set variable for loop in view more section #}
+
+        {% if loop.index == loop.length %}
+          {% set is_last_cat = true %}
+          {% set cat_more_exists = false %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endset %}
+
+  {# set 'view more' award items #}
+  {% set awards_more %}
+    {% if is_last_award_in_cat == false %}
+      {% set last_cat = 0 %}
+    {% endif %}
+
+    {% for category in categories[last_cat:] %}
+      {% if is_last_award_in_cat == true %}
+        <div class="h4 o-kicker kicker">
+          {{ category.category.name }}
+        </div>
+      {% endif %}
+
+      {# in case the visible section showed all awards in the visible category #}
+      {% if is_last_award_in_cat == true %}
+        {% set last_award = 0 %}
+      {% endif %}
+
+      {% for award in category.posts[last_award:] %}
+        {{ renderComponent('AwardCard', { award: award }) }}
+
+        {% if loop.index == loop.length %}
+          {% set is_last_award_in_cat = true %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endset %}
+{% endif %}
+
+<section class="awards dark-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+        <div class="title-column">
+          <div class="h4 o-kicker kicker">
+            {{ kicker }}
+          </div>
+          <h2 class="{{ heading_style }} o-title title u-text-white">
+            {{ title }}
+          </h2>
+          <div class="illustration{{ not mobile_illustration ? ' d-none d-md-block' }}">
+            {{ renderComponent('Image', { image: image }) }}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+        <div class="awards-container">
+          <div class="awards-column">
+            {{ awards_initial }}
+          </div>
+          {% if pick_awards_categories == 'awards' %}
+            {% if (awards|length) > 3 %}
+              {% set view_more = true %}
+            {% endif %}
+          {% else %}
+            {% if awards_more_exists or cat_more_exists %}
+              {% set view_more = true %}
+            {% endif %}
+          {% endif %}
+          {% if view_more %}
+            <div class="awards-column collapsed">
+              {{ awards_more }}
+            </div>
+            <button id="awards-show-more"
+              class="awards-show-more u-text-white"
+              data-show-more="{{ show_more_label }}"
+              data-show-less="{{ show_less_label }}"
+              aria-label="{{ __('Show More Awards', 'flynt') }}">
+              {{ show_more_label }}
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

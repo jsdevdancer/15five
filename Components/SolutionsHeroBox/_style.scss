@@ -1,0 +1,81 @@
+.solutions-box-hero {
+  padding: 30px 0;
+  text-align: center;
+
+  .text-col {
+    background-color: $kin;
+    border-radius: 4px 4px 0 0;
+
+    .text {
+      padding: 80px 25px;
+    }
+
+    .title {
+      padding-top: 0;
+      margin-bottom: 8px;
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+
+  .description {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .image-col {
+    border-radius: 0 0 4px 4px;
+
+    &.white {
+      background-color: $white;
+    }
+
+    &.rise {
+      background-color: $rise;
+    }
+
+    &.motion {
+      background-color: $motion;
+    }
+
+    &.cornbread {
+      background-color: $cornbread;
+    }
+
+    &.heart {
+      background-color: $heart;
+    }
+
+    &.mind {
+      background-color: $mind;
+    }
+
+    &.kin {
+      background-color: $kin;
+    }
+
+    &.tide {
+      background-color: $tide1;
+    }
+
+    &.tide-light {
+      background-color: $tide-light;
+    }
+
+    &.kin-light {
+      background-color: $kin-light;
+    }
+
+    &.black {
+      background-color: $black;
+    }
+
+    .image {
+      padding: 20px 0;
+    }
+
+    picture * {
+      margin: 0 auto;
+    }
+  }
+}

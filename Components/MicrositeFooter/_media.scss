@@ -1,0 +1,56 @@
+$footer-column-shift: 38px;
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .footer-microsite {
+    .container {
+      padding: 30px 0;
+    }
+
+    .socials {
+      margin-top: 0;
+
+      .social-menu {
+        justify-content: flex-end;
+        margin-top: 0;
+        column-gap: 35px;
+      }
+    }
+
+    .copyright {
+      text-align: left;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .footer {
+    padding-top: 0;
+
+    .socials {
+      padding-top: 20px;
+
+      .social-menu {
+        padding-top: 0;
+
+        a {
+          display: inline-block;
+          height: 24px;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .footer {
+    padding-top: 50px;
+
+    .socials .social-menu {
+      margin-left: 24px;
+    }
+  }
+}
+

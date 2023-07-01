@@ -1,0 +1,34 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .product-feature-tabs {
+    .product-information .description {
+      width: 85%;
+    }
+
+    .product-illustration {
+      margin-bottom: 0;
+
+      img {
+        margin: 0;
+      }
+    }
+
+    .o-tabs {
+      padding: 0;
+      margin: 20px 0 0;
+    }
+  }
+}
+
+//  Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .product-feature-tabs {
+    padding: 53px 0;
+
+    .tab-content-container .description {
+      padding: 0;
+      margin-right: -40px;
+      margin-left: -40px;
+    }
+  }
+}

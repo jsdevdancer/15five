@@ -1,0 +1,125 @@
+.top-footer {
+  padding: 40px 0;
+  background-color: $tide1;
+
+  .pretitle,
+  .pricing-label {
+    color: rgba($white, 0.6);
+  }
+
+  .h1 {
+    padding-top: 0;
+  }
+
+  .buttons {
+    .button {
+      white-space: nowrap;
+    }
+
+    .pricing {
+      margin-left: 15px;
+
+      .button {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 30px 0;
+  background-color: $tide1;
+
+  .menus {
+    padding-bottom: 30px;
+
+    .footer-menu {
+      margin: 0 -16px;
+
+      .title {
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+    }
+
+    ul.menu {
+      padding: 0;
+      margin-bottom: 25px;
+      list-style-type: none;
+
+      li:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        display: block;
+
+        padding: 0 16px;
+
+        font-size: 16px;
+        line-height: 24px;
+
+        color: rgba($white, 0.8);
+
+        text-decoration: none;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .socials {
+    padding-bottom: 40px;
+
+    .social-media {
+      margin-top: 40px;
+
+      .app-stores a {
+        &:not(:first-child) {
+          margin-left: 7px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 7px;
+        }
+      }
+    }
+
+    .social-menu {
+      padding-top: 30px;
+
+      a {
+        &:not(:first-child) {
+          margin-left: 16px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .privacy-terms {
+    text-align: center;
+
+    a {
+      margin-left: 4em;
+      font-size: 16px;
+      line-height: 5em;
+      text-decoration: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

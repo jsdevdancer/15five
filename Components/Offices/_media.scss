@@ -1,0 +1,30 @@
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .offices {
+    .office-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .offices {
+    .office-cards {
+      column-gap: 32px;
+      row-gap: 32px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .offices {
+    padding: 100px 0 92px;
+
+    .office-cards {
+      margin: 58px 0 117px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

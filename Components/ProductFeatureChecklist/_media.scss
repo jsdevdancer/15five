@@ -1,0 +1,10 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .title-col {
+    width: 21%;
+  }
+
+  .check-col {
+    width: 63%;
+  }
+}

@@ -1,0 +1,19 @@
+.one-title-two-columns {
+  padding: 80px 0;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .column {
+    font-size: 22px;
+    line-height: 30px;
+
+    > *:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}

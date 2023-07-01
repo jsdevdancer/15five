@@ -1,0 +1,45 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .three-column-hero {
+    padding-top: 80px;
+    padding-bottom: 84px;
+
+    .row__content {
+      margin-top: 58px;
+
+      .check-item {
+        margin-bottom: 0;
+
+        &:not(:last-child):not(:nth-child(n + 3)) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .row__button-image {
+      .buttons {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .three-column-hero {
+    .row__content {
+      padding-bottom: 0;
+    }
+
+    .row__button-image {
+      margin-top: 0;
+
+      .buttons {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}

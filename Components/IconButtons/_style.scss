@@ -1,0 +1,42 @@
+.icon-buttons {
+  padding: 20px 0;
+  text-align: center;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .button {
+    padding: 16px;
+    margin: 6px;
+    line-height: 0;
+    background-color: $tide-light;
+
+    &:hover {
+      background-color: rgba($tide1, 0.08);
+
+      .button-wrapper::after {
+        background: url("../assets/icons/menu-chevron-right-dark.svg") no-repeat center;
+      }
+    }
+
+    .button-wrapper {
+      display: inline-flex;
+      align-items: center;
+
+      &::after {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 6px;
+        content: "";
+        background: url("../assets/icons/menu-chevron-right.svg") no-repeat center;
+      }
+    }
+
+    img {
+      margin-right: 14px;
+    }
+  }
+}

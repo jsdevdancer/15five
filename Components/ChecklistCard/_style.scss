@@ -1,0 +1,118 @@
+.checklist-card {
+  padding: 80px 0;
+  background-image: linear-gradient(0deg, $kin-light 13.83%, rgba($kin-light, 0) 92.93%);
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .checklist {
+    margin: 40px 0 10px;
+
+    .check-item {
+      margin-bottom: 26px;
+    }
+
+    .icon {
+      margin-top: 4px;
+      margin-right: 16px;
+    }
+
+    .check-title {
+      padding-top: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  .feature-card {
+    text-decoration: none;
+
+    &.performance .product-color {
+      background-color: $rise;
+    }
+
+    &.engagement .product-color {
+      background-color: $motion;
+    }
+
+    &.manager-enablement .product-color {
+      background-color: $cornbread;
+    }
+
+    &.career-growth .product-color {
+      background-color: $heart;
+    }
+
+    &:hover .feature-description {
+      text-decoration: underline;
+    }
+
+    .image-container,
+    .text-container {
+      width: 296px;
+      margin: auto;
+    }
+
+    .image-container {
+      height: 167px;
+
+      .image {
+        height: 100%;
+      }
+    }
+
+    .image picture * {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+
+    .product-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+
+    .product-title {
+      padding-top: 2px;
+      margin-bottom: 0;
+    }
+
+    .feature-type {
+      padding-top: 4px;
+      color: rgba($tide1, 0.6);
+    }
+
+    .text-container {
+      margin-top: 12px;
+    }
+
+    .feature-title {
+      padding-top: 16px;
+      margin-bottom: 2px;
+    }
+
+    .feature-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  hr {
+    margin: 24px 0;
+    background-color: rgba($tide1, 0.1);
+  }
+
+  .button {
+    text-align: left;
+
+    .button-container {
+      display: inline-flex;
+      width: calc(100% - 25px);
+    }
+  }
+}

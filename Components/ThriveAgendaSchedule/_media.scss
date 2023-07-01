@@ -1,0 +1,57 @@
+// Stops at 768px
+@media (max-width: $breakpoint-large) {
+  .thrive-agenda-schedule {
+    padding: 70px 40px;
+    &-navbar {
+      padding: 35px 40px;
+    }
+  }
+}
+// Stops at 768px
+@media (max-width: $breakpoint-medium) {
+  .thrive-agenda-schedule {
+    &-navbar--buttons-wrapper{
+      column-gap: 14px;
+      &__button {
+        font-size: 18px;
+        a {
+          padding: 3px 6px;
+        }
+      }
+    }
+    &--day{
+      &__date {
+        font-size: 42px;
+      }
+      &--event {
+        display: block;
+        & > div {
+          width: 100%;
+        }
+        &__time {
+          margin-bottom: 29px;
+        }
+        &--presenters {
+          &:nth-child(3) {
+            margin-top: 40px;
+          }
+          &--person__name {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .empty-div {
+      height: 153px;
+    }
+  }
+}
+// Stops at 567px
+@media (max-width: $breakpoint-small) {
+  .thrive-agenda-schedule {
+    padding: 50px 16px;
+    &-navbar {
+      padding: 35px 16px;
+    }
+  }
+}

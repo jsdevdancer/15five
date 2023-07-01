@@ -1,0 +1,38 @@
+{% if hide_mobile %}
+  {% set hide_mobile_var = ' mobile-hidden' %}
+{% endif %}
+
+<section class="text-image-framed {{ hide_mobile_var }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-5 offset-lg-1 d-flex align-items-center">
+        <section>
+          <h2 class="h1">
+            {{ title }}
+          </h2>
+          <p class="large">
+            {{ description }}
+          </p>
+          {% if button.url and button.title %}
+            <a href="{{ button.url }}"
+              class="button button--text"
+              {{ button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{ button_aria_label }}">
+              {{ button.title }}
+            </a>
+          {% endif %}
+        </section>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 offset-lg-1 d-flex justify-content-end align-items-center">
+        <div class="images">
+          <div class="background-image">
+            {{ renderComponent('Image', { image: background_image }) }}
+          </div>
+          <div class="section-image">
+            {{ renderComponent('Image', { image: photo }) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,133 @@
+.notification-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  width: 100%;
+  height: $notification-bar-height-mobile;
+  padding: 16px 42px 16px 0;
+  text-align: left;
+
+  &.with-bg-image {
+    background-image: var(--bg-image-mobile);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.with-button {
+    height: $notification-bar-height-mobile-with-button;
+  }
+
+  &.bg--white {
+    background-color: $white;
+  }
+
+  &.bg--rise {
+    background-color: $rise;
+  }
+
+  &.bg--motion {
+    background-color: $motion;
+  }
+
+  &.bg--cornbread {
+    background-color: $cornbread;
+  }
+
+  &.bg--heart {
+    background-color: $heart;
+  }
+
+  &.bg--mind {
+    background-color: $mind;
+  }
+
+  &.bg--kin {
+    background-color: $kin;
+  }
+
+  &.bg--tide {
+    background-color: $tide1;
+  }
+
+  &.bg--tide-light {
+    background-color: $tide-light;
+  }
+
+  &.bg--kin-light {
+    background-color: $kin-light;
+
+    .button--text--rise {
+      color: $rise-deep;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &.bg--black {
+    background-color: $black;
+  }
+
+  &.text--white {
+    color: $white;
+
+    .fill-color {
+      fill: #ffffff;
+    }
+  }
+
+  &.text--tide {
+    color: $tide1;
+
+    .fill-color {
+      fill: #1a0d3f;
+    }
+  }
+
+  &.bg--tide {
+    color: $tide1;
+  }
+
+  .content {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .button--text {
+    display: block;
+    padding-top: 10px;
+    margin-bottom: 0;
+    line-height: 24px;
+    text-decoration: none;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    padding: 0 7px;
+    line-height: 24px;
+
+    &:focus {
+      outline-color: $white;
+    }
+  }
+
+  .admin-bar & {
+    top: $admin-bar-height-mobile;
+  }
+}

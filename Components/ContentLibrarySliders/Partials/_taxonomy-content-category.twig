@@ -1,0 +1,117 @@
+<div class="content-library-category taxonomy-page"
+  data-category-id="{{ category.term_id }}"
+  data-pagination="{{ pagination.current }}"
+  data-nonce="{{ nonce }}">
+  <div class="row align-items-end">
+    <div class="col-lg-8">
+      <h2 class="title">
+        {{ category.name }}
+      </h2>
+      <div class="description">
+        {{ category.description }}
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="filter">
+        <button role="button" class="button" aria-haspopup="true" aria-expanded="false" aria-controls="filter__menu">
+          {{ source('Assets/filter.svg') }}
+          {{ __('Filter', 'flynt') }}
+        </button>
+        <div class="filter__menu" id="filter__menu" role="menu" aria-labelledby="filter__menu">
+          <div>
+            <div class="h4">
+              {{ __('Select Filters', 'flynt') }}
+            </div>
+            <button role="button"
+              class="button button--plain"
+              id="js-closeFilterMenu"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="filter__menu">
+              {{ source('Assets/close-filter-menu.svg') }}
+            </button>
+          </div>
+          <nav>
+            <ul class="roles" role="menu">
+              {% for role in roles %}
+                <li role="menuitem">
+                  <button role="button"
+                    class="button button--tag"
+                    data-taxonomy="role"
+                    data-checked="false"
+                    data-term-id="{{ role.id }}">
+                    {{ __('For ', 'flynt') }}{{ role.name }}
+                  </button>
+                </li>
+              {% endfor %}
+              <input type="hidden" id="selectedRoles" name="selectedRoles" autocomplete="off" value="[]" />
+            </ul>
+            <hr />
+            <ul class="types" role="menu">
+              {% for type in types %}
+                <li role="menuitem">
+                  <button role="button"
+                    class="button button--tag"
+                    data-taxonomy="type"
+                    data-checked="false"
+                    data-term-id="{{ type.id }}">
+                    {{ type.name }}
+                  </button>
+                </li>
+              {% endfor %}
+              <input type="hidden" id="selectedTypes" name="selectedTypes" autocomplete="off" value="[]" />
+            </ul>
+            <button role="button"
+              class="button button--rise"
+              id="js-applyFilterMenu"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="filter__menu">
+              {{ __('Apply', 'flynt') }}
+            </button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="active-filters">
+      <button role="button" class="button button--plain clear-filters" id="js-clearAllFilters" aria-hidden="true">
+        {{ __('Clear All', 'flynt') }}
+      </button>
+      {# prettier-ignore-start #}
+      <template id="js-removeThisFilter"><button role="button" class="button button--tag" __data-taxonomy="" __data-term-id="" __aria-hidden="true">__Placeholder{{ source('Assets/remove-filter.svg') }}</button></template>
+      {# prettier-ignore-end #}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="c-resource-cards">
+        {% for post in posts %}
+          {{ renderComponent('ResourceCard', { post: post }) }}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% if pagination.total > 1 %}
+    <div class="row">
+      <div class="col">
+        <div class="pagination">
+          {{ renderComponent('NavigationArrows', { arrows: 'left' }) }}
+          {% set upper_limit = pagination.total < 3 ? pagination.total : 3 %}
+          {% for number in 1..upper_limit %}
+            <button type="button"
+              class="button button--pagination {{ pagination.current == number ? 'current' }}"
+              data-page="{{ number }}">
+              {{ number }}
+            </button>
+          {% endfor %}
+          {% if pagination.total > 3 %}
+            <button type="button" class="button button--pagination disabled">...</button>
+          {% endif %}
+          {{ renderComponent('NavigationArrows', { arrows: 'right' }) }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

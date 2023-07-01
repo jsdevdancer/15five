@@ -1,0 +1,51 @@
+/* Breakpoints */
+$breakpoint-extra-small: 376px;
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-extra-large: 1200px;
+$breakpoint-extra-extra-large: 1400px;
+
+/* Grid */
+$desktop-container-width: 1312px;
+$gutter-width: 32px;
+
+/* Typography */
+$heading-selectors: "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";
+$input-selectors: '[type="tel"], [type="url"], [type="text"], [type="date"], [type="email"], [type="search"], [type="number"], [type="password"], textarea, select';
+
+/* Colors */
+// Base
+$rise: #db3700;
+$motion: #6c00db;
+$cornbread: #f4ae2a;
+$heart: #ff52a1;
+$mind: #16dbdb;
+$kin: #fff2e8;
+
+// System feedback
+$error: #f11818;
+$success: #14bd6c;
+$warning: #f4ae2a;
+
+// Neutral scale (tide)
+$tide1: #1a0d3f;
+$tide-light: #f8f8f9;
+$kin-light: #fff7f1;
+
+// Accessibility
+$rise-deep: #ba2f00;
+$rise-extended:#ff4b11;
+
+// Others
+$white: #ffffff;
+$black: #000000;
+$gray-bd: #bdbdbd;
+
+/* Dimensions */
+$navbar-height: 58px;
+$notification-bar-height-mobile: 104px;
+$notification-bar-height-mobile-with-button: 138px;
+$notification-bar-height-desktop: 58px;
+$admin-bar-height-mobile: 46px;
+$admin-bar-height-desktop: 32px;

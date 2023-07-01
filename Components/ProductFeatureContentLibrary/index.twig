@@ -1,0 +1,27 @@
+<section class="product-feature-content-library">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4 offset-lg-4 col-xl-2 offset-xl-5">
+        <div class="h4 kicker o-kicker">
+          {{ kicker }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+        <div class="h2 title o-title">
+          {{ title }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="c-resource-cards">
+          {% for post in content_library_posts %}
+            {{ renderComponent('ResourceCard', { post: post.resource }) }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

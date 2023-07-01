@@ -1,0 +1,60 @@
+@import "styles/variables";
+@import "../Components/**/_admin.scss";
+
+// Backend Component Screenshots
+.flyntComponentScreenshot {
+  position: absolute;
+  bottom: 5px;
+  display: inline-block;
+  height: 36px;
+  padding: 2px;
+  margin-left: 5px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+
+  &-imageWrapper {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+  }
+
+  &-image {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    display: block;
+    max-width: 500px;
+    height: 250px;
+    background: #ffffff;
+    border: 3px solid #333739;
+    border-radius: 3px;
+    object-fit: contain;
+  }
+
+  &-imageElement {
+    display: block;
+    width: auto;
+  }
+
+  &-label {
+    position: absolute;
+    bottom: 4px;
+    left: 100%;
+    padding-left: 8px;
+    white-space: nowrap;
+  }
+}
+
+// Menu items width
+.menu-item-bar .menu-item-handle {
+  max-width: 790px;
+}
+
+.menu-item-settings {
+  max-width: 800px;
+}
+
+// ACF Components Popup
+.acf-tooltip.acf-fc-popup {
+  columns: 3;
+}

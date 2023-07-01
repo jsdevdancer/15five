@@ -1,0 +1,49 @@
+{% if heading_position == 'center' %}
+  {% set title_class = 'h1' %}
+{% else %}
+  {% set title_class = 'h2' %}
+{% endif %}
+<section class="events-cards heading-{{ heading_position }} background-{{ background_color }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 col-lg-6{{ heading_position == 'center' ? ' offset-md-1 offset-lg-3' }}">
+        {% if kicker %}
+          <div class="h4 o-kicker">
+            {{ kicker }}
+          </div>
+        {% endif %}
+        <h2 class="{{ title_class }} o-title">
+          {{ title }}
+        </h2>
+        {% if description %}
+          <p>
+            {{ description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {% if posts is not empty %}
+          <div class="cards-wrapper"
+            data-posts_per_page="{{ posts_per_page }}"
+            data-page="{{ posts.pagination.current }}"
+            data-max="{{ posts.pagination.total }}">
+            {% for card in posts %}
+              {% include 'Partials/card.twig' with { card: card, label: 'Virtual Event' } %}
+            {% endfor %}
+          </div>
+          {% if posts.pagination.total > 1 %}
+            <button id="events-load-more" class="button button--tide1" aria-label="Load more events">
+              {{ load_more_label }}
+            </button>
+          {% endif %}
+        {% else %}
+          <p class="no-events-message">
+            {{ no_events_message }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

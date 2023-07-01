@@ -1,0 +1,34 @@
+.horizontal-cta {
+  padding-top: 60px;
+  text-align: center;
+
+  @include bg-color-selector;
+
+  .col__text {
+    height: auto;
+
+    .title {
+      padding-top: 0;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    .button {
+      margin-bottom: 34.6px;
+    }
+  }
+
+  .col__image {
+    height: 225px;
+
+    img {
+      height: 100%;
+
+      margin: 0 auto;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .featured-event,
+  .single-event {
+    .text-col {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .image-col picture * {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .featured-event,
+  .single-event {
+    .text-col .text {
+      padding: 60px;
+    }
+  }
+}

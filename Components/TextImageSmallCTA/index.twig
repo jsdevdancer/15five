@@ -1,0 +1,33 @@
+<section class="text-image-small-cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4 col-lg-3 offset-lg-1">
+        <div class="image u-height-100 d-md-flex align-items-md-center">
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+      </div>
+      <div class="col-12 col-md-7 offset-md-1 col-lg-7 col-xl-5">
+        <div class="text u-height-100 d-md-flex flex-md-column align-items-md-start justify-content-md-center">
+          {% if kicker %}
+            <div class="h4 kicker o-kicker">
+              {{ kicker }}
+            </div>
+          {% endif %}
+          <h2 class="h1 title">
+            {{ title }}
+          </h2>
+          <p class="large">
+            {{ description }}
+          </p>
+          <a href="{{ button.url }}"
+            class="button button--text"
+            {{ primary_button_id ? 'id="' ~ primary_button_id ~ '"' }}
+            {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ button_aria_label }}">
+            {{ button.title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

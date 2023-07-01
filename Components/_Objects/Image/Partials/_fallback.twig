@@ -1,0 +1,63 @@
+{# Sizes #}
+{% if not custom_size %}
+  {% set d_one_x_width = image.desktop.one_x.old_format.width %} {# Desktop @1x #}
+  {% set d_two_x_width = image.desktop.two_x.old_format.width %} {# Desktop @2x #}
+  {% set m_one_x_width = image.mobile.one_x.old_format.width %} {# Mobile @1x #}
+  {% set m_two_x_width = image.mobile.two_x.old_format.width %} {# Mobile @2x #}
+{% else %}
+  {% set d_one_x_width = image.desktop.one_x.old_format|resize(custom_size.d_one_x).width %} {# Desktop @1x #}
+  {% set d_two_x_width = image.desktop.two_x.old_format|resize(custom_size.d_two_x).width %} {# Desktop @2x #}
+  {% set m_one_x_width = image.mobile.one_x.old_format|resize(custom_size.m_one_x).width %} {# Mobile @1x #}
+  {% set m_two_x_width = image.mobile.two_x.old_format|resize(custom_size.m_two_x).width %} {# Mobile @2x #}
+{% endif %}
+
+{# Sources #}
+{% if not custom_size %}
+  {% set d_one_x = image.desktop.one_x.old_format.src %} {# Desktop @1x #}
+  {% set d_two_x = image.desktop.two_x.old_format.src %} {# Desktop @2x #}
+  {% set m_one_x = image.mobile.one_x.old_format.src %} {# Mobile @1x #}
+  {% set m_two_x = image.mobile.two_x.old_format.src %} {# Mobile @2x #}
+{% else %}
+  {% set d_one_x = image.desktop.one_x.old_format.src|resize(custom_size.d_one_x) %} {# Desktop @1x #}
+  {% set d_two_x = image.desktop.two_x.old_format.src|resize(custom_size.d_two_x) %} {# Desktop @2x #}
+  {% set m_one_x = image.mobile.one_x.old_format.src|resize(custom_size.m_one_x) %} {# Mobile @1x #}
+  {% set m_two_x = image.mobile.two_x.old_format.src|resize(custom_size.m_two_x) %} {# Mobile @2x #}
+{% endif %}
+
+{% set extension = d_one_x|split('.')|last %} {# Image file extension (.png or .jpeg) #}
+
+{# prettier-ignore-start #}
+{% if d_two_x and d_one_x and m_two_x and m_one_x %}
+  {# If there are both @2x and @1x, for desktop and mobile #}
+  {# <!-- Fallback: {{ extension|upper }} | Desktop and Mobile | @1x and @2x --> #}
+  <img {{ is_lazy ? 'class="lazyload"' }}
+  {{ is_lazy ? 'data-src' : 'src' }} {{ '="' ~ d_one_x ~ '"' }}
+  {{ is_lazy ? 'data-srcset' : 'srcset' }} {{ '="'
+    ~ d_one_x ~ ' ' ~ d_one_x_width ~ 'w, ' ~ d_two_x ~ ' ' ~ d_two_x_width ~ 'w, '
+    ~ m_one_x ~ ' ' ~ m_one_x_width ~ 'w, ' ~ m_two_x ~ ' ' ~ m_two_x_width ~ 'w"' }}
+  sizes="(min-width: {{ mobile_breakpoint }}) and (min-resolution: 2dppx) {{ d_two_x_width ~ 'px, ' }}
+         (min-width: {{ mobile_breakpoint }}) {{ d_one_x_width ~ 'px, ' }}
+         (max-width: {{ mobile_breakpoint }}) and (min-resolution: 2dppx) {{ m_two_x_width ~ 'px, ' }}
+         (max-width: {{ mobile_breakpoint }}) {{ m_one_x_width ~ 'px, ' }}
+         100vw"
+  alt="{{ default_file.alt }}" />
+{% elseif (d_two_x or d_one_x) and (m_two_x or m_one_x) %}
+  {# If there is @2x or @1x, for desktop and mobile #}
+  {# <!-- Fallback: {{ extension|upper }} | Desktop and Mobile | @1x or @2x --> #}
+  <img {{ is_lazy ? 'class="lazyload"' }}
+    {{ is_lazy ? 'data-src' : 'src' }} {{ '="' ~ d_one_x ~ '"' }}
+    {{ is_lazy ? 'data-srcset' : 'srcset' }} {{ '="'
+      ~ (d_one_x ? d_one_x ~ ' ' ~ d_one_x_width ~ 'w, ')
+      ~ (m_one_x ? m_one_x ~ ' ' ~ m_one_x_width ~ 'w"') }}
+    sizes="(min-width: {{ mobile_breakpoint }}) {{ d_one_x ? d_one_x_width ~ 'px, ' }}
+           (max-width: {{ mobile_breakpoint }}) {{ m_one_x ? m_one_x_width ~ 'px, ' }}
+           100vw"
+    alt="{{ default_file.alt }}" />
+{% elseif d_one_x %}
+  {# If there is only @1x, for desktop #}
+  {# <!-- Fallback: {{ extension|upper }} | Desktop | @1x --> #}
+  <img {{ is_lazy ? 'class="lazyload"' }}
+    {{ is_lazy ? 'data-src' : 'src' }} {{ '="' ~ d_one_x ~ '"' }}
+    alt="{{ default_file.alt }}" />
+{% endif %}
+{# prettier-ignore-end #}

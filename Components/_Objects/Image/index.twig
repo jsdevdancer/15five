@@ -1,0 +1,23 @@
+{% set default_file = image.desktop.one_x.old_format %} {# Required file (.png, .jpeg, .svg) #}
+{% set is_svg = '.svg' in default_file.src %} {# Check if file is a SVG #}
+{% set is_lazy = image.is_lazy %}
+{% set mobile_breakpoint = '576px' %}
+
+<picture>
+  {% if not is_svg %}
+    {# AVIF #}
+    {% include 'Partials/_avif.twig' %}
+
+    {# WEBP #}
+    {% include 'Partials/_webp.twig' %}
+
+    {# PNG/JPEG #}
+    {% include 'Partials/_png_jpeg.twig' %}
+
+    {# Fallback #}
+    {% include 'Partials/_fallback.twig' %}
+  {% else %}
+    {# SVG #}
+    <img src="{{ default_file.src }}" alt="{{ default_file.alt }}" {{ is_lazy ? 'class="lazyload"' }} />
+  {% endif %}
+</picture>

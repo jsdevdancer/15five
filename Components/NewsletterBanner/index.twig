@@ -1,0 +1,32 @@
+<section class="newsletter-banner">
+  <div class="container">
+    <div class="newsletter-form">
+      <div class="row align-items-lg-center">
+        <div class="col-12">
+          <div class="image">
+            {{ renderComponent('Image', { image: image }) }}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="title h2 u-text-white">
+            {{ title }}
+          </div>
+        </div>
+        <div class="col-12">
+          {{
+            renderComponent(
+              'SubscriptionForm',
+              {
+                id: 'newsletter-form',
+                label: __('Let’s inspire your inbox', 'flynt'),
+                button_label: __('Sign up', 'flynt'),
+                pardot: pardot_url_3,
+                nonce: nonce
+              }
+            )
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

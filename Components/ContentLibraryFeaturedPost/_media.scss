@@ -1,0 +1,46 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .content-library-featured-post {
+    padding: 83px 0 74px;
+
+    .row:first-child {
+      margin-bottom: 17px;
+    }
+
+    img {
+      width: calc(100% - 16px);
+      border-radius: 4px;
+    }
+
+    picture {
+      img {
+        max-height: 320px;
+      }
+
+      &:first-child img {
+        margin-top: 16px;
+      }
+
+      &:last-child img {
+        position: absolute;
+        top: -16px;
+        left: 16px;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .taxonomies {
+      display: flex;
+      margin-top: 3px;
+    }
+
+    .category {
+      margin: 0 16px 0 0;
+    }
+
+    .type {
+      line-height: 20px;
+    }
+  }
+}

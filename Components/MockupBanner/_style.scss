@@ -1,0 +1,41 @@
+.mockup-banner {
+  padding: 40px 0;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .title, .banner-wrapper {
+    color: var(--text-color);
+  }
+
+  .banner-wrapper {
+    min-width: 100%;
+  }
+
+  .banner-wrapper {
+    background-color: var(--hero-bg-color);
+    color: var(--text-color);
+    border-radius:8px;
+    position:relative;
+    overflow:hidden;
+
+    .text-wrapper {
+      padding:1.5rem;
+      text-align:center;
+    }
+
+    .button--rise {
+        background-color: $white;
+        color: #db3700;
+        border: $white;
+
+      &:hover {
+        color: $white;
+        background-color: #db3700;
+        border-color: #db3700;
+      }
+    }
+  }
+}

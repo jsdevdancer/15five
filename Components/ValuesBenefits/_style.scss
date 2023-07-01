@@ -1,0 +1,31 @@
+.values-benefits {
+  padding: 80px 0;
+  background-color: $tide1;
+
+  .title,
+  .description,
+  .feature-title,
+  .list {
+    color: $white;
+  }
+
+  .title-column {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .feature {
+    .feature-title {
+      margin-bottom: 8px;
+    }
+
+    .list ul {
+      padding-left: 18px;
+      margin-bottom: 26px;
+    }
+  }
+}

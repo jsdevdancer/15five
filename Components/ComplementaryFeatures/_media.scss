@@ -1,0 +1,63 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .complementary-features {
+    .card-container {
+      // --negative-margin: 32px;
+      --negative-margin: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .complementary-features {
+    padding-bottom: 50px;
+
+    .card-container {
+      padding: 0;
+      margin: 0 -16px 40px;
+
+      .feature-card {
+        margin: 2px 16px;
+
+        .image-container,
+        .text-container {
+          width: 448px;
+        }
+
+        .image-container {
+          height: 253px;
+        }
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .complementary-features .card-container .feature-card {
+    .image-container,
+    .text-container {
+      width: 253px;
+    }
+
+    .image-container {
+      height: 143px;
+    }
+  }
+}
+
+// Starting at 1400px
+@media (min-width: $breakpoint-extra-extra-large) {
+  .complementary-features .card-container .feature-card {
+    .image-container,
+    .text-container {
+      width: 296px;
+    }
+
+    .image-container {
+      height: 167px;
+    }
+  }
+}

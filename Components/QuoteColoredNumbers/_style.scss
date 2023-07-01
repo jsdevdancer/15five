@@ -1,0 +1,50 @@
+.quote-colored-numbers {
+  padding: 30px 0 80px;
+  background-color: $kin-light;
+
+  .number-container {
+    margin-top: 80px;
+  }
+
+  .colored-number {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+
+  .number {
+    @include cornbread-honey();
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 27px;
+    line-height: 27px;
+    color: $white;
+    border-radius: 50%;
+
+    &.tide {
+      background-color: $tide1;
+    }
+
+    &.rise {
+      background-color: $rise;
+    }
+
+    &.cornbread {
+      background-color: $cornbread;
+    }
+
+    &.motion {
+      background-color: $motion;
+    }
+  }
+
+  .text {
+    margin-top: 27px;
+    @include phantom-sans-medium();
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

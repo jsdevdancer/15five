@@ -1,0 +1,39 @@
+<form class="subscription-form" id="{{ id }}" data-nonce="{{ nonce }}" data-pardot="{{ pardot ? pardot : false }}">
+  {% if label %}
+    <label for="{{ id }}-subscribe">{{ label }}</label>
+  {% endif %}
+
+  <div class="input-and-button">
+    <input type="text"
+      id="{{ id }}-subscribe"
+      name="{{ id }}-subscribe"
+      placeholder="Enter your email..."
+      aria-label="Enter your email..."
+      aria-describedby="{{ id }}-subscribe-error" />
+
+    <input type="submit"
+      value="{{ button_label ? button_label : __('Subscribe', 'flynt') }}"
+      class="button button--rise form-submit" />
+  </div>
+
+  <div id="{{ id }}-subscribe-error" class="error" role="alert">
+    {{ __('There was an error.', 'flynt') }}
+  </div>
+  <div class="sending" role="alert">
+    {{ __('Sending...', 'flynt') }}
+  </div>
+  <div class="success" role="alert">
+    {{ source('Assets/checkmark.svg') }}
+    <span>{{ __('Thank you for signing up!', 'flynt') }}</span>
+  </div>
+
+  <div id="{{ id }}-recaptcha" class="g-recaptcha"></div>
+
+  <input type="hidden" id="{{ id }}-gclid" name="gclid" value="{{ gclid }}" />
+
+  <small class="recaptcha-branding">
+    This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+  </small>
+</form>

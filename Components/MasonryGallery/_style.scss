@@ -1,0 +1,49 @@
+.masonry-gallery {
+  padding: 60px 0;
+  text-align: center;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 32px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .masonry {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+
+    picture * {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+  }
+
+  .image1 {
+    grid-area: 1 / 1 / 8 / 5;
+  }
+  .image2 {
+    grid-area: 1 / 5 / 3 / 7;
+  }
+  .image3 {
+    grid-area: 3 / 5 / 8 / 7;
+  }
+  .image4 {
+    grid-area: 8 / 1 / 13 / 7;
+  }
+  .image5 {
+    grid-area: 13 / 1 / 16 / 4;
+  }
+  .image6 {
+    grid-area: 13 / 4 / 16 / 7;
+  }
+}

@@ -1,0 +1,35 @@
+<section class="mockup-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-12 offset-lg-0">
+        <div class="banner-wrapper" style="--hero-bg-color:{{ bg_color }};--text-color:{{ text_color }}">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              {{ renderComponent('Image', { image: mockup }) }}
+            </div>
+            <div class="col-lg-6">
+              <div class="text-wrapper">
+                {% if kicker_text %}
+                  <p class="small mb-1">{{ kicker_text }}</p>
+                {% endif %}                
+                <div class="title h1">
+                  {{ title }}
+                </div>
+                {% if description %}
+                  <p>{{ description }}</p>
+                {% endif %}
+                <a class="button button--rise"
+                  href="{{ button.url }}"
+                  {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                  aria-label="{{ aria_label }}"
+                >
+                  {{ button.title }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

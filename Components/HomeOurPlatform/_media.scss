@@ -1,0 +1,26 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .our-platform {
+    padding: 80px 0;
+
+    .o-title {
+      max-width: 100%;
+    }
+
+    img {
+      width: 114px;
+      margin-top: 0;
+    }
+
+    .row:first-child {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+// Starting at 1400px
+@media (min-width: $breakpoint-extra-extra-large) {
+  .our-platform .row:last-child {
+    padding: 0 50px;
+  }
+}

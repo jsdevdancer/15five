@@ -1,0 +1,69 @@
+<section class="text-image-floating-bar">
+  <div class="container">
+    {% if section_title or section_description %}
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="section-heading">
+            {% if section_title %}
+              <h2 class="h1 section-title">
+                {{ section_title }}
+              </h2>
+            {% endif %}
+            {% if section_description %}
+              <div class="section-description">
+                {{ section_description }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="text-image-container">
+      <div class="row">
+        <div class="col-12 col-md-6 d-flex align-items-center">
+          <div class="text-column">
+            <h2 class="h2 title">
+              {{ title }}
+            </h2>
+            {% if description %}
+              <div class="description">
+                {{ description }}
+              </div>
+            {% endif %}
+            {% if button.url and button.title %}
+              <a href="{{ button.url }}" class="button button--tide1" aria-label="{{ button_aria_label }}">
+                {{ button.title }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="image d-flex{{ image_border == 'right' ? ' right' : ' justify-content-end left' }}">
+            <div class="background-illustration">
+              {{ renderComponent('Image', { image: background_illustration }) }}
+            </div>
+            <div class="photo">
+              {{ renderComponent('Image', { image: image }) }}
+            </div>
+            {% if activate_tooltip and (tooltip.tooltip_text or tooltip.tooltip_icon) %}
+              <div class="tooltip d-flex {{ tooltip_position }}">
+                {% if tooltip.tooltip_icon %}
+                  <div class="tooltip-icon d-flex">
+                    <img src="{{ tooltip.tooltip_icon.src }}"
+                      alt="{{ tooltip.tooltip_icon.alt }}"
+                      title="{{ tooltip.tooltip_icon.title }}" />
+                  </div>
+                {% endif %}
+                {% if tooltip.tooltip_text %}
+                  <div class="tooltip-text">
+                    {{ tooltip.tooltip_text }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

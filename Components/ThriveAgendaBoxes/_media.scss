@@ -1,0 +1,11 @@
+// Starting at 567px
+@media (min-width: $breakpoint-small) {
+  .thrive-agenda-boxes {
+    padding: 90px 0 100px;
+    .card {
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

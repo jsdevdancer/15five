@@ -1,0 +1,70 @@
+// Starting at 576px {
+@media (min-width: $breakpoint-small) {
+  .big-cards {
+    .card {
+      .card-image-container {
+        height: auto;
+        //min-height: 378px;
+      }
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .big-cards {
+    .heading-text .title {
+      padding-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-wrapper {
+      &:nth-child(n + 3) {
+        margin-top: 60px;
+      }
+    }
+
+    .card {
+      margin: 0;
+
+      .card-text {
+        height: calc(100% - 378px);
+      }
+
+      .card-image-container {
+        img {
+          min-height: 200px;
+        }
+      }
+    }
+
+    &.step-card {
+      .card-wrapper {
+        &:nth-child(n + 3) {
+          margin-top: 32px;
+        }
+      }
+
+      .card {
+        .card-text {
+          height: 268px;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .big-cards {
+    padding: 80px 0;
+    .card {
+      .card-image-container {
+        img {
+          min-height: 378px;
+        }
+      }
+    }
+  }
+}

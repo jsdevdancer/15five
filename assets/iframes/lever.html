@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Resize iframe</title>
+<script type="text/javascript">
+  window.addEventListener("load", onLoadFunction);
+
+  function onLoadFunction(e) {
+    var match = /[?&]height=([0-9]+)/i.exec(window.location.href);
+    if (!match) return;
+    var height = parseInt(match[1]);
+    var resizePostings = window.parent.parent.resizePostings;
+    if (typeof resizePostings === "function") {
+      resizePostings(height);
+    }
+  }
+</script>

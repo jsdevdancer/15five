@@ -1,0 +1,16 @@
+@media (min-width: $breakpoint-medium) {
+  .secondar-navigation {
+    bottom: 24px;
+    width: fit-content;
+
+    .nav-item {
+      display: block;
+      margin: 7px 15px;
+
+      &.current {
+        color: $white;
+        background-color: $tide1;
+      }
+    }
+  }
+}

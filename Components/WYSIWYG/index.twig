@@ -1,0 +1,17 @@
+<section class="wysiwyg-section {{ background_color }} {{ text_position }}" {% if section_id %}id="{{ section_id }}"{% endif %}>
+  {% if block_width != 'full-bleed' %}
+    <div class="container">
+      <div class="row">
+        <div class="{{ block_width }}">
+  {% endif %}
+
+          <div class="wysiwyg">
+            {{ wysiwyg_field }}
+          </div>
+
+  {% if block_width != 'full-bleed' %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>

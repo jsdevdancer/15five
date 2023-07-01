@@ -1,0 +1,42 @@
+.our-platform {
+  padding: 60px 0;
+  text-align: center;
+
+  .o-title {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  a.card {
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      background: rgba($tide1, 0.03);
+
+      .button--text::after {
+        background: url("../assets/icons/menu-chevron-right-dark.svg") no-repeat center;
+      }
+    }
+  }
+
+  .card {
+    display: block;
+    padding: 39px 24px 32px;
+    text-decoration: none;
+  }
+
+  img {
+    width: 148px;
+    margin: 4px auto 22px;
+  }
+
+  .row:first-child {
+    margin-bottom: 30px;
+  }
+
+  .row:last-child p {
+    max-width: 320px;
+    margin: 0 auto 24px;
+  }
+}

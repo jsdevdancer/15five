@@ -1,0 +1,77 @@
+<section class="all-news">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="breadcrumb">
+          <a href="{{ back_button.url }}"
+            class="button button--text"
+            {{ back_button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ back_button_aria_label }}">
+            {{ back_button.title }}
+          </a>
+        </div>
+        <h1 class="h1 title u-no-vertical-space">
+          {{ title }}
+        </h1>
+        <div class="press-container">
+          {% for item in posts %}
+            {% include 'Partials/card.twig' with { card: item } %}
+          {% endfor %}
+        </div>
+        {% if posts.pagination.total > 1 %}
+          {{ source('Assets/arrows.svg') }}
+          <div class="press-pagination d-flex align-items-center justify-content-center">
+            {% set current = posts.pagination.current %}
+            {% set total = posts.pagination.total %}
+            {% if current - 1 < 0 %}
+              {% set prev = 0 %}
+            {% else %}
+              {% set prev = current - 1 %}
+            {% endif %}
+            {% set next = current + 1 %}
+            <a href="{{ fn('get_pagenum_link', prev) }}"
+              class="o-arrow button button--plain previous {{ prev == 0 ? 'disabled' }}">
+              <svg>
+                <use xlink:href="#arrow-left" />
+              </svg>
+            </a>
+            <nav class="pages d-flex justify-content-center" role="navigation" aria-label="Pagination Navigation">
+              {% if current != 1 %}
+                <a href="{{ fn('get_pagenum_link', 1) }}" class="page-number first-elipsis" aria-label="Go to first page">…</a>
+              {% endif %}
+              {% for page_number in 1..total %}
+                {% if current == 1 %}
+                  {% set print_num = page_number == current or page_number == current + 1 or page_number == current + 2 %}
+                {% elseif current == total %}
+                  {% set print_num = page_number == current
+                    or page_number == current + 1
+                    or page_number == current - 2
+                    or page_number == current - 1
+                  %}
+                {% else %}
+                  {% set print_num = page_number == current or page_number == current + 1 %}
+                {% endif %}
+                {% if print_num %}
+                  {% if page_number != current %}
+                    <a href="{{ fn('get_pagenum_link', page_number) }}" class="page-number" aria-label="Go to Page {{ page_number }}">{{ page_number }}</a>
+                  {% else %}
+                    <span class="page-number current" aria-label="Current Page, Page {{ page_number }}" aria-current="true">{{ page_number }}</span>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              {% if current != total %}
+                <a href="{{ fn('get_pagenum_link', total) }}" class="page-number last-elipsis" aria-label="Go to last page">…</a>
+              {% endif %}
+            </nav>
+            <a href="{{ fn('get_pagenum_link', next) }}"
+              class="o-arrow button button--plain next {{ next > total ? 'disabled' }}">
+              <svg>
+                <use xlink:href="#arrow-right" />
+              </svg>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

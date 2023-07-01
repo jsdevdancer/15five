@@ -1,0 +1,67 @@
+<section class="plans-pricing">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>
+          {{ title }}
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="plans">
+          {% for plan in plans %}
+            <article class="plan {{ plan.highlighted_label ? 'is-highlighted' }}">
+              {% if plan.highlighted_label %}
+                <div class="plan__highlight-label h6">
+                  {{ plan.highlighted_label }}
+                </div>
+              {% endif %}
+              <div class="plan__header">
+                <div class="plan__title h2">
+                  {{ plan.title }}
+                </div>
+                <div class="plan__description">
+                  {{ plan.description }}
+                </div>
+                <div class="plan__price">
+                  {% if plan.price %}
+                    <div class="value">
+                      ${{ plan.price }}/
+                    </div>
+                  {% endif %}
+                  <div class="description {{ not plan.price ? 'only-description' }}">
+                    {{ plan.price_description }}
+                  </div>
+                </div>
+                <a class="plan__link button button--rise"
+                  href="{{ plan.button.url }}"
+                  {{ plan.button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                  aria-label="{{ plan.aria_label }}">
+                  {{ plan.button.title }}
+                </a>
+              </div>
+              <hr />
+              <div class="plan__body">
+                <div class="plan__features">
+                  {{ plan.features }}
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="plans-link h4">
+          <a class="button button--text"
+            href="{{ plans_link.url }}"
+            {{ plans_link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+            {{ plans_link.title }}
+          </a>
+        </div>
+        <div class="logos-title h4">
+          {{ client_logos.title }}
+        </div>
+        {{ renderComponent('LogosRow', { logos: client_logos.logos }) }}
+      </div>
+    </div>
+  </div>
+</section>

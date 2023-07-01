@@ -1,0 +1,77 @@
+<section 
+  class="client-reviews {{ background_color }} {% if  bg_image.src %} lazyload-bg" data-bg-image="{{ bg_image.src }}{% endif %}"
+  style="{{ padding_variables }}">
+  <div class="container text-center">
+    {% if g2_logo %}
+      <div class="row">
+        <div class="col mb-2">
+          <img src="{{ g2_logo.src }}" alt="{{ g2_logo.alt }}" />
+        </div>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2 class="o-title h1">
+          {{ title }}
+        </h2>
+      </div>
+    </div>
+    {% if description %}
+      <div class="row">
+        <div class="col">
+          <p class="large">
+            {{ description }}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+    {% if g2_rating.stars_icon %}
+      <div class="row">
+        <div class="col mt-3 mb-5">
+          <img src="{{ g2_rating.stars_icon.src }}" alt="{{ g2_rating.stars_icon.alt }}" />
+          {% if g2_rating.stars_label %}
+            <p class="h3 py-0">
+              {{ g2_rating.stars_label }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    <div class="row">
+      <div class="col">
+        {% if logos %}
+          <div class="logos {{ (logos|length) % 2 != 0 ? 'odd' : '' }}">
+            {% for logo in logos %}
+              <div class="logo">
+                <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" />
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <div class="reviews row{{ logos ? '' : ' margin-top' }}">
+          <div class="col-md-4">
+            {% for item in reviews %}
+              {% if loop.index in [1, 4, 7] %}
+                {% include 'Partials/_review.twig' with { item: item } %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="col-md-4">
+            {% for item in reviews %}
+              {% if loop.index in [2, 5, 8] %}
+                {% include 'Partials/_review.twig' with { item: item } %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="col-md-4">
+            {% for item in reviews %}
+              {% if loop.index in [3, 6, 9] %}
+                {% include 'Partials/_review.twig' with { item: item } %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

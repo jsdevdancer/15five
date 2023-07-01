@@ -1,0 +1,30 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .why-15five {
+    .row:first-child {
+      margin-bottom: 57px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .why-15five {
+    padding: 93px 0 140px;
+
+    img {
+      width: 441px;
+      margin: 0;
+    }
+
+    .reasons {
+      &:last-child {
+        margin-top: 40px;
+      }
+
+      div:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

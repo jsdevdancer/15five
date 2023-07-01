@@ -1,0 +1,7 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .video-hero .text {
+    height: calc(100vh - 58px);
+    margin-top: 0;
+  }
+}

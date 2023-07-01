@@ -1,0 +1,25 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .spacer {
+    &.desktop-none {
+      height: 0;
+      margin-top: 0;
+    }
+
+    &.desktop-increase {
+      height: var(--desktopIncrease);
+
+      &.mobile-reduce {
+        margin-top: 0;
+      }
+    }
+
+    &.desktop-reduce {
+      margin-top: var(--desktopReduce);
+
+      &.mobile-increase {
+        height: 0;
+      }
+    }
+  }
+}

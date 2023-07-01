@@ -1,0 +1,23 @@
+<section 
+  {{ section_id ? (('id="' ~ section_id)|replace({ ' ': '-', '#': '' })|lower) ~ '"' : '' }}
+  class="form-component {{ background_color }}"
+>
+  <div class="container">
+      <div class="row row__title">
+        <div class="col-md-8">
+          <h2 class="h1 title">
+            {{ title }}
+         </h2>
+        </div>
+      </div>
+
+      <div class="row row__form">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="gravity-form">
+            {{ gravityForm(gravity_form, 'false', 'false', 'true') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

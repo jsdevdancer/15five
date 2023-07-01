@@ -1,0 +1,290 @@
+
+html {
+  scroll-behavior: smooth;
+}
+.logged-in.admin-bar .thrive-agenda-schedule-navbar.sticky-nav {
+  top: 90px;
+}
+.thrive-agenda-schedule {
+  position: relative;
+  padding: 35px 80px 50px;
+  color: $white;
+  background-image: url("../Components/ThriveAgendaBoxes/Assets/background.png");
+  background-size: 100%;
+  &.sticky-nav {
+    margin-top: 123px;
+  }
+
+  //navbar styling starts
+  &-navbar {
+    padding: 35px 80px;
+    background: $white;
+    transition: all 0.3s;
+    &.sticky-nav {
+      position: fixed;
+      top: 58px;
+      z-index: 99;
+      width: 100%;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &--buttons-wrapper {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      column-gap: 48px;
+      list-style: none;
+      &__button {
+        font-size: 24px;
+        line-height: 1.625;
+        cursor: pointer;
+        border: 2px solid $tide1;
+        border-radius: 5px;
+        &:hover,
+        &:active,
+        &.active {
+          color: $white;
+          background: $tide1;
+          a {
+            color: $white;
+          }
+        }
+        a {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          padding: 5px 15px;
+          text-decoration: none;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+    &--filters {
+      position: relative;
+      button {
+        padding: 5px 16px;
+        font-size: 24px;
+        line-height: 1.625;
+        color: $tide1;
+        cursor: pointer;
+        background: $white;
+        border: 2px solid $tide1;
+        border-radius: 5px;
+        outline: none;
+        svg {
+          margin-right: 8px;
+        }
+      }
+      &--filters-wrapper {
+        position: absolute;
+        top: calc(100% + 15px);
+        right: 0;
+        z-index: 99;
+        display: none;
+        background: $white;
+        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+      }
+      .filter-container {
+        @include phantom-sans-medium();
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 225px;
+        height: 49px;
+        padding-left: 55px;
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.25;
+        color: $tide1;
+        text-transform: uppercase;
+        cursor: pointer;
+        user-select: none;
+
+        input {
+          position: absolute;
+          cursor: pointer;
+          opacity: 0;
+          &:checked ~ .checkmark {
+            background-color: $tide1;
+            &::after {
+              display: block;
+            }
+          }
+        }
+        .checkmark {
+          position: absolute;
+          top: 50%;
+          left: 12px;
+          width: 26px;
+          height: 26px;
+          border: 1px solid $tide1;
+          border-radius: 50%;
+          transform: translateY(-55%);
+          &::after {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            display: none;
+            width: 8px;
+            height: 8px;
+            content: "";
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba($white, 0.9);
+  }
+  & .container-fluid {
+    position: relative;
+    z-index: 5;
+    padding: 0;
+  }
+  &--day {
+    position: relative;
+    .empty-div {
+      position: absolute;
+      bottom: 100%;
+      width: 100%;
+      height: 181px;
+      pointer-events: none;
+    }
+    &__date {
+      @include cornbread-honey-regular;
+      padding: 24px 0;
+      font-size: 48px;
+      line-height: 1.125;
+      border-top: 1px solid $tide1;
+      border-bottom: 1px solid $tide1;
+    }
+    &--event {
+      display: flex;
+      padding: 24px 0;
+      column-gap: 30px;
+      &.border {
+        border-top: 1px solid rgba(26, 13, 63, 0.3);
+      }
+      &:nth-child(3){
+        border: none;
+      }
+      &.keynote {
+        .thrive-agenda-schedule--day--event--agenda::after {
+          color: #8226e0;
+          content: "Keynote";
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), $motion;
+        }
+      }
+      &.fireside-chat {
+        .thrive-agenda-schedule--day--event--agenda::after {
+          color: #ab7a1d;
+          content: "Fireside Chat";
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), $cornbread;
+        }
+      }
+      &.workshop {
+        .thrive-agenda-schedule--day--event--agenda::after {
+          color: #0f9a9a;
+          content: "Workshop";
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), $mind;
+        }
+      }
+      &.panel {
+        .thrive-agenda-schedule--day--event--agenda::after {
+          color: #b33a71;
+          content: "Panel";
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), $heart;
+        }
+      }
+      &__time {
+        @include phantom-sans-medium();
+        width: 25%;
+        font-size: 24px;
+        // line-height: 1.33;
+        line-height: 1;
+      }
+      &--agenda {
+        width: 40%;
+        &__title {
+          @include cornbread-honey-regular;
+          margin-bottom: 0;
+          font-size: 32px;
+          // line-height: 1.3125;
+          line-height: 1;
+        }
+        &__description {
+          @include phantom-sans-medium();
+          margin: 14px 0 16px;
+          font-size: 24px;
+          line-height: 1.33;
+        }
+        &::after {
+          padding: 0 7.5px;
+          font-size: 16px;
+          line-height: 1.5;
+          border-radius: 4px;
+        }
+      }
+      &--presenters {
+        width: 35%;
+        &--person {
+          &:not(:last-child) {
+            margin-bottom: 24px;
+          }
+          &__name {
+            @include phantom-sans-medium();
+            margin-bottom: 0;
+            font-size: 24px;
+            line-height: 1.33;
+          }
+          &__position {
+            margin: 0;
+            margin-top: 2px;
+            font-size: 18px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+  .o-title {
+    @include cornbread-honey-regular;
+    margin: 0 auto;
+    color: inherit;
+  }
+  .description {
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .button {
+    @include phantom-sans-medium();
+    display: block;
+    width: max-content;
+    padding: 11px 16px 10px;
+    margin: auto;
+    line-height: 1.5;
+    color: $white;
+    text-decoration: none;
+    background: $tide1;
+    border-radius: 4px;
+    transition: 0.3s;
+    &:hover {
+      scale: 1.1;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

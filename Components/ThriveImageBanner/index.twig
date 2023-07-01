@@ -1,0 +1,35 @@
+<section class="thrive-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div {% if button.target == '_blank'%}onclick="window.open('{{ button.url }}' , '_blank')"{% else %}onclick="location.href='{{ button.url }}'"{% endif %} class="banner-wrapper">
+          <div class="row align-items-center">
+            <div class="col-lg-5 order-lg-2">
+              {{ renderComponent('Image', { image: mockup }) }}
+            </div>
+            <div class="col-lg-7 order-lg-1">
+              <div class="text-wrapper">
+                {% if kicker_text %}
+                  <p class="small mb-1">{{ kicker_text }}</p>
+                {% endif %}                
+                <div class="title h1">
+                  {{ title }}
+                </div>
+                {% if description %}
+                  <p>{{ description }}</p>
+                {% endif %}
+                <a class="button button--rise"
+                  href="{{ button.url }}"
+                  {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                  aria-label="{{ aria_label }}"
+                >
+                  {{ button.title }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+.line-button {
+  @include bg-color-selector;
+  padding:80px 0;
+
+  &.white {
+    .line-wrapper {
+      background-color:$white;
+    }
+  }
+
+  &.kin {
+    .line-wrapper {
+      background-color:#fff2e8;
+    }
+  }
+
+  &.kin-light {
+    .line-wrapper {
+      background-color:#fff7f1;
+    }
+  }
+
+  &.tide-light {
+    .line-wrapper {
+      background-color:#F8F8F9;
+    }
+  }
+
+  .buttons-container {
+    position:relative;
+
+    &.line {
+      &::after {
+        content:'';
+        position: absolute;
+        top: 50%;
+        right:0;
+        width:100%;
+        left:0;
+        height:1px;
+        background-color: rgba(26,13,63,.1);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+
+      .line-wrapper {
+        position:relative;
+        z-index:2;
+        padding:0 20px;
+      }
+    } 
+  }
+}

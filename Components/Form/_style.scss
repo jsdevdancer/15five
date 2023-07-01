@@ -1,0 +1,80 @@
+.form-component {
+  @include bg-color-selector;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .row__title {
+    margin-bottom: 31px;
+    text-align: center;
+
+    .col-md-8 {
+      margin: 0 auto;
+    }
+
+    .title {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &.tide {
+    label {
+      color: $white;
+    }
+    a {
+      color: $white;
+    }
+  }
+
+  .gravity-form {
+    .gform_hidden {
+      display: none;
+    }
+
+    .gform_body {
+      margin-bottom: 10px;
+
+      .gform_fields {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .gfield {
+        flex-shrink: 0;
+        width: 100%;
+        padding: 0;
+
+        margin-bottom: 22px;
+      }
+    }
+
+    .gform_footer {
+      text-align: center;
+
+      input[type="submit"] {
+        padding: 11px 16px 10px;
+        font-size: 18px;
+        line-height: 25px;
+        color: $white;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        background-color: $rise;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        appearance: none;
+
+        &:hover,
+        &:focus {
+          color: $white;
+        }
+      }
+
+      .disclosure {
+        display: none;
+      }
+    }
+  }
+}

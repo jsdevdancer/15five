@@ -1,0 +1,47 @@
+// Starting at 376px
+@media (min-width: $breakpoint-extra-small) {
+  .client-reviews {
+    .logo img {
+      max-width: 130px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .client-reviews {
+    padding-top: var(--padding-desktop-top);
+    padding-bottom: var(--padding-desktop-bottom);
+    .logos {
+      justify-content: center;
+      padding: 30px 0 34px;
+    }
+
+    .logo {
+      flex: 0 0 auto;
+
+      &:first-child {
+        flex: 0 0 auto;
+      }
+    }
+
+    .logos {
+      &.odd {
+        .logo {
+          &:first-child {
+            flex: 0 0 auto;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .review {
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

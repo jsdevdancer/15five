@@ -1,0 +1,36 @@
+<section class="checklist-card">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-5 offset-xl-1">
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+        {% if description %}
+          <p class="large--desktop">
+            {{ description }}
+          </p>
+        {% endif %}
+        <div class="checklist d-flex flex-column">
+          {% for check in checklist %}
+            {% include 'Partials/check-item.twig' with { check: check } %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-12 col-md-5 col-lg-4 offset-lg-1 col-xl-3">
+        {% include 'Partials/feature-card.twig' with { feature: card } %}
+
+        {% if button.title and button.url %}
+          <hr />
+          <a href="{{ button.url }}"
+            class="button button--text d-flex align-items-center"
+            {{ button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ aria_label }}">
+            <div class="button-container">
+              {{ button.title }}
+            </div>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

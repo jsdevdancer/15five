@@ -1,0 +1,16 @@
+.single-event {
+  // WYSIWYG
+  .wysiwyg {
+    margin-top: 2.25rem;
+
+    a {
+      color: $motion;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $motion;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .taxonomy-page .c-resource-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .taxonomy-page .c-resource-cards {
+    column-gap: 32px;
+    row-gap: 32px;
+  }
+}
+
+@media (min-width: 783px) {
+  .taxonomy-page .filter__menu {
+    .admin-bar & {
+      top: calc(#{$admin-bar-height-desktop} + #{$navbar-height});
+    }
+
+    .notification-bar-active.admin-bar & {
+      top: calc(#{$admin-bar-height-desktop} + #{$notification-bar-height-mobile} + #{$navbar-height});
+    }
+
+    .notification-bar-active-with-button.admin-bar & {
+      top: calc(#{$admin-bar-height-desktop} + #{$notification-bar-height-mobile-with-button} + #{$navbar-height});
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .content-library-sliders {
+    padding: 80px 0;
+
+    .slider-controls {
+      display: flex;
+    }
+  }
+
+  .taxonomy-page {
+    .c-resource-cards {
+      padding: 24px 0 48px;
+    }
+
+    .filter {
+      position: relative;
+      display: flex;
+      flex-flow: row-reverse;
+      margin-top: 0;
+
+      > button {
+        float: right;
+      }
+    }
+
+    .filter__menu {
+      position: absolute;
+      top: 40px !important;
+      right: 0;
+      left: auto;
+      z-index: 999;
+
+      width: 452px;
+      height: auto;
+      padding: 16px;
+      border-radius: 4px;
+
+      box-shadow: 0 8px 20px rgba($black, 0.08);
+
+      .admin-bar & {
+        top: 40px;
+      }
+
+      > div .button {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 16px 0 8px;
+        margin-right: -8px;
+      }
+
+      li:not(:last-of-type),
+      li:last-of-type {
+        margin: 0 8px 8px 0;
+      }
+
+      .button--rise {
+        float: right;
+        width: auto;
+        padding: 7px 12px;
+        line-height: 18px;
+      }
+    }
+
+    .c-resource-cards {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 32px;
+      row-gap: 32px;
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .taxonomy-page {
+    .c-resource-cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .active-filters {
+      width: calc(100% - 150px);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .thank-you-page {
+    .related-content-cards {
+      .c-resource-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .thank-you-page {
+    .related-content-cards {
+      .c-resource-cards {
+        column-gap: 32px;
+        row-gap: 32px;
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .thank-you-page {
+    .content-library-featured-post {
+      padding: 60px 0 40px;
+    }
+
+    .related-content-cards {
+      padding: 0 0 80px;
+
+      .c-resource-cards {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .thank-you-page {
+    .related-content-cards {
+      .c-resource-cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "UNLP37NS2E.com.15five.15Five",
+        "paths": [
+          "NOT /saml2/*",
+          "/high_fives/*",
+          "/objectives/*",
+          "/one-on-one/*",
+          "/answer/*",
+          "/report/*",
+          "/account/*",
+          "/digest/*",
+          "/uni/*"
+        ]
+      },
+      {
+        "appID": "UNLP37NS2E.com.15five.15Five-dev",
+        "paths": [
+          "NOT /saml2/*",
+          "/high_fives/*",
+          "/objectives/*",
+          "/one-on-one/*",
+          "/answer/*",
+          "/report/*",
+          "/account/*",
+          "/digest/*",
+          "/uni/*"
+        ]
+      }
+    ]
+  }
+}

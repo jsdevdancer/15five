@@ -1,0 +1,143 @@
+<footer class="main-footer">
+  {% if post.meta('disablePrefooterToggle') != true %}
+    <section class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-lg-4 offset-lg-1">
+            <div class="image-col d-none d-md-flex align-items-md-center justify-content-md-center u-height-100">
+              {{ renderComponent('Image', { image: top_footer_image }) }}
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-lg-6 offset-lg-1">
+            <div class="text-col d-md-flex justify-content-md-center flex-md-column u-height-100">
+              <div class="h4 pretitle">
+                {{ top_footer_small_title }}
+              </div>
+              <div class="h1 u-text-white">
+                {{ top_footer_title }}
+              </div>
+              <div class="buttons d-flex align-items-center">
+                <div class="main-cta">
+                  <a class="button button--rise button--text--white light-focus"
+                    href="{{ top_footer_button.url }}"
+                    {{ top_footer_button.target ? 'target="_blank" rel="noopener noreferrer"' }}>
+                    {{ top_footer_button.title }}
+                  </a>
+                </div>
+                {% if (top_footer_pricing_button.url and top_footer_pricing_button.title) or top_footer_pricing_label %}
+                  <div class="pricing d-none d-md-flex flex-wrap">
+                    {% if top_footer_pricing_button.url and top_footer_pricing_button.title %}
+                      <a class="button button--text button--text--white light-focus"
+                        href="{{ top_footer_pricing_button.url }}"
+                        {{ top_footer_pricing_button.target ? 'target="_blank" rel="noopener noreferrer"' }}>
+                        {{ top_footer_pricing_button.title }}
+                      </a>
+                    {% endif %}
+                    {% if top_footer_pricing_label %}
+                      <span class="pricing-label">{{ top_footer_pricing_label }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  <section class="footer dark-bg">
+    <div class="menus">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-2 col-lg-2 offset-lg-1">
+            {{ footer_widget_1 }}
+          </div>
+          <div class="col-12 col-md-2 col-lg-2">
+            {{ footer_widget_2 }}
+          </div>
+          <div class="col-12 col-md-3 col-lg-2">
+            {{ footer_widget_3 }}
+          </div>
+          <div class="col-12 col-md-2 col-lg-2">
+            {{ footer_widget_4 }}
+          </div>
+          <div class="col-12 col-md-3 col-lg-2">
+            {{ footer_widget_5 }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="socials">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+            <div class="newsletter-form d-flex align-items-center justify-content-center justify-content-md-start u-height-100">
+              {{
+                renderComponent(
+                  'SubscriptionForm',
+                  {
+                    id: 'footer-form',
+                    label: __('Let’s inspire your inbox', 'flynt'),
+                    button_label: __('Sign up', 'flynt'),
+                    nonce: nonce
+                  }
+                )
+              }}
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 col-xl-5 offset-xl-1">
+            <div class="social-media d-flex flex-column align-items-center flex-lg-row align-items-lg-end justify-content-lg-between justify-content-xl-end u-height-100">
+              <div class="app-stores">
+                <a href="{{ footer_app_store_url }}" target="_blank" rel="noopener noreferrer">
+                  {{ source('Assets/appstore.svg') }}
+                </a>
+                <a href="{{ footer_play_store_url }}" target="_blank" rel="noopener noreferrer">
+                  {{ source('Assets/playstore.svg') }}
+                </a>
+              </div>
+              <div class="social-menu">
+                {% for social in footer_social_menu %}
+                  <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer">
+                    {{ source('Assets/' ~ social.name ~ '.svg') }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3 col-lg-2 offset-lg-1">
+            <div class="copyright u-text-white">
+              © {{ 'now'|date('Y') }} 15Five
+            </div>
+          </div>
+          <div class="col-12 col-md-4 offset-md-5 col-lg-3 offset-lg-5">
+            <div class="privacy-terms">
+              {% if footer_security %}
+                <a href="{{ footer_security.url }}"
+                  class="u-text-white"
+                  {{ footer_security.target ? 'target="_blank" rel="noopener noreferrer"' }}>
+                  {{ footer_security.title }}
+                </a>
+              {% endif %}
+              <a href="{{ footer_privacy_policy.url }}"
+                class="u-text-white"
+                {{ footer_privacy_policy.target ? 'target="_blank" rel="noopener noreferrer"' }}>
+                {{ footer_privacy_policy.title }}
+              </a>
+              <a href="{{ footer_terms_conditions.url }}"
+                class="u-text-white"
+                {{ footer_terms_conditions.target ? 'target="_blank" rel="noopener noreferrer"' }}>
+                {{ footer_terms_conditions.title }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>

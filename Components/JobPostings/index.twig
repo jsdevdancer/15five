@@ -1,0 +1,37 @@
+{% set dark_colors = ['motion', 'tide', 'black'] %}
+{% if background_color in (dark_colors|keys) %}
+  {% set dark_focus = ' dark-bg' %}
+{% endif %}
+
+<section id="{{ section_id|replace({ ' ': '-', '#': '' }) }}"
+  class="job-postings {{ background_color }}{{ dark_focus }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="h1 o-title title">
+          {{ title }}
+        </h2>
+      </div>
+    </div>
+    <div class="row row__postings">
+      <div class="col-12">
+        {% for team, postings in jobs %}
+          <div class="row posting-item">
+            <div class="col-lg-5 col__team">
+              <h3>
+                {{ team }}
+              </h3>
+            </div>
+            <div class="col-lg-7 col__jobs">
+              <ul class="jobs">
+                {% for job in postings %}
+                  <li class="job-item"><a href="{{ job.url }}">{{ job.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

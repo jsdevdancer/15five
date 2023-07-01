@@ -1,0 +1,76 @@
+.product-feature-tabs {
+  padding: 30px 0;
+
+  .product-information {
+    .icon {
+      margin-right: 8px;
+    }
+
+    .name {
+      line-height: 32px;
+    }
+
+    .title {
+      padding-top: 16px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .product-illustration {
+    margin-bottom: 75px;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .o-tabs {
+    padding: 0 16px;
+    margin: 0 -16px;
+  }
+
+  .o-tab {
+    margin-top: 1px;
+  }
+
+  .tab-content-container {
+    position: relative;
+    margin-top: 16px;
+    text-align: center;
+
+    .tab-content {
+      position: absolute;
+      padding-top: 60px;
+
+      visibility: hidden;
+
+      background-color: rgba($tide1, 0.05);
+      border-radius: 4px;
+
+      opacity: 0;
+      transition: opacity 0.3s linear;
+
+      &.active {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .text {
+        padding: 0 16px;
+      }
+
+      .description {
+        margin-bottom: 16px;
+      }
+
+      .image {
+        padding-top: 20px;
+      }
+
+      picture * {
+        margin: 0 auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.why-15five {
+  padding: 60px 0;
+  color: $white;
+  background: $tide1;
+
+  .o-kicker {
+    color: rgba($white, 0.6);
+  }
+
+  .o-title {
+    color: $white;
+  }
+
+  .button--text {
+    text-align: left;
+  }
+
+  img {
+    display: block;
+    margin: 32px 0;
+  }
+
+  .reasons {
+    &:last-child {
+      margin-top: 40px;
+    }
+
+    div:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    h3.cornbread-honey {
+      color: $white;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

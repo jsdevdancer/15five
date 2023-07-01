@@ -1,0 +1,57 @@
+// Starting at 376px
+@media (min-width: $breakpoint-extra-small) {
+  .why-15five-hero .logo img {
+    max-width: 130px;
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .why-15five-hero {
+    .kin-background {
+      padding-top: 80px;
+    }
+
+    .logos {
+      padding: 70px 0 80px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .why-15five-hero {
+    .logos {
+      justify-content: center;
+    }
+
+    .logo {
+      flex: 0 0 auto;
+
+      &:first-child {
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .why-15five-hero .logos {
+    padding-right: 0;
+    padding-left: 0;
+
+    .logo {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
+  }
+}
+
+// Starting at 1400px
+@media (min-width: $breakpoint-extra-extra-large) {
+  .why-15five-hero .logos .logo {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+}

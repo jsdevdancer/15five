@@ -1,0 +1,39 @@
+.thrive-banner {
+  padding: 75px 0;
+  color: $white;
+  background: $tide1;
+  .banner-wrapper {
+    position: relative;
+    min-width: 100%;
+    padding: 45px 15px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url("../Components/ThriveImageBanner/Assets/background.png");
+    background-size: cover;
+    border-radius: 16px;
+    .title {
+      @include cornbread-honey-regular;
+      padding-top: 0;
+      margin-bottom: 20px;
+      color: inherit;
+    }
+    .text-wrapper {
+      text-align: left;
+      p {
+        @include phantom-sans-medium;
+        font-size: 22px;
+        line-height: 30px;
+        text-decoration: none;
+      }
+      a {
+        color: $white;
+      }
+      .button--rise {
+        color: $white;
+        background-color: $tide1;
+        border: $white;
+        transition: 0.3s;
+      }
+    }
+  }
+}

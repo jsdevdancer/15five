@@ -1,0 +1,49 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .thrive-event-pricing {
+    padding: 140px 0 70px;
+    &--content-wrapper {
+      max-width: 365px;
+      text-align: left;
+      &_headline {
+        @include cornbread-honey-regular;
+        font-size: 48px;
+        line-height: 54px;
+      }
+    }
+    &--price-wrapper {
+      margin-top: 0;
+      &--tickets-wrapper {
+        &--ticket {
+          &:hover {
+            scale: 1.1;
+          }
+          &_title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .thrive-event-pricing {
+    &--price-wrapper {
+      margin-top: 0;
+      &--tickets-wrapper {
+        &--ticket {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &_price {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

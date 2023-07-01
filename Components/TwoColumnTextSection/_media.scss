@@ -1,0 +1,43 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .two-column-text-section {
+    padding: 80px 0 100px;
+
+    .title {
+      margin-bottom: 69px;
+    }
+
+    .text-column {
+      &.left {
+        padding: 50px 50px 50px 7px;
+
+        &::after {
+          top: 50%;
+          right: -17px;
+          bottom: auto;
+          left: auto;
+          width: 1px;
+          height: 100%;
+          transform: translateY(-50%);
+        }
+      }
+
+      &.right {
+        padding: 50px 7px 50px 50px;
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .two-column-text-section .text-column {
+    &.left {
+      padding: 65px 85px 65px 7px;
+    }
+
+    &.right {
+      padding: 65px 7px 65px 85px;
+    }
+  }
+}

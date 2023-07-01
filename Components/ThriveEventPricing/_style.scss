@@ -1,0 +1,87 @@
+.thrive-event-pricing {
+  padding: 70px 0 50px;
+  color: $white;
+  background: $tide1;
+  &--content-wrapper {
+    text-align: center;
+    &_headline {
+      @include cornbread-honey-regular;
+      padding-top: 0;
+      margin-bottom: 16px;
+      font-size: 48px;
+      line-height: 54px;
+      color: inherit;
+    }
+    &_button {
+      @include phantom-sans-medium;
+      display: inline-block;
+      padding: 11px 16px 10px;
+      margin-top: 40px;
+      text-decoration: none;
+      background: $white;
+      border-radius: 4px;
+      transition: 0.3s;
+      &:hover {
+        scale: 1.1;
+        box-shadow: 0 4px 4px rgba($black, 0.3);
+      }
+    }
+  }
+  &--price-wrapper {
+    margin-top: 70px;
+    &--tickets-wrapper {
+      &--ticket {
+        display: block;
+        padding: 25px 48px;
+        margin-bottom: 33px;
+        color: $tide1;
+        text-decoration: none;
+        background: $white;
+        border-left: 13px solid;
+        border-radius: 8px;
+        transition: 0.5s;
+        &.heart {
+          border-color: $heart;
+        }
+        &.mind {
+          border-color: $mind;
+        }
+        &.motion {
+          border-color: $motion;
+        }
+        &.cornbread {
+          border-color: $cornbread;
+        }
+        &_title {
+          @include cornbread-honey-regular;
+          padding: 0;
+          margin: 0;
+          font-size: 32px;
+          line-height: 42px;
+        }
+        &_date {
+          margin: 0;
+          & span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 12px -5px 0;
+            background: url("../Components/ThriveEventPricing/Assets/calender.png");
+          }
+        }
+        &_price {
+          @include phantom-sans-semibold;
+          margin: 0;
+          margin-top: 26px;
+          font-size: 48px;
+          line-height: 54px;
+        }
+      }
+    }
+    &_disclaimer {
+      font-size: 22px;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+}

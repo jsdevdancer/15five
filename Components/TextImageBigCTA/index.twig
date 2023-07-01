@@ -1,0 +1,27 @@
+<section class="text-image-big-cta">
+  <div class="container">
+    <div class="row align-items-md-center">
+      <div class="col-12 col-md-5 offset-lg-1">
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+        <div class="description-wrapper">
+          <div class="description">
+            {{ description }}
+          </div>
+        </div>
+        <a href="{{ url.url }}"
+          class="button button--rise"
+          {{ url.target ? 'target="_blank" rel="noopener noreferrer"' }}
+          {% if button_aria_label %}
+            aria-label="{{ button_aria_label }}"
+          {% endif %}>
+          {{ url.title }}
+        </a>
+      </div>
+      <div class="col-12 col-md-5 offset-md-1 offset-lg-0 d-none d-md-block">
+        {{ renderComponent('Image', { image: image }) }}
+      </div>
+    </div>
+  </div>
+</section>

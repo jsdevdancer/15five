@@ -1,0 +1,17 @@
+<section class="content-library-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <h1>
+          {{ content_library_hero.title }}
+        </h1>
+        <p class="large--desktop">
+          {{ content_library_hero.description }}
+        </p>
+      </div>
+      <div class="col-lg-7">
+        {{ renderComponent('Image', { image: content_library_hero.image }) }}
+      </div>
+    </div>
+  </div>
+</section>

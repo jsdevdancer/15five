@@ -1,0 +1,40 @@
+<div class="popup video {{ video.video_source }}">
+  <div class="modal">
+    <div class="video-container">
+      <div class="close-wrapper">
+        <i class="close">{{ source('Assets/close.svg') }}</i>
+      </div>
+      {% if video.video_source == 'iframe' %}
+        {{ video.iframe_code }}
+      {% elseif video.video_source == 'wistia' %}
+        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+          <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+            <iframe loading="lazy"
+              data-video-id="{{ video.wistia_id }}"
+              src=""
+              title="What does 15Five actually do? Video"
+              allow="fullscreen"
+              allowtransparency="true"
+              frameborder="0"
+              scrolling="no"
+              class="wistia_embed"
+              name="wistia_embed"
+              msallowfullscreen
+              width="100%"
+              height="100%"></iframe>
+          </div>
+        </div>
+      {% else %}
+        <video preload="metadata" playsinline controls>
+          <source src="{{ video.video_file }}" />
+          {% for caption in video.video_captions %}
+            <track src="{{ caption.vtt_file }}"
+              kind="captions"
+              srclang="{{ caption.lang }}"
+              label="{{ caption.file_label }}" />
+          {% endfor %}
+        </video>
+      {% endif %}
+    </div>
+  </div>
+</div>

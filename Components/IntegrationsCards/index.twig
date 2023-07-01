@@ -1,0 +1,30 @@
+{% for cat in categories %}
+  <section class="integrations-cards heading-h2 background-{{ background_color }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-10 col-lg-6">
+          <h2 class="h2 o-title">
+            {{ title }}
+          </h2>
+          {% if description %}
+            <p>
+              {{ description }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="cards-wrapper">
+            {% for card in cat.posts %}
+              {% if loop.index > 4 %}
+                {% set hidden = true %}
+              {% endif %}
+              {% include 'Partials/card.twig' with { card: card, label: title, hide: hidden } %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}

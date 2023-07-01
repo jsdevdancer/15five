@@ -1,0 +1,75 @@
+<section id="{{ product_id }}" class="product-feature-tabs">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-9 col-lg-7 d-md-flex align-items-md-center">
+        <div class="product-information">
+          <div class="product-name-icon d-flex aling-items-center">
+            <div class="icon">
+              <img src="{{ product_icon.src }}" alt="" role="presentation" />
+            </div>
+            <div class="h4 name u-no-vertical-space">
+              {{ product_name }}
+            </div>
+          </div>
+          <h2 class="h1 title">
+            {{ product_title }}
+          </h2>
+          <div class="description">
+            <p>
+              {{ product_description }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 offset-lg-2 d-md-flex align-items-md-center">
+        <div class="product-illustration">
+          {{ renderComponent('Image', { image: product_illustration }) }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="o-tabs" role="tablist" aria-label="{{ __('Product Features Tabs', 'flynt') }}">
+          {% for tab in product_features %}
+            <button class="o-tab{{ loop.index == 1 ? ' o-tab--selected' }}" data-tab-id="{{ loop.index }}" role="tab">
+              {{ tab.feature_name }}
+            </button>
+          {% endfor %}
+        </div>
+        <div class="tab-content-container">
+          {% for tab_content in product_features %}
+            <div class="tab-content{{ loop.index == 1 ? ' active' }}" data-tab-content-id="{{ loop.index }}">
+              <div class="row">
+                <div class="col-12 col-md-10 offset-md-1 col-lg-4 offset-lg-4">
+                  <div class="text">
+                    <div class="description">
+                      {{ tab_content.feature_description }}
+                    </div>
+                    {% if tab_content.feature_button.url and tab_content.feature_button.title %}
+                      <a href="{{ tab_content.feature_button.url }}"
+                        class="button button--rise secondary"
+                        {{
+                        tab_content.feature_button.target == '_blank'
+                          ? 'target="_blank" rel="noopener noreferrer"'
+                        }}
+                        aria-label="{{ tab_content.feature_button_aria_label }}">
+                        {{ tab_content.feature_button.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                  <div class="image">
+                    {{ renderComponent('Image', { image: tab_content.feature_image }) }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,300 @@
+// stylelint-disable declaration-no-important
+
+.u-skip-link {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  &:focus {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 58px;
+
+    line-height: 58px;
+    text-align: center;
+    background: $white;
+
+    .admin-bar & {
+      top: 106px;
+
+      @media (min-width: 783px) {
+        top: 92px;
+      }
+    }
+  }
+}
+
+.u-height-auto {
+  height: auto !important;
+}
+
+.u-height-100 {
+  height: 100% !important;
+}
+
+.u-text-white {
+  color: $white !important;
+}
+
+.u-no-vertical-space {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+// Colors
+.u-bg {
+  &--white {
+    background-color: $white;
+  }
+
+  &--rise {
+    background-color: $rise;
+  }
+
+  &--motion {
+    background-color: $motion;
+  }
+
+  &--cornbread {
+    background-color: $cornbread;
+  }
+
+  &--heart {
+    background-color: $heart;
+  }
+
+  &--mind {
+    background-color: $mind;
+  }
+
+  &--kin {
+    background-color: $kin;
+  }
+
+  &--tide {
+    background-color: $tide1;
+  }
+
+  &--tide-light {
+    background-color: $tide-light;
+  }
+
+  &--kin-light {
+    background-color: $kin-light;
+  }
+
+  &--black {
+    background-color: $black;
+  }
+
+  &--kin,
+  &--tide-light,
+  &--kin-light,
+  &--white {
+    color: $tide1;
+
+    a {
+      color: $motion;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Forms
+.u-gravity-form {
+  padding: 80px 300px;
+  margin: 0 -300px;
+  background-color: $kin-light;
+
+  .form-icon {
+    margin-bottom: 26px;
+  }
+
+  .form-title {
+    padding-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .disclosure {
+    margin: 16px 0 0;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  // Gravity Forms elements
+  .gfield {
+    margin-bottom: 16px;
+  }
+
+  .gfield_label {
+    margin-bottom: 4px;
+    line-height: 24px;
+  }
+
+  .ginput_container {
+    margin-top: 4px;
+
+    &_textarea {
+      .textarea {
+        max-height: 113px;
+      }
+    }
+  }
+
+  .gform_wrapper {
+    #{$input-selectors} {
+      line-height: 25px;
+    }
+
+    .nice-select {
+      width: 100%;
+      padding: 11px 16px 10px;
+    }
+  }
+
+  .gform_footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 24px 0 0;
+  }
+
+  .gform_wrapper input[type="submit"],
+  .gform_wrapper input.gform_next_button {
+    display: inline-block;
+    width: auto;
+    min-height: 48px;
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 25px;
+    color: $white;
+    background-color: $rise;
+    border-color: $rise;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), $rise;
+    }
+  }
+
+  .gform_ajax_spinner {
+    width: 32px;
+    margin-left: 16px;
+  }
+
+  // Starting at 992px
+  @media (min-width: $breakpoint-large) {
+    padding: 48px 32px 80px;
+    margin: 0;
+    background: none;
+  }
+
+  // Starting at 1400px
+  @media (min-width: $breakpoint-extra-extra-large) {
+    padding: 164px 32px 140px 102px;
+    margin: 0;
+    background: none;
+
+    .ginput_container,
+    .disclosure {
+      max-width: 407px;
+    }
+  }
+}
+
+.u-wysiwyg {
+  a {
+    color: $motion;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.spinner-border {
+  display: none;
+  float: right;
+
+  width: 14px;
+  height: 14px;
+  margin-top: 5px;
+  margin-left: 10px;
+  vertical-align: text-bottom;
+  border: 0.1em solid currentColor;
+  border-width: 0.1em;
+  border-right-color: transparent;
+  border-radius: 50%;
+
+  animation: spinner-border 0.75s linear infinite;
+
+  @keyframes spinner-border {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &.active {
+    display: inline-block;
+  }
+}
+
+@mixin bg-color-selector {
+  &.white {
+    background-color: $white;
+  }
+
+  &.kin {
+    background-color: $kin;
+  }
+
+  &.kin-light {
+    background-color: $kin-light;
+  }
+
+  &.tide-light {
+    background-color: $tide-light;
+  }
+
+  &.tide {
+    background-color: $tide1;
+
+    .title,
+    .o-kicker,
+    p {
+      color: $white;
+    }
+  }
+}
+
+@mixin removeSpacing {
+  padding: 0;
+  margin: 0;
+}

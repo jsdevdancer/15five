@@ -1,0 +1,60 @@
+<section class="featured-podcast">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-4">
+        <h2 class="h2 section-title">
+          {{ section_title }}
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-5 mb-4 mb-md-0">
+      {% if display_player == 0 %}
+        <div class="image">
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+      {% else %}
+        <div class="podcast-info">
+          <div class="episode-embed-code">
+            {{ embed_code }}
+          </div>
+        </div>
+      {% endif %}
+      </div>
+      <div class="col-12 col-md-7 col-xl-6 offset-xl-1">
+        <div class="podcast-info">
+          <div class="meta-info d-flex flex-column flex-md-row align-items-md-center">
+            <div class="h6 category">
+              {{ category }}
+            </div>
+            <div class="season">
+              {{ season }}
+            </div>
+          </div>
+          <h3 class="h2 episode-title">
+            {{ episode_title }}
+          </h3>
+          <div class="episode-description pr-md-3">
+            {{ episode_description }}
+          </div>
+          <div class="row reference">
+              <div class="col-md-6 d-flex align-items-center pl-md-0 mb-4 mb-md-0">
+                {{ renderComponent('Image', { image: first_refer_picture }) }}
+                <div class="text-white text-block">
+                  <p class="episode-description mb-1"><strong>{{ first_refer_name }}</strong></p>
+                  <p class="episode-description m-0">{{ first_refer_description }}</p>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-center pr-md-0">
+                {{ renderComponent('Image', { image: second_refer_picture }) }}
+                <div class="text-white text-block">
+                  <p class="episode-description mb-1"><strong>{{ second_refer_name }}</strong></p>
+                  <p class="episode-description m-0">{{ second_refer_description }}</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

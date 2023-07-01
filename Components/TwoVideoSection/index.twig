@@ -1,0 +1,54 @@
+<section class="two-video-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+        <p class="description large">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+        <div class="left-video video-wrapper">
+          <div class="image-wrapper d-md-flex align-items-md-center u-height-100">
+            <div class="image">
+              <div class="background-image">
+                {{ renderComponent('Image', { image: background_image }) }}
+              </div>
+              <div class="picture">
+                {{ renderComponent('Image', { image: left_video.video_image }) }}
+              </div>
+              <button class="play-button">{{ source('Assets/play-button.svg') }}</button>
+            </div>
+          </div>
+          <h3 class="h3 video-title">
+            {{ left_video.video_title }}
+          </h3>
+          {{ renderComponent('VideoModal', { video: left_video.video }) }}
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="right-video video-wrapper">
+          <div class="image-wrapper d-md-flex align-items-md-center u-height-100">
+            <div class="image">
+              <div class="background-image">
+                {{ renderComponent('Image', { image: background_image }) }}
+              </div>
+              <div class="picture">
+                {{ renderComponent('Image', { image: right_video.video_image }) }}
+              </div>
+              <button class="play-button">{{ source('Assets/play-button.svg') }}</button>
+            </div>
+          </div>
+          <h3 class="h3 video-title">
+            {{ right_video.video_title }}
+          </h3>
+          {{ renderComponent('VideoModal', { video: right_video.video }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

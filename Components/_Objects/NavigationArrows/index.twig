@@ -1,0 +1,31 @@
+{{ source('Assets/arrows.svg') }}
+{% if arrows == 'left' %}
+  <button type="button"
+    class="o-arrow button button--plain previous disabled"
+    aria-label="{{ __('Previous', 'flynt') }}">
+    <svg>
+      <use xlink:href="#arrow-left" />
+    </svg>
+  </button>
+{% elseif arrows == 'right' %}
+  <button type="button" class="o-arrow button button--plain next" aria-label="{{ __('Next', 'flynt') }}">
+    <svg>
+      <use xlink:href="#arrow-right" />
+    </svg>
+  </button>
+{% else %}
+  <div class="o-arrows">
+    <button type="button"
+      class="o-arrow button button--plain previous disabled"
+      aria-label="{{ __('Previous', 'flynt') }}">
+      <svg>
+        <use xlink:href="#arrow-left" />
+      </svg>
+    </button>
+    <button type="button" class="o-arrow button button--plain next" aria-label="{{ __('Next', 'flynt') }}">
+      <svg>
+        <use xlink:href="#arrow-right" />
+      </svg>
+    </button>
+  </div>
+{% endif %}

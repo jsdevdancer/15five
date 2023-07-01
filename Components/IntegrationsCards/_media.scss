@@ -1,0 +1,29 @@
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .integrations-cards {
+    .cards-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .integrations-cards {
+    .cards-wrapper {
+      column-gap: 32px;
+      row-gap: 32px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .integrations-cards {
+    padding: 100px 0 92px;
+
+    .cards-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

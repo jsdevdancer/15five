@@ -1,0 +1,15 @@
+{
+  "name": "performance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "psi.js",
+  "scripts": {
+    "psi": "node psi.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/webhook": "^6.0.0",
+    "psi": "^4.1.0"
+  }
+}

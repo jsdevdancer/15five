@@ -1,0 +1,26 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .solutions-box-hero {
+    .text-col {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .image-col {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .solutions-box-hero {
+    .text-col .text {
+      padding-right: 50px;
+      padding-left: 74px;
+    }
+
+    .image-col .image {
+      padding: 40px 0;
+    }
+  }
+}

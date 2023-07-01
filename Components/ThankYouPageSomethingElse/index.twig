@@ -1,0 +1,16 @@
+<section class="thank-you-something-else">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col">
+        <h3 class="title h2">
+          {{ title }}
+        </h3>
+        <ul class="links">
+          {% for item in links %}
+            <li><a href="{{ item.link.url }}" class="h4">{{ item.link.title }}</a></li>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

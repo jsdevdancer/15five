@@ -1,0 +1,48 @@
+<nav class="navbar__menu" id="navbar__menu" aria-label="{{ __('Main Navigation', 'flynt') }}">
+  {% if main_menu.items %}
+    <ul role="menu">
+      {% for item in main_menu.items %}
+        {% if item.has_mega_menu %}
+          <li class="navbar__menu__item has-mega-menu" role="none">
+            <a class="navbar__menu__link"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+              {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+              role="menuitem">
+              {{ item.title }}
+            </a>
+            {% if item.type_of_mega_menu == 'type1' %}
+              <nav class="navbar__mega-menu navbar__mega-menu--type1">
+                {% include 'Partials/_mega-menu-type1.twig' %}
+              </nav>
+            {% else %}
+              <nav class="navbar__mega-menu navbar__mega-menu--type2">
+                {% include 'Partials/_mega-menu-type2.twig' %}
+              </nav>
+            {% endif %}
+          </li>
+        {% else %}
+          <li class="navbar__menu__item
+            {{ item.current ? 'navbar__menu__item--current' }}" role="none">
+            <a class="navbar__menu__link"
+              href="{{ item.link }}"
+              tabindex="0"
+              {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{item.aria_label ? item.aria_label : item.title}}"
+              role="menuitem">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {# Navbar Buttons #}
+  {% if is_mobile() %}
+    {% include 'Partials/_buttons.twig' %}
+</nav>
+  {% else %}
+</nav>
+    {% include 'Partials/_buttons.twig' %}
+  {% endif %}

@@ -1,0 +1,48 @@
+<section class="single-event">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="box-container d-flex flex-wrap">
+          <div class="col-12 col-md-6 text-col d-flex flex-column align-items-start justify-content-center">
+            <div class="text">
+              <div class="meta-info">
+                {% if kicker %}
+                  <div class="h6 event-tag">
+                    {{ kicker }}
+                  </div>
+                {% endif %}
+                {% if event_start_date %}
+                  <div class="event-date">
+                    {{ event_start_date|date('F j, Y') }}
+                  </div>
+                {% endif %}
+              </div>
+              <h2 class="h2 title">
+                {{ event_title }}
+              </h2>
+              <div class="description">
+                {{ event_description }}
+              </div>
+              <a href="{{ event_button.url }}"
+                class="button button--rise"
+                {{ event_button.target ? 'target="_blank" rel="noopener noreferrer"' }}
+                aria-label="{{ aria_label }}">
+                {{ event_button.title }}
+              </a>
+              {% if wysiwyg %}
+                <div class="wysiwyg">
+                  {{ wysiwyg }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-12 col-md-6 image-col">
+            <div class="image">
+              {{ renderComponent('Image', { image: image }) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

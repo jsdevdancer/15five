@@ -1,0 +1,80 @@
+{% set left_panel = item.meta('type2_mega_menu').left_panel %}
+{% set right_panel = item.meta('type2_mega_menu').right_panel %}
+
+<div class="container-lg">
+  <div class="row">
+    <div class="col">
+      <div class="panel__wrapper">
+        <div class="panel panel--left">
+          <div class="lead">
+            <div class="title">
+              {{ left_panel.title }}
+            </div>
+          </div>
+          <ul class="navbar__submenu" role="menu">
+            {% for left_panel_link in left_panel.links %}
+              {% set title = left_panel_link.link.title.title %}
+              {% set url = left_panel_link.link.title.url %}
+              {% set target = left_panel_link.link.title.target %}
+              {% set aria_label = left_panel_link.link.aria_label %}
+
+              <li class="navbar__submenu__item" role="none">
+                <a class="navbar__submenu__link"
+                  href="{{ url }}"
+                  {{ target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                  aria-label="{{ aria_label ? aria_label : title }}" role="menuitem">
+                  <span class="title">{{ title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="panel panel--right">
+          <div class="lead">
+            <div class="title">
+              {{ right_panel.title }}
+            </div>
+          </div>
+          <ul class="navbar__submenu {{ (right_panel.products|length) == 3 ? 'three-columns' }}" role="menu">
+            {% for product in right_panel.products %}
+              {% set image = product.image %}
+              {% set hover_color = product.hover_color %}
+              {% set title = product.link.title %}
+              {% set url = product.link.url %}
+              {% set target = product.link.target %}
+              {% set aria_label = product.aria_label %}
+              {% set description = product.description %}
+
+              <li class="navbar__submenu__item" role="none">
+                <a class="navbar__submenu__link"
+                  href="{{ url }}"
+                  {{ target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                  onMouseOver="this.style.background='linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), {{
+                  hover_color
+                  }}'"
+                  onMouseOut="this.style.background='transparent'"
+                  aria-label="{{ aria_label ? aria_label : description }}" role="menuitem">
+                  <img src="{{ image.src }}" alt="" role="presentation" aria-hidden="true" />
+                  <span class="title">{{ title }}</span>
+                  <div class="description">
+                    {{ description }}
+                  </div>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+          {% set title = right_panel.see_all_link.title %}
+          {% set url = right_panel.see_all_link.url %}
+          {% set target = right_panel.see_all_link.target %}
+          {% set aria_label = right_panel.see_all_link_aria_label %}
+          <a class="navbar__submenu__link navbar__submenu__link--see-all"
+            href="{{ url }}"
+            {{ target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ aria_label ? aria_label : title }}">
+            <span class="title">{{ title }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

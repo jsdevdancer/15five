@@ -1,0 +1,23 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .video-testimonial {
+    height: 550px;
+
+    .row {
+      flex-direction: column;
+
+      .image-wrapper {
+        height: 100%;
+      }
+
+      .col__quote {
+        padding: 0;
+
+        .logo,
+        .quote {
+          margin-bottom: 37px;
+        }
+      }
+    }
+  }
+}

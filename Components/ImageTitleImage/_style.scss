@@ -1,0 +1,21 @@
+.image-title-image {
+  padding: 25px 0;
+  text-align: center;
+  background-color: $tide1;
+
+  .image {
+    picture * {
+      margin: 0 auto;
+    }
+
+    &.bottom-image picture * {
+      width: 100%;
+    }
+  }
+
+  .title {
+    padding-top: 32px;
+    margin-bottom: 77px;
+    color: $white;
+  }
+}

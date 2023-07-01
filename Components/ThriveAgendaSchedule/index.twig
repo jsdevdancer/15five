@@ -1,0 +1,129 @@
+<section class="thrive-agenda-schedule-navbar">
+  <nav>
+    <ul class="thrive-agenda-schedule-navbar--buttons-wrapper">
+          {% for day in days %}
+          {% set a = ( a | default(0) ) + 1 %}
+
+          {% if day.event_date.week_day == 'Monday' %}{% set week_day = 'Mon' %}{% endif %}
+          {% if day.event_date.week_day == 'Tuesday' %}{% set week_day = 'Tue' %}{% endif %}
+          {% if day.event_date.week_day == 'Wednesday' %}{% set week_day = 'Wed' %}{% endif %}
+          {% if day.event_date.week_day == 'Thursday' %}{% set week_day = 'Thu' %}{% endif %}
+          {% if day.event_date.week_day == 'Friday' %}{% set week_day = 'Fri' %}{% endif %}
+          {% if day.event_date.week_day == 'Saturday' %}{% set week_day = 'Sat' %}{% endif %}
+          {% if day.event_date.week_day == 'Sunday' %}{% set week_day = 'Sun' %}{% endif %}
+
+          {% if day.event_date.month == 'January' %}{% set month = 'Jan' %}{% endif %}
+          {% if day.event_date.month == 'February' %}{% set month = 'Feb' %}{% endif %}
+          {% if day.event_date.month == 'March' %}{% set month = 'Mar' %}{% endif %}
+          {% if day.event_date.month == 'April' %}{% set month = 'Apr' %}{% endif %}
+          {% if day.event_date.month == 'May' %}{% set month = 'May' %}{% endif %}
+          {% if day.event_date.month == 'June' %}{% set month = 'Jun' %}{% endif %}
+          {% if day.event_date.month == 'July' %}{% set month = 'Jul' %}{% endif %}
+          {% if day.event_date.month == 'August' %}{% set month = 'Aug' %}{% endif %}
+          {% if day.event_date.month == 'September' %}{% set month = 'Sep' %}{% endif %}
+          {% if day.event_date.month == 'October' %}{% set month = 'Oct' %}{% endif %}
+          {% if day.event_date.month == 'November' %}{% set month = 'Nov' %}{% endif %}
+          {% if day.event_date.month == 'December' %}{% set month = 'Dec' %}{% endif %}
+        <li class="thrive-agenda-schedule-navbar--buttons-wrapper__button" data-id="event-day-{{ a }}">
+          <a href="#day{{ a }}">
+          <span class="d-none d-xl-inline">{{ day.event_date.week_day }}</span><span class="d-xl-none">{{ week_day }}</span><span class="d-none d-md-inline">, {{ month }}</span>. {{ day.event_date.date }}
+          </a>
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    <div class="thrive-agenda-schedule-navbar--filters">
+      <button class="filter-button d-none d-lg-inline">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.222967 1.62221C-0.305476 0.968445 0.164802 0 1.01072 0H16.9893C17.8352 0 18.3054 0.968445 17.7771 1.62221L11.9019 8.89074C11.3294 9.59896 11.0176 10.4788 11.0176 11.3857V13.3228C11.0176 14.382 10.5925 15.3978 9.83575 16.1469L8.70453 17.2665C8.06897 17.8955 6.98236 17.4501 6.98236 16.5605V11.3858C6.98236 10.4788 6.6705 9.59894 6.09807 8.89076L0.222967 1.62221Z" fill="#190C3E"/>
+        </svg>
+        filters
+      </button>
+      <span class="filter-button d-lg-none" style="cursor: pointer">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.222967 1.62221C-0.305476 0.968445 0.164802 0 1.01072 0H16.9893C17.8352 0 18.3054 0.968445 17.7771 1.62221L11.9019 8.89074C11.3294 9.59896 11.0176 10.4788 11.0176 11.3857V13.3228C11.0176 14.382 10.5925 15.3978 9.83575 16.1469L8.70453 17.2665C8.06897 17.8955 6.98236 17.4501 6.98236 16.5605V11.3858C6.98236 10.4788 6.6705 9.59894 6.09807 8.89076L0.222967 1.62221Z" fill="#190C3E"/>
+        </svg>
+      </span>
+      <div class="thrive-agenda-schedule-navbar--filters--filters-wrapper">
+        <label class="filter-container">Show All
+          <input type="radio" checked="checked" name="radio" value="all">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filter-container">Panel
+          <input type="radio" name="radio" value="panel">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filter-container">Keynote
+          <input type="radio" name="radio" value="keynote">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filter-container">Workshop
+          <input type="radio" name="radio" value="workshop">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filter-container">Fireside Chat
+          <input type="radio" name="radio" value="fireside-chat">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  </nav>
+</section>
+<section class="thrive-agenda-schedule" {% if section_id %}id="{{ section_id }}"{% endif %} style="color: #1A0D3F">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div>
+          {% for day in days %}
+          {% set i = ( i | default(0) ) + 1 %}
+          
+            <div id="event-day-{{ i }}" class='thrive-agenda-schedule--day'>
+              <div id="day{{ i }}" class="empty-div"></div>
+              <div class="thrive-agenda-schedule--day__date o-title">
+                {{ day.event_date.week_day }}, 
+                {{ day.event_date.month }} 
+                {{ day.event_date.date }}{% if day.event_date.date in [1, 21, 31] %}st
+                {% elseif day.event_date.date in [2, 22] %}nd
+                {% elseif day.event_date.date in [3, 23] %}rd
+                {% else %}th{% endif %}
+                {{ week_day }}
+              </div>
+              {% for event in day.events %}
+                <div class="thrive-agenda-schedule--day--event {{ event.agenda.event_type }} {% if event.time %}border{% endif %}" data-category="{{ event.agenda.event_type }}">
+                  <div class="thrive-agenda-schedule--day--event__time">
+                    {{ event.time }}
+                  </div>
+                  <div class="thrive-agenda-schedule--day--event--agenda">
+                    <p class="thrive-agenda-schedule--day--event--agenda__title">
+                      {{ event.agenda.title }}
+                    </p>
+                    {% if event.agenda.description %}
+                    <p class="thrive-agenda-schedule--day--event--agenda__description">
+                      {{ event.agenda.description }}
+                    </p>
+                    {% endif %}
+                  </div>
+                  <div class="thrive-agenda-schedule--day--event--presenters">
+                    {% for presenter in event.presenters %}
+                    <div class="thrive-agenda-schedule--day--event--presenters--person">
+                      <p class="thrive-agenda-schedule--day--event--presenters--person__name">
+                        {{ presenter.name }}
+                      </p>
+                      <p class="thrive-agenda-schedule--day--event--presenters--person__position">
+                        {{ presenter.position }}
+                      </p>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+            {% endfor %}
+            </div>
+            {# {{% i = i + 1 %}} #}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='overlay'></div>
+</section>

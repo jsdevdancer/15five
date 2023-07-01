@@ -1,0 +1,33 @@
+{# prettier-ignore #}
+<section
+  class="notification-bar
+  {{ bg_color ? 'bg--' ~ bg_color }}
+  {{ text_color ? 'text--' ~ text_color }}
+  {{ button.link ? 'with-button' }}
+  {{ bg_type == 'bg_image' ? 'with-bg-image' }}"
+  {{ bg_type == 'bg_image' ? 'style="--bg-image-desktop: url(' ~ bg_image.desktop_image.src ~ '); 
+  --bg-image-mobile: url(' ~ bg_image.mobile_image.src ~ ')"' }}>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="content">
+          {{ wysiwyg }}
+        </div>
+        {% if button.link %}
+          <a class="button--text button--text--{{ text_color }} h5"
+            href="{{ button.link.url }}"
+            {{ button.link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ button.aria_label }}">
+            {{ button.link.title }}
+          </a>
+        {% endif %}
+        <button class="button button--plain close-button"
+          data-cookie-type="{{ cookie_validity.type }}" data-cookie-hours="{{ cookie_validity.hours }}" aria-label="hide notification banner">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7068 1.7071C14.0973 1.31657 14.0973 0.683402 13.7068 0.292883C13.3162 -0.0976355 12.6831 -0.0976267 12.2925 0.292903L7 5.5856L1.70745 0.292903C1.31693 -0.0976267 0.683769 -0.0976355 0.293239 0.292883C-0.097291 0.683402 -0.0972996 1.31657 0.29322 1.7071L5.58581 6.99983L0.292883 12.2929C-0.0976355 12.6834 -0.0976267 13.3166 0.292903 13.7071C0.683433 14.0976 1.3166 14.0976 1.70712 13.7071L7 8.41406L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41419 6.99983L13.7068 1.7071Z" class="fill-color"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

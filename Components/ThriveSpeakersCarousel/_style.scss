@@ -1,0 +1,81 @@
+.thrive-speakers-carousel {
+  .slick-slide {
+    margin: 0 45px;
+  }
+  & .bar {
+    position: absolute;
+    bottom: 100px;
+    z-index: 5;
+    display: block;
+    width: 50%;
+    height: 75px;
+    content: "";
+    background: $tide1;
+    &.left {
+      right: calc(50% + 185px);
+    }
+    &.right {
+      left: calc(50% + 185px);
+    }
+  }
+  position: relative;
+  padding: 50px 0 100px;
+  color: $white;
+  background-color: $tide1;
+  &--carousel-wrapper {
+    text-align: center;
+    &--speaker {
+      &_portrait {
+        width: 296px;
+        height: 296px;
+        border-radius: 16px;
+      }
+      &--info-wrapper {
+        max-width: 225px;
+        margin: auto;
+        &_name {
+          @include phantom-sans-semibold;
+          margin-bottom: 8px;
+          font-size: 20px;
+          line-height: 1;
+          color: inherit;
+        }
+        &_position {
+          margin-bottom: 0;
+          line-height: 1;
+          color: inherit;
+        }
+      }
+    }
+  }
+  &--arrows-wrapper {
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    height: 80px;
+    transform: translateX(-50%);
+    & .arrow{
+      width: 17px;
+      height: 31px;
+      cursor: pointer;
+      background-size: cover;
+      opacity: 0.3;
+      transition: 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+      &.arrow-prev {
+        background: url("../Components/ThriveSpeakersCarousel/Assets/arrow.png");
+        transform: rotate(180deg);
+      }
+      &.arrow-next {
+        background: url("../Components/ThriveSpeakersCarousel/Assets/arrow.png");
+
+      }
+    }
+  }
+}

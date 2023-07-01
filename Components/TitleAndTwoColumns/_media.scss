@@ -1,0 +1,10 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .one-title-two-columns {
+    padding: 120px 0;
+
+    .title {
+      margin-bottom: 60px;
+    }
+  }
+}

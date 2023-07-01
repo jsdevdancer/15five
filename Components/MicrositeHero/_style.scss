@@ -1,0 +1,150 @@
+.microsite-hero {
+  padding: 60px 0 180px 0;
+  text-align: center;
+  background-color: var(--hero-bg-color);
+
+  &.has-bg-image {
+    background-image: var(--hero-bg-image-mobile);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.tide {
+    .text-column, .title {
+      color: #1a0d3f;
+    }
+  }
+
+  &.white {
+    .text-column, .title {
+      color: #ffffff;
+    }
+  }
+
+  .title {
+    margin-bottom: 14px;
+  }
+
+  .section-logo {
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .description {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .content-wrapper {
+    position:relative;
+    z-index:1;
+  }
+
+  .subsection-wrapper {
+    padding: 6px 0 18px;
+
+    @media(min-width:$breakpoint-medium) {
+      text-align: left;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    .subsection-image {
+      min-width: 132px;
+      padding-right: 38px;
+    }
+
+    .caption {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  }
+
+  .image-hero {
+    position:relative;
+
+    &.no-confettis {
+
+      .image {
+
+        &::before, &::after {
+          display:none;
+        }
+      }
+    }
+
+    .image {
+      position:relative;
+      z-index: 0;
+      border-radius: 4px;
+
+      &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute; 
+      }
+
+      &::before {
+        background:url('../Components/MicrositeHero/Assets/confetti-top-mobile.png') no-repeat top / cover;
+        top: -60%;
+        right: -18px;
+        width: 247px;
+        height: 244px;
+        z-index:-1;
+      }
+
+
+      &::after {
+        background:url('../Components/MicrositeHero/Assets/confetti-bottom-mobile.png') no-repeat center / cover;
+        bottom: -70%;
+        left: -5%;
+        width: 394px;
+        height: 240px;
+        z-index:-1;
+      }
+    }
+  }
+  
+  .image {
+    margin-top: 50px;
+  }
+
+  .image-wrapper {
+    position: relative;
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transform: translate(-50%, -50%);
+      appearance: none;
+
+      &:hover {
+        svg circle {
+          fill: $motion;
+          stroke: $motion;
+        }
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    img, video {
+      border-radius:4px;
+    }
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+}

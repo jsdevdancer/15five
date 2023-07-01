@@ -1,0 +1,22 @@
+<article class="c-resource-card">
+  <a href="{{ card.meta('events_url') }}" target="_blank">
+    <div class="c-resource-card__header">
+      <div class="c-resource-card__image">
+        {{ renderComponent('Image', { image: card.meta('events_image') }) }}
+      </div>
+    </div>
+    <div class="c-resource-card__body">
+      <div class="c-resource-card__taxonomies">
+        <div class="c-resource-card__category h6">
+          {{ label }}
+        </div>
+        <div class="c-resource-card__type">
+          {{ card.meta('event_start_date')|date('F j, Y') }}
+        </div>
+      </div>
+      <div class="c-resource-card__title">
+        {{ card.title }}
+      </div>
+    </div>
+  </a>
+</article>

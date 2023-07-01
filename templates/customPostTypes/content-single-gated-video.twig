@@ -1,0 +1,113 @@
+{% extends 'templates/_document.twig' %}
+
+{% set onClickHandler = 'location.href="#gated-video-form"' %}
+
+{% if post.featured_image %}
+  {% set main_image = post.featured_image %}
+{% else %}
+  {% set main_image = post.event_on_demand_featured_image_group %}
+{% endif %}
+
+{% block Content %}
+  <section class="content-single-post gated gated--video" data-post-id={{ post.ID }} data-form-id={{post.gravity_form}}>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="#"
+            class="back-button"
+            onClick="contentLibraryBackButton(event);"
+            data-href="{{ content_library_main_page.link }}">
+            {{ __('Back', 'flynt') }}
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="post-content">
+            <div class="video__wrapper video--desktop blocked">
+              <div class="image__wrapper">
+                <div class="background-image">
+                  {{ renderComponent('Image', { image: main_image }) }}
+                </div>
+                <button {{ button_disabled }} class="play-button {{ image_overlay != 'false' ? image_overlay : '' }}">
+                  <aside class="video-tooltip__wrapper">
+                    <p class="video-tooltip">
+                      {{ post.gated_video_tooltip_message }}
+                    </p>
+                  </aside>
+                  {{ source('./assets/styles/content-single/Assets/play-button--blocked.svg') }}
+                </button>
+              </div>
+            </div>
+
+            <div class="meta">
+              <div class="category h6">
+                {{ post.terms('content-category')|join('') }}
+              </div>
+              <div class="type">
+                {{ post.terms('content-type')|join('') }}
+              </div>
+            </div>
+            <h1 class="title">
+              {{ post.title }}
+            </h1>
+
+            <div class="video__wrapper video--mobile blocked">
+              <div class="image__wrapper">
+                <div class="background-image">
+                  {{ renderComponent('Image', { image: main_image }) }}
+                </div>
+                <button onClick='{{ onClickHandler }}' class="play-button {{ image_overlay != 'false' ? image_overlay : '' }}">
+                  <aside class="video-tooltip__wrapper">
+                    <p class="video-tooltip">
+                      {{ post.gated_video_tooltip_message_mobile }}
+                    </p>
+                  </aside>
+                </button>
+              </div>
+            </div>
+
+            <div class="gutenberg-content">
+              {{ post.content }}
+            </div>
+            {% if post.terms('content-author') %}
+              <hr />
+              <div class="authors">
+                {% for author in post.terms('content-author') %}
+                  <div class="author">
+                    <div class="image">
+                      {{ renderComponent('Image', { image: author.image }) }}
+                    </div>
+                    <div class="name-and-position">
+                      <div class="name">
+                        {{ author.name }}
+                      </div>
+                      <div class="position">
+                        {{ author.description }}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div id="gated-video-form" class="u-gravity-form">
+            <div class="form-title h3">
+              {{ post.gravity_form_title }}
+            </div>
+            {{ gravityForm(post.gravity_form, 'false', 'false', 'true') }}
+
+            {% if post.already_user_message.button.title %}
+              <div class="form-extra-message">
+                <span>{{ post.already_user_message.text }}</span>
+                <a href="{{ post.already_user_message.button.link }}">{{ post.already_user_message.button.title }}</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

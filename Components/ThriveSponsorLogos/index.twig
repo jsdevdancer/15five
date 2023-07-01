@@ -1,0 +1,14 @@
+<section class="thrive-sponsor-logos {{ background_color }}" {% if section_id %}id="{{ section_id }}"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% if headline %}
+          <div class="title h1">
+            {{ headline }}
+          </div>
+        {% endif %}
+        {{ renderComponent('LogosRow') }}
+      </div>
+    </div>
+  </div>
+</section>

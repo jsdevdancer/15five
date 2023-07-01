@@ -1,0 +1,45 @@
+<section class="complementary-features">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
+        <div class="text">
+          {% if kicker %}
+            <div class="h4 kicker u-no-vertical-space">
+              {{ kicker }}
+            </div>
+          {% endif %}
+          <div class="h2 title o-title">
+            {{ title }}
+          </div>
+          <div class="description">
+            {{ description }}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6 offset-lg-1">
+        <div class="features d-flex flex-column">
+          <div class="card-container d-flex">
+            {% for feature in comp_features %}
+              {% include 'Partials/feature-card.twig' with { feature: feature } %}
+            {% endfor %}
+          </div>
+          <div class="slider-meta d-none d-lg-flex align-items-lg-center justify-content-lg-end">
+            <div class="pagination">
+              <span class="current">1</span>
+              of
+              <span class="total">{{ comp_features|length }}</span>
+            </div>
+            <div class="o-arrows d-flex">
+              <button class="o-arrow button button--plain prev" aria-label="Previous">
+                {{ source('Assets/Arrow.svg') }}
+              </button>
+              <button class="o-arrow button button--plain next" aria-label="Next">
+                {{ source('Assets/Arrow.svg') }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

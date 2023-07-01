@@ -1,0 +1,39 @@
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .all-news {
+    .press-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .all-news {
+    .press-container {
+      row-gap: 32px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .all-news {
+    .breadcrumb {
+      padding-bottom: 24px;
+    }
+
+    .press-container {
+      padding: 55px 0 44px;
+      grid-template-columns: repeat(4, 1fr);
+
+      .press-item a {
+        padding: 24px 24px 28px;
+      }
+    }
+
+    .press-pagination {
+      padding-bottom: 80px;
+    }
+  }
+}

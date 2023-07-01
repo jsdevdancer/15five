@@ -1,0 +1,67 @@
+<section class="plans-pricing-new">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>
+          <div class="desktop">
+            {{ title_desktop }}
+          </div>
+          <div class="mobile">
+            {{ title_mobile }}
+          </div>
+        </h1>
+        <div class="plans">
+          {% for plan in plans %}
+            <article class="plan">
+              <div class="plan__label">
+                {{ plan.label }}
+              </div>
+              <div class="plan__header">
+                <div class="plan__title h2">
+                  {{ plan.title }}
+                </div>
+                <div class="plan__price">
+                  {% if plan.price %}
+                    <div class="value">
+                      ${{ plan.price }}/
+                    </div>
+                  {% endif %}
+                  <div class="description {{ not plan.price ? 'only-description' }}">
+                    {{ plan.price_description }}
+                  </div>
+                </div>
+                <div class="plan__description">
+                  {{ plan.description }}
+                </div>
+                <a class="plan__link button button--rise"
+                  href="{{ plan.button.url }}"
+                  {{ plan.button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                  aria-label="{{ plan.aria_label }}">
+                  {{ plan.button.title }}
+                </a>
+              </div>
+              <div class="plan__body">
+                <div class="plan__features">
+                  <div class="plan__features_section {{ plan.features.first_section.features is empty ? 'empty' }}">
+                    {{ plan.features.first_section.features }}
+                  </div>
+                  <div class="plan__features_section {{ plan.features.second_section.features is empty ? 'empty' }}">
+                    <hr />
+                    {{ plan.features.second_section.features }}
+                  </div>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="plans-link h4">
+          <a class="button button--text"
+            href="{{ plans_link.url }}"
+            {{ plans_link.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+            {{ plans_link.title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

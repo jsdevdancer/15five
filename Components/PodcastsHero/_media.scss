@@ -1,0 +1,39 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .podcasts-hero {
+    padding: 72px 0;
+    text-align: left;
+
+    .title {
+      margin-bottom: 8px;
+    }
+
+    .description {
+      max-width: calc(100% - 29px);
+    }
+
+    .image {
+      margin-top: 0;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .podcasts-hero {
+    .subscription-form .input-and-button {
+      flex-wrap: nowrap;
+
+      input {
+        width: auto;
+        max-width: 247px;
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+
+      button {
+        width: auto;
+      }
+    }
+  }
+}

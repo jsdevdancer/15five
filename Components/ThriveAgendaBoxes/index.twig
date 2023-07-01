@@ -1,0 +1,42 @@
+<section class="thrive-agenda-boxes" {% if section_id %}id="{{ section_id }}"{% endif %}>
+  <div class="container">
+    <div class="row header">
+      <div class="col">
+      {% if kicker %}
+        <div class="o-kicker h4">
+          {{ kicker }}
+        </div>
+      {% endif %}
+        <h2 class="o-title h1">
+          {{ title }}
+        </h2>
+      </div>
+    </div>
+    <div class="row cards d-flex justify-content-center">
+      {% for card in cards %}
+        <div class="col-lg-4">
+          <div class="card {{ card.border }}">
+            <div class="title">
+              {{ card.date }}
+            </div>
+            <ul>
+            {% for event in card.events %}
+              <li>
+                {{ event.name }}
+              </li>
+            {% endfor %}
+            </ul>
+
+          </div>
+        </div>
+      {% endfor %}
+      {% if button %}
+        <a href='{{ button.url}}' class='button'
+        {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+        {{ button.title}}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+  <div class='overlay'></div>
+</section>

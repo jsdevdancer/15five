@@ -1,0 +1,10 @@
+// Starting 992px
+@media (min-width: $breakpoint-large) {
+  .text-image-big-cta {
+    padding: 140px 0;
+
+    .description {
+      max-width: 80%;
+    }
+  }
+}

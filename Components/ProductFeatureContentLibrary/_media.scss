@@ -1,0 +1,26 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .product-feature-content-library {
+    padding: 70px 0 0;
+
+    .c-resource-cards {
+      padding-bottom: 70px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .product-feature-content-library {
+    padding: 80px 0 0;
+
+    .title {
+      padding-top: 13px;
+      margin-bottom: 44px;
+    }
+
+    .c-resource-cards {
+      padding-bottom: 80px;
+    }
+  }
+}

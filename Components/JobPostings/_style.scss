@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Quando&display=swap");
+$poppins: "Poppins", "Segoe UI", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+.job-postings {
+  padding: 60px 0;
+
+  &.motion,
+  &.tide,
+  &.black {
+    * {
+      color: $white;
+    }
+  }
+
+  &.white {
+    background-color: $white;
+  }
+
+  &.rise {
+    background-color: $rise;
+  }
+
+  &.motion {
+    background-color: $motion;
+  }
+
+  &.cornbread {
+    background-color: $cornbread;
+  }
+
+  &.heart {
+    background-color: $heart;
+  }
+
+  &.mind {
+    background-color: $mind;
+  }
+
+  &.kin {
+    background-color: $kin;
+  }
+
+  &.tide {
+    background-color: $tide1;
+  }
+
+  &.tide-light {
+    background-color: $tide-light;
+  }
+
+  &.kin-light {
+    background-color: $kin-light;
+  }
+
+  &.black {
+    background-color: $black;
+  }
+
+  .row__postings {
+    font-family: $poppins;
+  }
+
+  .posting-item {
+    padding-top: 24px;
+    margin-top: 20px;
+    margin-bottom: 48px;
+
+    border-top: solid rgba(255, 255, 255, 0.1) 1px;
+
+    h3 {
+      padding-top: 0;
+      padding-left: 16px;
+      margin-bottom: 15px;
+      font-family: Quando, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 42px;
+    }
+
+    .jobs {
+      padding-left: 16px;
+      list-style: none;
+    }
+
+    .job-item {
+      margin-bottom: 20px;
+      a {
+        font-family: $poppins;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 28px;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

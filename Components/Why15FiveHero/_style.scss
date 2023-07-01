@@ -1,0 +1,54 @@
+.why-15five-hero {
+  .kin-background {
+    padding: 60px 0 180px;
+    margin-bottom: -200px;
+    background-color: rgba($kin, 0.5);
+  }
+
+  .section-title,
+  .section-kicker {
+    text-align: center;
+  }
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 60px 0;
+  }
+
+  .logo {
+    display: flex;
+    flex: 0 0 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+
+    &:first-child {
+      flex: 0 0 100%;
+    }
+
+    &:nth-child(2) img,
+    &:nth-child(4) img {
+      margin-left: auto;
+    }
+
+    &:nth-child(3) img,
+    &:nth-child(5) img {
+      margin-right: auto;
+    }
+
+    img {
+      max-width: 120px;
+    }
+  }
+
+  .cards {
+    margin-bottom: 40px;
+  }
+}

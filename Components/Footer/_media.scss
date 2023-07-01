@@ -1,0 +1,146 @@
+$footer-column-shift: 38px;
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .top-footer {
+    padding: 25px 0;
+  }
+
+  .footer {
+    .menus .footer-menu {
+      margin: 0;
+
+      .title {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      ul.menu a {
+        display: inline;
+        padding: 0;
+      }
+    }
+
+    .socials .social-media {
+      margin-top: 0;
+
+      .social-menu {
+        a {
+          &:not(:first-child) {
+            margin-left: 8px;
+          }
+
+          &:not(:last-child) {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    .copyright {
+      text-align: left;
+    }
+
+    .privacy-terms {
+      text-align: right;
+
+      a {
+        margin-left: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .top-footer {
+    .text-col {
+      padding-top: 35px;
+      padding-bottom: 80px;
+    }
+
+    .buttons {
+      .pricing {
+        .button {
+          margin-right: 20px;
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding-top: 0;
+
+    .menus {
+      [class^="col"] {
+        &:nth-child(2) {
+          width: calc((16.666666%) - #{$footer-column-shift});
+        }
+        &:nth-child(3) {
+          width: calc((16.666666%) + #{$footer-column-shift});
+        }
+      }
+    }
+
+    .socials {
+      padding-top: 20px;
+
+      .social-media {
+        .app-stores {
+          a {
+            display: inline-block;
+            height: 40px;
+            transform: translateY(5px);
+          }
+        }
+
+        .social-menu {
+          padding-top: 0;
+
+          a {
+            display: inline-block;
+            height: 24px;
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .footer {
+    padding-top: 50px;
+
+    .socials .social-media .social-menu {
+      margin-left: 24px;
+
+      a {
+        &:not(:first-child) {
+          margin-left: 7px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}
+
+// Starting at 1400
+@media (min-width: $breakpoint-extra-extra-large) {
+  .footer .socials .social-media .social-menu {
+    a {
+      &:not(:first-child) {
+        margin-left: 16px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+}

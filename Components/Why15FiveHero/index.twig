@@ -1,0 +1,43 @@
+<section class="why-15five-hero">
+  <div class="kin-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 col-xl-6 offset-xl-3">
+          <div class="h4 o-kicker section-kicker">
+            {{ kicker }}
+          </div>
+          <h1 class="h1 o-title section-title">
+            {{ title }}
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-10 offset-lg-1">
+          <div class="logos">
+            {% for logo in company_logos %}
+              <div class="logo">
+                <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" />
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="cards">
+          {% for card in checkmark_cards %}
+            {{
+              renderComponent(
+                'CheckmarkCard',
+                { has_image: false, image: '', title: card.title, description: card.description }
+              )
+            }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

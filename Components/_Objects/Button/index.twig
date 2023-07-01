@@ -1,0 +1,20 @@
+<a class="button button--{{ type }} {{ color == 'white' ? 'button--text--white light-focus' }}"
+  href="{{ href }}"
+  {{ new_tab ? 'target="_blank" rel="noopener noreferrer"' }}>
+  {{ label ? : default_label }}
+</a>
+
+{# How to use #}
+{# {{
+  renderComponent(
+    'Button',
+    {
+      type: 'text',
+      color: 'white',
+      href: featured_post.link,
+      new_tab: new_tab,
+      label: button_label,
+      default_label: 'See More'
+    }
+  )
+}} #}

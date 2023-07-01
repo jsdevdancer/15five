@@ -1,0 +1,32 @@
+<a href="{{ feature.url.url }}"
+  class="feature-card d-flex flex-column {{ feature.product.value }}"
+  {{ feature.url.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+  <div class="image-container">
+    <div class="image">
+      {{ renderComponent('Image', { image: feature.image }) }}
+    </div>
+  </div>
+  <div class="text-container">
+    <div class="product-label d-flex align-items-center">
+      {% if feature.product.value != 'other' %}
+        <div class="product-color"></div>
+      {% endif %}
+      <div class="h6 product-title">
+        {% if feature.product.value == 'other' %}
+          {{ feature.other }}
+        {% else %}
+          {{ feature.product.label }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="feature-type">
+      {{ feature.type }}
+    </div>
+    <div class="h4 feature-title">
+      {{ feature.title }}
+    </div>
+    <div class="feature-description">
+      {{ feature.description }}
+    </div>
+  </div>
+</a>

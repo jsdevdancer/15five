@@ -1,0 +1,19 @@
+// Starts at 768px
+@media (min-width: $breakpoint-medium) {
+  .two-video-section {
+    .right-video {
+      margin-top: 0;
+    }
+  }
+}
+
+// Starts at 992px
+@media (min-width: $breakpoint-large) {
+  .two-video-section {
+    padding: 65px 0;
+
+    .description {
+      margin-bottom: 75px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+// Up to 374px
+@media (max-width: 374px) {
+  .subscription-form.footer-style .input-and-button input {
+    width: 100%;
+    margin: 0 0 4px;
+  }
+}
+
+// Starting at 576px
+@media (min-width: $breakpoint-small) {
+  .subscription-form.footer-style .input-and-button input {
+    width: 307px;
+    margin: 0 8px 0 0;
+  }
+}

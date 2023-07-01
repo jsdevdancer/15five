@@ -1,0 +1,31 @@
+<section class="video-testimonial dark-bg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="image__wrapper">
+          <div class="background-image">
+            {{ renderComponent('Image', { image: bg_image }) }}
+          </div>
+          <button class="play-button {{ image_overlay != 'false' ? image_overlay : '' }}">
+            {{ source('Assets/play-button.svg') }}
+          </button>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col__quote {% if  quote_bg_image.src %} lazyload-bg" data-bg-image="{{ quote_bg_image.src }}{% endif %}">
+        <img src="{{ logo.src }}" alt="{{ logo.alt }}" class="logo" />
+        <h2 class="quote">
+          {{ author.quote }}
+        </h2>
+        <div class="author">
+          <p class="h3 author__name">
+            {{ author.name }}
+          </p>
+          <p class="author__description">
+            {{ author.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ renderComponent('VideoModal', { video: video }) }}
+</section>

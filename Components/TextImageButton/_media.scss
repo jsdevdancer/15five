@@ -1,0 +1,37 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .text-image-button {
+    padding: 90px 0 160px;
+
+    &.hero {
+      padding-top: 80px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .text-image-button {
+    .title {
+      &.h1 {
+        font-size: 48px;
+        line-height: 54px;
+      }
+
+      &.h2 {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+
+    .image.large-spacing {
+      &.bottom {
+        margin-top: 72px;
+      }
+
+      &.top {
+        margin-bottom: 72px;
+      }
+    }
+  }
+}

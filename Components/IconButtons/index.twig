@@ -1,0 +1,30 @@
+<section class="icon-buttons">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+        {% if description %}
+          <p class="large--desktop">
+            {{ description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-10 offset-md-1">
+        <div class="buttons-container d-flex flex-wrap align-items-center justify-content-center">
+          {% for button in buttons %}
+            <a href="{{ button.link.url }}" class="button" aria-label="{{ button.aria_label }}">
+              <div class="button-wrapper">
+                {{ renderComponent('Image', { image: button.image }) }}
+                {{ button.link.title }}
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

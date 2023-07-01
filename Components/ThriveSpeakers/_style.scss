@@ -1,0 +1,108 @@
+.thrive-speakers {
+  padding: 50px 0;
+  color: $white;
+  background: $tide1;
+  .row {
+    align-items: center;
+  }
+  .title {
+    color: inherit;
+    @include cornbread-honey-regular;
+  }
+  .section-title {
+    margin-bottom: 70px;
+    color: inherit;
+    text-align: center;
+  }
+  .kicker-text,
+  h3,
+  h4 {
+    padding-top: 0;
+    color: inherit;
+  }
+  h2 {
+    padding-top: 0;
+  }
+  h3 {
+    margin-bottom: 22px;
+    font-size: 32px;
+    line-height: 42px;
+  }
+  h4 {
+    margin-bottom: 7px;
+  }
+  .speaker {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+
+  }
+
+  .reverse {
+    .speaker-image {
+      right: 0;
+      left: auto;
+    }
+
+    .image {
+      margin-right: 0;
+    }
+  }
+
+  .speaker-image {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - var(--episode-bg-offset));
+      height: 90%;
+      margin-top: 10%;
+
+      * {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+    }
+
+    .image {
+      position: relative;
+      height: 100%;
+
+      * {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+      }
+    }
+
+    &.left {
+      .image {
+        padding-left: 15px;
+      }
+    }
+  }
+
+  .speaker-name {
+    padding-top: 0;
+    margin-bottom: 4px;
+    color: inherit;
+  }
+
+  .speaker-description {
+    margin-top: 22px;
+
+    a {
+      color: $motion;
+      text-decoration: none;
+      transition: color 0.3s linear;
+    }
+  }
+}

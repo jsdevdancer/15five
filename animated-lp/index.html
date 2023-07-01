@@ -1,0 +1,571 @@
+
+<!doctype html>
+<html lang="en" class="view html5-player">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- BEGIN CUSTOM HEAD HTML -->
+    <!-- END CUSTOM HEAD HTML -->
+
+        <base id="cerosBase">
+
+        <script type="text/javascript">
+            (function () {
+                var locationWithNoQuery = document.location.href.split('?')[0].split('#')[0];
+                locationWithNoQuery = locationWithNoQuery.replace(/[><\(\)'"]/g,'');
+
+                if (document.location.pathname.match(/\.html$/)) {
+                    window.cerosBaseUrl = locationWithNoQuery.replace(/[^\/]*\.html$/, '');
+                } else {
+                    window.cerosBaseUrl = locationWithNoQuery.replace(/(\/p|\/page)\/[a-z0-9-]*\/?$/, '/');
+                }
+
+                document.getElementById('cerosBase').href = window.cerosBaseUrl;
+            })();
+        </script>
+
+
+        <script type="text/javascript" src="assets/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="assets/webfont-1.6.3.js"></script>
+
+    <script type="text/javascript">
+        window.cerosContext = {
+        viewAssetsDomain    : '',
+            publicAssetsBaseUrl: 'assets/',
+            isEmbedded: top != window,
+            isVanityDomain: location.hostname !== 'view.ceros.com',
+            previewMode: false,
+            logging: {
+            emitDevWarnings : false,
+                modes: {
+                        'debug': false,
+                        'info': false,
+                        'warn': true,
+                        'error': true
+                }
+            },
+            usePageSlugsInNavigation: false,
+            usePreviewBanner: false,
+            useDocumentLoadingSpinner: true,
+            analyticsApplicationKey: 'player',
+            analyticsMaxDwellTime: 1800,
+            analyticsUrl: '',
+            apiVersion: 'v1',
+            revalidateWithCore: false,
+
+            ajaxCaching: true,
+        mediaDomainMap: null,
+            rollbarPlayerAccessKey: '61d7450b926c4268b5f89b75862f33a9',
+            deploymentName: 'prod',
+            appVersion: '7.18.1',
+            rollbarMaxItems: 5,
+        isExported: true,
+            isStudio: false,
+
+            openGraphUrl: '',
+            accountSlug: '15five',
+        gracePeriodExpired  : 9007199254740991 < Date.now() / 1000,
+            appSlug: 'nushs-copies',
+            issueAliasSlug: 'technology-d-1-1-1',
+            issue: {"id":600130,"projectId":91308,"slug":"experience-6227873030b26","name":"Perform Landing Page MOBILE Copy","status":"published","creationDate":"2022-03-08T16:41:20.000Z","lastModifiedDate":"2022-03-09T19:43:04.000Z","deletionDate":null,"firstPublishedDate":"2022-03-09T18:07:56.000Z","wipExperienceVersionId":2272733,"publishedExperienceVersionId":2276239,"createdByMemberId":27037,"primaryIssueAliasId":830871,"firstPageThumbnailUrl":"\/\/media-s3-us-east-1.ceros.com\/15five\/studio-thumbnails\/page-6227872f44e28.jpg","importLinkShared":0,"lastPublishedDate":"2022-03-09T18:07:56.000Z","lastModifiedByMemberId":27037,"lastPublishedByMemberId":27037,"passwordProtected":0,"isAuthenticatedPublishedExperience":0,"auth0UserId":null,"isTemplate":0,"templateSubtitle":null,"templateThumbnailUrl":null,"htmlLanguage":"en","lastUnpublishedDate":null,"lastUnpublishedByMemberId":null,"resourceId":"62278730-c4f2894458828","title":"Perform Landing Page MOBILE Copy"},
+            docVersion: {"id":2276239,"experienceId":600130,"slug":"experience-version-6228ecfc1c1a2","loadLowRes":1,"seoNoIndex":0,"googleAnalyticsId":null,"committedJsonUrl":"http:\/\/media-s3-us-east-1.ceros.com\/15five\/doc-version-json\/v11\/experience-version-6228ecfc1c1a2.js","themingBackgroundImageUri":null,"seoTitleKeywords":"","seoMetaKeywords":"","seoMetaDescription":"","canonicalUrlOverride":"","editorPagesManifest":[{"uri":"\/v1\/account\/15five\/pages\/page-6228ecfc1c1bb","initiallyDisabled":false,"overrides":{"mobile":{"initiallyDisabled":false}},"thumbnail":"https:\/\/media-s3-us-east-1.ceros.com\/15five\/page-thumbnails\/2022\/03\/09\/1adfd7bf3d14a93575a290380a9fe88d\/page-thumbnail.jpg?imageOpt=1&crop=870,489,x0,y0"}],"cdeExportUrl":null,"exportAppVersion":null,"creationDate":"2022-03-09T18:07:56.000Z","modificationDate":"2022-03-09T18:07:56.000Z","publishedDate":"2022-03-09T18:07:56.000Z","committedByMemberId":27037,"unsupportedBrowserRedirectUrl":"","ogTitle":null,"ogDescription":null,"ogImageUrl":null,"twitterTitle":null,"twitterDescription":null,"twitterImageUrl":null,"twitterHandle":null,"lazyLoading":0,"tarExportUrl":null,"pageNamesInTitle":0,"mainContentLinkText":null,"textMode":"char","zoomControlsEnabled":0,"requireUserConsentForAnalytics":0,"integrateWithCmp":0,"layoutSettings":{"layoutPrimarySetting":"device-type","maxTabletWidthBreakpoint":1280,"maxMobileWidthBreakpoint":800,"deviceTypeMissingVariantFallback":"desktop"},"carousel":{"enabled":0,"autoTransition":0,"autoTransitionDelay":"5"},"theming":{"arrowsEnabled":0,"swipeEnabled":0,"menuEnabled":0,"backgroundColor":"#E8E7E7","menuFgColor":"#FFFFFF","menuBgColor":"#000000","backgroundImage":null}},
+            fontManifest: {"Google|Montserrat|300|normal":{"familyName":"Montserrat","familyGuid":"Google|Montserrat","fontWeight":300,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Montserrat|300|normal","variantName":"Light","cssFamilyName":"Montserrat","api":"Google"},"Google|Montserrat|400|normal":{"familyName":"Montserrat","familyGuid":"Google|Montserrat","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Montserrat|400|normal","variantName":"Normal","cssFamilyName":"Montserrat","api":"Google"},"Google|Montserrat|600|normal":{"familyName":"Montserrat","familyGuid":"Google|Montserrat","fontWeight":600,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Montserrat|600|normal","variantName":"Semi-Bold","cssFamilyName":"Montserrat","api":"Google"},"Google|Montserrat|700|normal":{"familyName":"Montserrat","familyGuid":"Google|Montserrat","fontWeight":700,"fontStyle":"normal","unitsPerEm":1000,"ascent":800,"variantGuid":"Google|Montserrat|700|normal","variantName":"Bold","cssFamilyName":"Montserrat","api":"Google"},"Google|Roboto|400|normal":{"familyName":"Roboto","familyGuid":"Google|Roboto","fontWeight":400,"fontStyle":"normal","unitsPerEm":2048,"ascent":1536,"variantGuid":"Google|Roboto|400|normal","variantName":"Normal","cssFamilyName":"Roboto","api":"Google"},"Uploaded|0ef28ace-98c4-11ec-a766-0e10c5fdecad":{"familyName":"Cornbread Honey SB","familyGuid":"Uploaded|0ef1fd87-98c4-11ec-a766-0e10c5fdecad","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":734,"variantGuid":"Uploaded|0ef28ace-98c4-11ec-a766-0e10c5fdecad","variantName":"CornbreadHoney-SemiBold","cssFamilyName":"Cornbread Honey SB-Cor-1FrREm9a","cssFileURL":"fonts\/081470e8-28fd-4c92-a39c-d902c7a9b823\/cornbreadhoney-semibold.css","api":"Uploaded","woffFileURL":null},"Uploaded|1ead74f3-98c4-11ec-a766-0e10c5fdecad":{"familyName":"Phantom Sans","familyGuid":"Uploaded|1ead38db-98c4-11ec-a766-0e10c5fdecad","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":750,"variantGuid":"Uploaded|1ead74f3-98c4-11ec-a766-0e10c5fdecad","variantName":"Book","cssFamilyName":"Phantom Sans-Book-MVDoILQn","cssFileURL":"fonts\/a3b3d109-ac16-477a-aabf-98dff773909b\/phantomsans-book.css","api":"Uploaded","woffFileURL":null},"Uploaded|20529eb8-98c4-11ec-a766-0e10c5fdecad":{"familyName":"Phantom Sans","familyGuid":"Uploaded|1ead38db-98c4-11ec-a766-0e10c5fdecad","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":750,"variantGuid":"Uploaded|20529eb8-98c4-11ec-a766-0e10c5fdecad","variantName":"Medium","cssFamilyName":"Phantom Sans-Medium-n5KeGGpl","cssFileURL":"fonts\/40790d2c-f26f-41e7-9334-6ed0e0d2bb64\/phantomsans-medium.css","api":"Uploaded","woffFileURL":null},"Uploaded|210f81e4-98c4-11ec-a766-0e10c5fdecad":{"familyName":"Phantom Sans","familyGuid":"Uploaded|1ead38db-98c4-11ec-a766-0e10c5fdecad","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":750,"variantGuid":"Uploaded|210f81e4-98c4-11ec-a766-0e10c5fdecad","variantName":"Regular","cssFamilyName":"Phantom Sans-Regular-C8v5o18K","cssFileURL":"fonts\/13fed378-31dc-4161-8db0-fe6340238bde\/phantomsans-regular.css","api":"Uploaded","woffFileURL":null},"Uploaded|220717b4-98c4-11ec-a766-0e10c5fdecad":{"familyName":"Phantom Sans","familyGuid":"Uploaded|1ead38db-98c4-11ec-a766-0e10c5fdecad","fontWeight":400,"fontStyle":"normal","unitsPerEm":1000,"ascent":750,"variantGuid":"Uploaded|220717b4-98c4-11ec-a766-0e10c5fdecad","variantName":"SemiBold","cssFamilyName":"Phantom Sans-SemiBold-rrTfhpo2","cssFileURL":"fonts\/5db53b28-1355-4a4b-a140-77f42664b5ca\/phantomsans-semibold.css","api":"Uploaded","woffFileURL":null}},
+        whiteLabeling   : true,
+        isTrialAccount      : true,
+        allowCommerceIntegration  : false,
+        allowEmbeddedPlayerSdk    : true,
+        allowAdaptiveLayouts: true,
+            commerceSettings: {
+            panelWidth      : null,
+            panelHeight     : null,
+                productUrl: '',
+                shoppingCartUrl: '',
+            },
+                themeObj: {
+                arrowsEnabled    : false,
+                swipeEnabled     : false,
+                menuEnabled      : false,
+                    menuFgColor: '#FFFFFF',
+                    menuBgColor: '#000000',
+                    menuHoverOpacity: 0.6,
+                    backgroundColor: '#E8E7E7',
+                backgroundImage  :
+                        null
+
+                },
+            googleFontUrl: '',
+            featureFlags: {"Password Protected Experiences":false,"Getty Image Integration":true,"Getty Video Integration":true,"Accessibility":false,"(BETA) Viewer Role":false,"(BETA) Reviewer Role":false,"(BETA) Protected Preview":false,"(BETA) Enable Welcome Message for Early Access Roles":false,"Cookie Compliance":false,"Position Interactions":true,"Project Miller Prototype":false,"(BETA) Account Level Roles":false,"New Text Tool":false,"Studio API":false,"Global Search":false,"Authenticated Published Experiences":false,"Studio Redesign":false,"Admin Redesign":false},
+            analyticsTrackers: {
+                cerosPlayerTracker: {enabled: true },
+                googleAnalyticsTracker: {"enabled":false},
+                googleTagManagerTracker: {"enabled":false},
+                marketoTracker: {enabled: false, accountId: '' },
+                eloquaTracker: {enabled: false, siteId: '', cookieDomain: ''},
+                universalAnalyticsTracker: {enabled: false }
+            }
+        };
+    </script>
+
+    <!--
+      DISPLAY SETTINGS
+    -->
+        <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="monitor-signature" content="monitor:player:html5"/>
+
+    <title>Perform Landing Page MOBILE Copy</title>
+
+
+
+
+    <meta property="og:title" content="Perform Landing Page MOBILE Copy"/>
+        <meta property="og:image" content="media/1adfd7bf3d14a93575a290380a9fe88d/page-thumbnail.jpg"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:type" content="website"/>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Perform Landing Page MOBILE Copy">
+    <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="media/1adfd7bf3d14a93575a290380a9fe88d/page-thumbnail.jpg">
+
+    <script language="Javascript" id="docversion-request-script">
+        window.docVersionRequest = window.jQuery.ajax({
+            url           : "media/experience-version-6228ecfc1c1a2.js",
+            dataType      : 'jsonp',
+            jsonp         : false, 
+            cache         : true,  
+            jsonpCallback : "loadDocVersion_v1_account_15five_document_versions_experience_version_6228ecfc1c1a2",
+            success       : window.jQuery.noop 
+        });
+    </script>
+
+    <!--
+      FONTS
+    -->
+
+    
+
+
+
+    <script type="text/javascript">
+        window.cerosPlayerLoadStart = new Date();
+    </script>
+
+    <!--
+        Although the player itself no longer uses requirejs, users can still use requirejs with
+        the SDK. Therefore, we need to continue including it here... for now...
+    -->
+    <script
+        type="text/javascript"
+        crossorigin="anonymous"
+        src="assets/player/shared/libs/require/require-min.b03b66057d7df9b2cc9aa9c4c18aa569.js">
+    </script>
+
+    <script
+            type="text/javascript"
+            async
+            crossorigin="anonymous"
+            charset="UTF-8"
+            src="assets/player/applications/html5-player/bootstrap-optimized.a37884a750aff7451dfefd02f0e14833.js">
+    </script>
+
+    <link rel="stylesheet" type="text/css"
+          href="assets/player/applications/html5-player/css/html5-player.91c0eabfa460e205ff2f270991808d5d.css"/>
+
+    <style>
+        body {
+            background-color: #E8E7E7;
+        }
+
+        body:-ms-fullscreen::-ms-backdrop {
+            background-color: #E8E7E7;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+
+    <noscript>
+        
+            <div class="page"><p class="text-component">Contact us</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+<p class="text-component">Overall great experience. 
+Well done team!</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Client Name
+Job Title - Location</p>
+<img src="media/fed0ca7a4d500b90d365d3a493578835/facebook-teerasej-profile-ball-circle.png" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+<p class="text-component">Just Fantastic. 
+Couldn't do better even 
+if they tried.</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Client Name
+Job Title - Location</p>
+<img src="media/ffbece39d85017876378593c6c78a237/profile-circle-1-1.png" alt=""  class="image-component"/>
+<p class="text-component">Find out more</p>
+<img src="media/e1e09e42370c844f28159ae5fa5b648a/2.png" alt=""  class="image-component"/>
+<img src="media/d4f77f527a9401cc48eedb2d93d94ac4/1.png" alt=""  class="image-component"/>
+<p class="text-component">What is the main goal of performance reviews in your organization?</p>
+<p class="text-component">Get the Full Report</p>
+<p class="text-component">SCROLL DOWN</p>
+<img src="https://media-s3-us-east-1.ceros.com/15five/images/2022/03/08/feb4d6f8e6437b474e39b4bbbf9557da/processed-svg-arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">We surveyed thousands of HR leaders, managers, and individual contributors to see how they feel about the performance review process at their organization. Here’s what we found.
+</p>
+<p class="text-component">Reviewing the Performance Review</p>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p>
+<p class="text-component">Subject 01</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/12/22/95fcbc757e843a57c4ba480dcb1775e7/light-bulb-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p>
+<p class="text-component">Subject 02</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/12/22/2334d964c1024d5e3754c8d6f2004c5d/cog-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p>
+<p class="text-component">Subject 03</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/12/22/6d0ca941f5ee1593a385618fd5a39f5f/clock-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p>
+<p class="text-component">Subject 04</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/12/22/0c5f97a5f5d54fe0637ed78f73380673/search-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor.</p>
+<p class="text-component">Subject 05</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/12/22/aecd0525f4eb74b05f72e2b8a8f30d1a/paper-icon.svg" alt=""  class="image-component"/>
+<img src="media/0c6eddd1b06f8b7813fe3a47487ac302/hero.png" alt=""  class="image-component"/>
+<p class="text-component">Get the Full Report</p>
+<p class="text-component">How does your performance review process compare?</p>
+<p class="text-component">The number one goal was to facilitate personal and professional growth of employees, followed by the goal of boosting business performance. Thus, HR leaders know that the performance review can and should simultaneously support the growth and development of individual employees while driving positive results for the business as a whole. 
+</p>
+<p class="text-component">How would you rate the effectiveness of your performance review process in achieving the goal(s) above?</p>
+<p class="text-component">Balancing and accomplishing those goals is no easy task— only about 64% of HR leaders reported that their performance review process is effective at achieving its goals.
+</p>
+<p class="text-component">0</p>
+<p class="text-component">50%</p>
+<p class="text-component">100%</p>
+<p class="text-component">Highly Effective</p>
+<p class="text-component">Effective</p>
+<p class="text-component">Moderately Effective</p>
+<p class="text-component">19%</p>
+<p class="text-component">45.3%</p>
+<p class="text-component">25%</p>
+<p class="text-component">Slightly Effective</p>
+<p class="text-component">9%</p>
+<p class="text-component">Ineffective</p>
+<p class="text-component">1.4%</p>
+<p class="text-component">Which of the following are concerns you have with your review process? Please select all that apply.</p>
+<p class="text-component">Is it evident that ensuring performance reviews are fair and equitable is top of mind for HR leaders today — nearly half of respondents said that it was a concern.  HR leaders understand that managers play a critical role in the performance review process, and that they need support. 
+</p>
+<p class="text-component">0</p>
+<p class="text-component">50%</p>
+<p class="text-component">100%</p>
+<p class="text-component">Ensuring performance reviews are fair and equitable
+</p>
+<p class="text-component">49.9%</p>
+<p class="text-component">Finding a performance review tool that fits into our existing HR tech ecosystem
+</p>
+<p class="text-component">33.9%</p>
+<p class="text-component">Finding a performance review tool that minimizes administrative burden</p>
+<p class="text-component">38.3%</p>
+<p class="text-component">Differentiating between high and low performers</p>
+<p class="text-component">27.9%</p>
+<p class="text-component">Ensuring that managers feel equipped to navigate the review process</p>
+<p class="text-component">39.7%</p>
+<p class="text-component">Having access to data for insights that can informs strategy decisions</p>
+<p class="text-component">32.3%</p>
+<p class="text-component">Getting everyone in the company to buy into the process</p>
+<p class="text-component">31.7%</p>
+<p class="text-component">What factors are holding you back from improving your performance review process? Please select all that apply.</p>
+<p class="text-component">0</p>
+<p class="text-component">50%</p>
+<p class="text-component">100%</p>
+<p class="text-component">Not enough time</p>
+<p class="text-component">39.5%</p>
+<p class="text-component">Lack of budget</p>
+<p class="text-component">33.3%</p>
+<p class="text-component">Lack of clear organizational goals for reviews</p>
+<p class="text-component">28.3%</p>
+<p class="text-component">Not seen as a priority by executives</p>
+<p class="text-component">31.3%</p>
+<p class="text-component">Other</p>
+<p class="text-component">3.4%</p>
+<p class="text-component">HR leaders have a lot on their plate, and the number one reason cited as a blocker for improving the performance review process was a lack of time.
+</p>
+<p class="text-component">Organizational resistance to change</p>
+<p class="text-component">38.1%</p>
+<p class="text-component">1</p>
+<p class="text-component">To facilitate personal and professional growth of employees</p>
+<p class="text-component">To establish consistency with how managers define high performance</p>
+<p class="text-component">To improve retention</p>
+<p class="text-component">To meet an organizational requirement</p>
+<p class="text-component">To inform compensation decisions</p>
+<p class="text-component">6</p>
+<p class="text-component">To boost business performance</p>
+<p class="text-component">2</p>
+<p class="text-component">ITEM</p>
+<p class="text-component">overall rank</p>
+<p class="text-component">rank distribution</p>
+<p class="text-component">3</p>
+<p class="text-component">4</p>
+<p class="text-component">5</p>
+<img src="https://media-s3-us-east-1.ceros.com/15five/images/2022/03/02/5d74293343cd5c701c8fb0eefeed1560/15five-rgb-full-color-lockup.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Lorem ipsum dolor</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Uncovering Experience Gaps</p>
+<p class="text-component">In order to get a deeper understanding of how all employees are impacted by the performance review process, we surveyed three groups: HR leaders, managers, and individual contributors. We asked questions not just about how each group felt about the performance review process, but also about how they thought the other groups felt.
+
+The results revealed that there are indeed significant discrepancies in the reported experiences that each group has with the performance review process. 
+
+Explore these gaps below.
+</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">HR Leader</p>
+<p class="text-component">Having to do so many reviews that you experience burnout and stop caring about the employees feelings.</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Manager</p>
+<p class="text-component">Trying to capture everything the employee did for the entire year and put it in orderly fashion.</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Individual Contributor</p>
+<p class="text-component">Only having once a year reviews. Not knowing how I’m performing throughout the year is difficult.</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">HR Leader</p>
+<p class="text-component">Infrequency of sometimes only doing reviews once or twice a year and one way feedbacks when the manager is the one doing most of the talking</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">What is most painful about the review process at your organization?
+</p>
+<p class="text-component">Formal Process</p>
+<p class="text-component">The discrepancy reveals that awareness of the process is greatly decreased for employees at lower levels. Because HR leaders and managers are more in the weeds with designing the strategy and facilitating the reviews, they can more readily identify the formal process that exists. Employees, on the other hand, may see performance reviews simply as something that happens once a year, or something they have to check off of the list, instead of seeing it as a full end-to-end process.</p>
+<p class="text-component">But only 77% of individual contributors agreed that their organization has a formal performance review process.</p>
+<p class="text-component">77%</p>
+<p class="text-component">But only 64% of individual contributors said that they are given the opportunity to give feedback on the performance review process.
+</p>
+<p class="text-component">64%</p>
+<p class="text-component">Lorem Ipsum</p>
+<p class="text-component">HR leaders and managers largely reported that employees are given the opportunity to provide feedback on the performance review process. But not nearly as many individual contributors agreed. This implies that there may be a lack of clarity on how employees can go about actually giving feedback on the process. There may also be a lack of psychological safety, where employees do not feel comfortable or encouraged to share their feedback about the process. A psychologically safe environment would proactively create more space for that feedback to occur at all levels of the organization.</p>
+<p class="text-component">But only 53% of individual contributors agreed that their manager is skilled at facilitating performance reviews.</p>
+<p class="text-component">53%</p>
+<p class="text-component">Managers’ Skills at Performance Review Facilitation
+</p>
+<p class="text-component">HR leaders and managers think that managers are relatively skilled at facilitating performance reviews, but less individual contributors agree. This indicates that individual contributors may have grievances or concerns about the process that they are not communicating, leading their superiors to think they are doing a good job at facilitating.
+</p>
+<p class="text-component">But only 43% of individual contributors agreed that the process improves their relationship with their manager.
+</p>
+<p class="text-component">43%</p>
+<p class="text-component">Improvement of Manager-Employee Relationship
+</p>
+<p class="text-component">The manager-employee relationship is a node with influence that touches almost every aspect of the work experience, and the performance review is a great opportunity for that relationship to be improved. Unfortunately, we found that this opportunity is not being seized. HR leaders are most likely to agree that the performance review process improves relationships between managers and employees, followed by managers, and then their employees. This indicates that individual contributors may have grievances or concerns about the process that they are not communicating, leading their superiors to think they are doing a good job at facilitating. It can also imply that managers are unaware that the feedback they are giving or the way in which they are giving it is actually harming the relationship with their direct report in some way.
+</p>
+<p class="text-component"></p>
+<p class="text-component">But only 43% of individual contributors agreed.
+</p>
+<p class="text-component">43%</p>
+<p class="text-component">Accuracy of Reviews</p>
+<p class="text-component">But only 44% of individual contributors agreed.
+</p>
+<p class="text-component">44%</p>
+<p class="text-component">Improved Employee Performance</p>
+<p class="text-component">As a whole, HR leaders are the most likely to think that the performance review process leads to improved employee performance, followed by managers and then individual contributors. 
+
+This data suggests that HR leaders are lacking visibility into employees’ feelings and opinions about the performance review process, and failing to see that individual contributors in particular are relatively unsatisfied with the process.
+</p>
+<p class="text-component">HR leaders are more likely than managers and individual contributors to think that the performance review process provides an accurate representation of employee performance. This could imply that HR leaders are lacking a degree of visibility into the day to day work of the individual contributors, so they are less able to assess how well the review process that they have designed is actually capturing information about an employee’s performance level.</p>
+<p class="text-component">65% of managers agreed.</p>
+<p class="text-component">Formal Process</p>
+<p class="text-component">The discrepancy reveals that awareness of the process is greatly decreased for employees at lower levels. Because HR leaders and managers are more in the weeds with designing the strategy and facilitating the reviews, they can more readily identify the formal process that exists. Employees, on the other hand, may see performance reviews simply as something that happens once a year, or something they have to check off of the list, instead of seeing it as a full end-to-end process.</p>
+<p class="text-component">75% of managers agreed that they themselves are skilled at facilitating performance reviews.</p>
+<p class="text-component">75%</p>
+<p class="text-component">Managers’ Skills at Performance Review Facilitation
+</p>
+<p class="text-component">HR leaders and managers think that managers are relatively skilled at facilitating performance reviews, but less individual contributors agree. This indicates that individual contributors may have grievances or concerns about the process that they are not communicating, leading their superiors to think they are doing a good job at facilitating.
+</p>
+<p class="text-component">And 92% of managers stated that their organization has a formal performance review process.</p>
+<p class="text-component">92%</p>
+<p class="text-component">And 92% of managers agreed.</p>
+<p class="text-component">92%</p>
+<p class="text-component">Lorem Ipsum</p>
+<p class="text-component">HR leaders and managers largely reported that employees are given the opportunity to provide feedback on the performance review process. But not nearly as many individual contributors agreed. This implies that there may be a lack of clarity on how employees can go about actually giving feedback on the process. There may also be a lack of psychological safety, where employees do not feel comfortable or encouraged to share their feedback about the process. A psychologically safe environment would proactively create more space for that feedback to occur at all levels of the organization.</p>
+<p class="text-component">68% of managers agreed that the process improves their relationships with their direct reports.</p>
+<p class="text-component">68%</p>
+<p class="text-component">Improvement of Manager-Employee Relationship
+</p>
+<p class="text-component">The manager-employee relationship is a node with influence that touches almost every aspect of the work experience, and the performance review is a great opportunity for that relationship to be improved. Unfortunately, we found that this opportunity is not being seized. HR leaders are most likely to agree that the performance review process improves relationships between managers and employees, followed by managers, and then their employees. This indicates that individual contributors may have grievances or concerns about the process that they are not communicating, leading their superiors to think they are doing a good job at facilitating. It can also imply that managers are unaware that the feedback they are giving or the way in which they are giving it is actually harming the relationship with their direct report in some way.
+</p>
+<p class="text-component">66% of managers agreed.</p>
+<p class="text-component">66%</p>
+<p class="text-component">Accuracy of Reviews</p>
+<p class="text-component">HR leaders are more likely than managers and individual contributors to think that the performance review process provides an accurate representation of employee performance. This could imply that HR leaders are lacking a degree of visibility into the day to day work of the individual contributors, so they are less able to assess how well the review process that they have designed is actually capturing information about an employee’s performance level.</p>
+<p class="text-component">65% of managers agreed.
+</p>
+<p class="text-component">65%</p>
+<p class="text-component">Improved Employee Performance</p>
+<p class="text-component">As a whole, HR leaders are the most likely to think that the performance review process leads to improved employee performance, followed by managers and then individual contributors. 
+
+This data suggests that HR leaders are lacking visibility into employees’ feelings and opinions about the performance review process, and failing to see that individual contributors in particular are relatively unsatisfied with the process.
+</p>
+<p class="text-component">93% of HR leaders stated that their organization has a formal performance review process.</p>
+<p class="text-component">93%</p>
+<p class="text-component">Formal Process</p>
+<p class="text-component">The discrepancy reveals that awareness of the process is greatly decreased for employees at lower levels. Because HR leaders and managers are more in the weeds with designing the strategy and facilitating the reviews, they can more readily identify the formal process that exists. Employees, on the other hand, may see performance reviews simply as something that happens once a year, or something they have to check off of the list, instead of seeing it as a full end-to-end process.</p>
+<p class="text-component">83% of HR leaders said that employees are given the opportunity to evaluate their perception of fairness of the performance review process.</p>
+<p class="text-component">83%</p>
+<p class="text-component">Feedback on Process</p>
+<p class="text-component">HR leaders and managers largely reported that employees are given the opportunity to provide feedback on the performance review process. But not nearly as many individual contributors agreed. This implies that there may be a lack of clarity on how employees can go about actually giving feedback on the process. There may also be a lack of psychological safety, where employees do not feel comfortable or encouraged to share their feedback about the process. A psychologically safe environment would proactively create more space for that feedback to occur at all levels of the organization.</p>
+<p class="text-component">When asked if managers are skilled at facilitating performance reviews, 72% of HR leaders agreed.</p>
+<p class="text-component">72%</p>
+<p class="text-component">Managers’ Skills at Performance Review Facilitation</p>
+<p class="text-component">HR leaders and managers think that managers are relatively skilled at facilitating performance reviews, but less individual contributors agree. This indicates that individual contributors may have grievances or concerns about the process that they are not communicating, leading their superiors to think they are doing a good job at facilitating.
+</p>
+<p class="text-component">When asked if the performance review process improves relationships between managers and employees, 74% of HR leaders agreed.</p>
+<p class="text-component">74%</p>
+<p class="text-component">Improvement of Manager-Employee Relationship</p>
+<p class="text-component">The manager-employee relationship is a node with influence that touches almost every aspect of the work experience, and the performance review is a great opportunity for that relationship to be improved. Unfortunately, we found that this opportunity is not being seized. HR leaders are most likely to agree that the performance review process improves relationships between managers and employees, followed by managers, and then their employees. This indicates that individual contributors may have grievances or concerns about the process that they are not communicating, leading their superiors to think they are doing a good job at facilitating. It can also imply that managers are unaware that the feedback they are giving or the way in which they are giving it is actually harming the relationship with their direct report in some way.
+</p>
+<p class="text-component">When asked if the review process provides an accurate view of employee performance, 75% of HR leaders agreed.</p>
+<p class="text-component">75%</p>
+<p class="text-component">Accuracy of Reviews</p>
+<p class="text-component">HR leaders are more likely than managers and individual contributors to think that the performance review process provides an accurate representation of employee performance. This could imply that HR leaders are lacking a degree of visibility into the day to day work of the individual contributors, so they are less able to assess how well the review process that they have designed is actually capturing information about an employee’s performance level.</p>
+<p class="text-component">When asked if the performance review process leads to improved employee performance, 75% of HR leaders agreed.
+</p>
+<p class="text-component">75%</p>
+<p class="text-component">Improved Employee Performance</p>
+<p class="text-component">As a whole, HR leaders are the most likely to think that the performance review process leads to improved employee performance, followed by managers and then individual contributors. 
+
+This data suggests that HR leaders are lacking visibility into employees’ feelings and opinions about the performance review process, and failing to see that individual contributors in particular are relatively unsatisfied with the process.
+</p>
+<p class="text-component">Manager</p>
+<p class="text-component">Individual Contributer</p>
+<p class="text-component">Frequency of Performance Related Conversations
+</p>
+<p class="text-component">HR leaders and managers believe that conversations about performance between managers and their teams are happening more frequently than those team members feel that they are happening. Managers in particular think these conversations are happening the most often. This could be a result of a lack of agreement or clarity around what constitutes a “performance related conversation” — does a conversation over Slack count? Or does it need to happen formally, in a 1-on-1? — and lack of documentation about when these conversations occur and what is communicated in them.
+</p>
+<p class="text-component">Managers</p>
+<p class="text-component">Individual
+Contributors</p>
+<p class="text-component">How often do managers have conversations about performance with their direct reports?</p>
+<img src="media/a3155471f3020bfa402b56449b6e43fc/hr-leader.png" alt=""  class="image-component"/>
+<p class="text-component">Once a week</p>
+<p class="text-component">12%</p>
+<p class="text-component">Never / Not Sure</p>
+<p class="text-component">1%</p>
+<p class="text-component">Once a month</p>
+<p class="text-component">28%</p>
+<p class="text-component">Once a quarter</p>
+<p class="text-component">39%</p>
+<p class="text-component">Once a year</p>
+<p class="text-component">21%</p>
+<p class="text-component">Approximately how often do you have conversations about performance with your direct reports?
+</p>
+<p class="text-component">Once a week</p>
+<p class="text-component">23%</p>
+<p class="text-component">Never / Not Sure</p>
+<p class="text-component">2%</p>
+<p class="text-component">Once a month</p>
+<p class="text-component">25%</p>
+<p class="text-component">Once a quarter</p>
+<p class="text-component">28%</p>
+<p class="text-component">Once a year</p>
+<p class="text-component">21%</p>
+<img src="media/14607439b2683db3894847a3c0118004/manager.png" alt=""  class="image-component"/>
+<p class="text-component">Approximately how often does your manager have conversations about performance with you?</p>
+<p class="text-component">Once a week</p>
+<p class="text-component">11%</p>
+<p class="text-component">Never / Not Sure</p>
+<p class="text-component">11%</p>
+<p class="text-component">Once a month</p>
+<p class="text-component">16%</p>
+<p class="text-component">Once a quarter</p>
+<p class="text-component">28%</p>
+<p class="text-component">Once a year</p>
+<p class="text-component">35%</p>
+<img src="media/aa6e2af27ecfd05c5fca55ac23e099b5/ic.png" alt=""  class="image-component"/>
+<p class="text-component">Get the Full Report</p>
+<p class="text-component">Get the Full Report</p>
+<p class="text-component">Hear from HR Leaders</p>
+<p class="text-component">Vice President of People at Wagmo, Inc.
+</p>
+<img src="media/6896a46cf036c22b9b3f7e4de62d217c/play-button.png" alt=""  class="image-component"/>
+<p class="text-component">Jillian Adams</p>
+<p class="text-component">Director of People and Operations at Imagine LA</p>
+<p class="text-component">Jillian Adams</p>
+<img src="media/6896a46cf036c22b9b3f7e4de62d217c/play-button.png" alt=""  class="image-component"/>
+<p class="text-component">Karinn Cologne</p>
+<p class="text-component">Senior Director of Talent and Culture at Boardable
+</p>
+<p class="text-component">Gabby VanAlstine</p>
+<p class="text-component">Lourys Baltazar
+</p>
+<img src="media/6896a46cf036c22b9b3f7e4de62d217c/play-button.png" alt=""  class="image-component"/>
+<p class="text-component">Personnel Manager at Multi-Brand Franchises
+</p>
+<p class="text-component">Jillian Adams</p>
+<img src="media/6896a46cf036c22b9b3f7e4de62d217c/play-button.png" alt=""  class="image-component"/>
+<p class="text-component">Closing the Gaps — Designing a Review Process That Benefits Everyone
+</p>
+<p class="text-component">In the last few years, the workplace has been totally reimagined — so it only makes sense that there would be an increasingly pressing need to reimagine how we think about and conduct performance reviews. In reimagining a review process, HR leaders should focus on closing the gaps discussed in this report and designing a process that is beneficial, fair, and impactful to all involved. 
+
+But we know that’s much easier said than done — so we designed a comprehensive guide to designing a fair, valuable, efficient review process. 
+
+We’ve distilled conversations with strategic HR leaders, a recent survey of over 1,000 strategic HR leaders, and a thorough review of academic and industry research into 5 principles to keep in mind as you are designing your review process. Also, every organization has different goals and context to consider when designing reviews. We’ll walk through decisions, options, and tradeoffs you will encounter as you design your review process, and share best practices.
+</p>
+<img src="media/5b575af575d25ab26917435785aa576c/e-bookmockup-survey-report-2022-1.png" alt=""  class="image-component"/>
+<p class="text-component">Get the Performance Review Playbook and schedule a demo!</p>
+<p class="text-component">Get the Playbook</p>
+<p class="text-component">Get the Playbook</p>
+<p class="text-component">Schedule a Demo</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">HR Leader</p>
+<p class="text-component">HR Leader</p>
+<img src="https://media-s3-us-east-1.ceros.com/ora-clinical/images/2021/08/05/d481d7daf69372bda5ec73a4b5f2266f/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="https://media-s3-us-east-1.ceros.com/ora-clinical/images/2021/08/05/9be462b6d46598d6aa12b4c99ec1929b/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Approximately how often do you have conversations about performance with your direct reports?</p>
+<p class="text-component">Approximately how often does your manager have conversations about performance with you?</p>
+<p class="text-component">More info</p>
+<img src="null" alt=""  class="image-component"/>
+<p class="text-component">More info</p>
+<p class="text-component">More info</p>
+<p class="text-component">More info</p>
+<p class="text-component">More info</p>
+<p class="text-component">More info</p>
+<img src="https://media-s3-us-east-1.ceros.com/siranush-khachatryan/images/2022/03/04/1f1d0387994570c4128c3358690bed00/close-icon.svg" alt=""  class="image-component"/>
+<img src="https://media-s3-us-east-1.ceros.com/siranush-khachatryan/images/2022/03/04/1f1d0387994570c4128c3358690bed00/close-icon.svg" alt=""  class="image-component"/>
+<img src="https://media-s3-us-east-1.ceros.com/siranush-khachatryan/images/2022/03/04/1f1d0387994570c4128c3358690bed00/close-icon.svg" alt=""  class="image-component"/>
+<img src="https://media-s3-us-east-1.ceros.com/siranush-khachatryan/images/2022/03/04/1f1d0387994570c4128c3358690bed00/close-icon.svg" alt=""  class="image-component"/>
+<img src="https://media-s3-us-east-1.ceros.com/siranush-khachatryan/images/2022/03/04/1f1d0387994570c4128c3358690bed00/close-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/09/18/e1807bd675ab02a2d736b7b3e43a3756/arrow-icon.svg" alt=""  class="image-component"/>
+<p class="text-component">Individual Contributor</p>
+<p class="text-component">No real training for weaknesses, or advancement opportunities.</p>
+<img src="http://media-s3-us-east-1.ceros.com/hannah-s/images/2017/10/30/d62e542e84f06fb41b750da5fdfd226b/quote-icon.svg" alt=""  class="image-component"/></div>
+    </noscript>
+
+
+<div id="main"></div>
+<div id="backgroundContainer"></div>
+
+
+
+    <!-- BEGIN CUSTOM HTML -->
+    
+    <!-- END CUSTOM HTML -->
+
+
+
+    <div id="page-transition-aria-live" class="sr-only" aria-live="assertive"></div>
+</body>
+</html>

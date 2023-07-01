@@ -1,0 +1,54 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .awards {
+    .title-column {
+      margin-bottom: 0;
+
+      .title {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+
+    .award {
+      position: relative;
+      padding: 16px 86px 16px 16px;
+
+      &::before,
+      &::after {
+        position: absolute;
+        right: 30px;
+        width: 7px;
+        height: 2px;
+        content: "";
+        background-color: #827c97;
+        border-radius: 1.2px;
+        transition: background-color 0.3s linear;
+      }
+
+      &::before {
+        top: calc(50% + 2px);
+        transform: translateY(-50%) rotate(-45deg);
+      }
+
+      &::after {
+        top: calc(50% - 1.8px);
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .awards {
+    padding: 97px 0 80px;
+  }
+}

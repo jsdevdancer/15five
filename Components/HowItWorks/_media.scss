@@ -1,0 +1,40 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .how-it-works {
+    padding: 120px 0;
+
+    .steps {
+      display: grid;
+      width: 100%;
+      margin: auto;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px;
+    }
+
+    .step {
+      max-width: 100%;
+    }
+
+    .description {
+      max-width: 613px;
+      margin: 0 auto;
+    }
+
+    .subtitle {
+      padding-top: 40px;
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .how-it-works {
+    .steps {
+      display: grid;
+      width: 1092px;
+      margin: auto;
+      grid-template-columns: repeat(3, 300px);
+      column-gap: 96px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<section class="image-title-image">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <div class="image top-image">
+          {{ renderComponent('Image', { image: top_image }) }}
+        </div>
+        <h2 class="h1 title">
+          {{ title }}
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="image bottom-image">
+    {{ renderComponent('Image', { image: bottom_image }) }}
+  </div>
+</section>

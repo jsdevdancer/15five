@@ -1,0 +1,114 @@
+.g2-awards {
+  background-color: #fff7f1;
+
+  .container {
+    padding-top: 60px;
+    padding-bottom: 60.33px;
+  }
+
+  .section_title,
+  .section_subtitle {
+    text-align: center;
+  }
+
+  .section_title {
+    margin-bottom: 1rem;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .section_subtitle {
+    margin-bottom: 60.82px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .quote-container {
+    max-width: 372px;
+    padding-bottom: 40px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    .score-wrapper {
+      display: block;
+
+      width: 120px;
+      height: 24px;
+
+      margin: 0 auto;
+
+      background-image: url("../Components/G2Awards/assets/5-stars.svg");
+      background-size: contain;
+    }
+
+    .content {
+      margin-bottom: 20px;
+    }
+
+    .author {
+      margin-bottom: 2px;
+      opacity: 0.6;
+    }
+
+    .description {
+      margin-bottom: 0;
+    }
+  }
+
+  .awards-container {
+    margin-bottom: 40px;
+    text-align: right;
+
+    .awards-column {
+      &:first-child .kicker:first-child {
+        padding-top: 0;
+      }
+    }
+
+    .kicker {
+      text-align: left;
+    }
+
+    .collapsed {
+      display: none;
+    }
+
+    .award {
+      text-align: left;
+      background-color: rgba(26, 13, 63, 0.1);
+
+      transition: background-color 300ms linear;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(26, 13, 63, 0.2);
+
+        &::after,
+        &::before {
+          background-color: $tide1 !important;
+        }
+      }
+
+      .text {
+        .title {
+          margin-bottom: 2px;
+        }
+
+        .title,
+        .source {
+          color: $tide1 !important;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .awards-show-more {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    appearance: none;
+  }
+}

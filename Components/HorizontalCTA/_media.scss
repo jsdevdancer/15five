@@ -1,0 +1,31 @@
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .horizontal-cta {
+    height: 308px;
+    padding-top: 0;
+    text-align: left;
+
+    .col__text {
+      .title {
+        margin-bottom: 23px;
+      }
+
+      p {
+        margin: 0;
+        margin-bottom: 24px;
+      }
+
+      .button {
+        margin-bottom: 0;
+      }
+    }
+
+    .col__image {
+      height: 308px;
+      img {
+        height: 100%;
+        margin: 0;
+      }
+    }
+  }
+}

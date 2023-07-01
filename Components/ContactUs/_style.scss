@@ -1,0 +1,69 @@
+.contact-us {
+  .content {
+    padding: 60px 0;
+  }
+
+  .kicker {
+    margin-bottom: 8px;
+  }
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .description {
+    max-width: 513px;
+    margin-bottom: 24px;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .list-icon {
+    max-width: 24px;
+    margin-right: 10px;
+  }
+
+  .success {
+    position: absolute;
+    justify-content: space-between;
+
+    width: calc(100% - 32px);
+    max-width: 450px;
+    padding: 4px 55px 3px 16px;
+
+    background: rgba($tide1, 0.1);
+    border-radius: 4px;
+    transform: translateY(calc(-100% + 4px));
+
+    &.is-desktop {
+      position: relative;
+      width: auto;
+      transform: translateY(-32px);
+    }
+  }
+
+  .success button {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    padding: 10px;
+    line-height: 0;
+    cursor: pointer;
+  }
+
+  .u-gravity-form .gform_wrapper [type="date"],
+  .u-gravity-form .gform_wrapper [type="email"],
+  .u-gravity-form .gform_wrapper [type="number"],
+  .u-gravity-form .gform_wrapper [type="password"],
+  .u-gravity-form .gform_wrapper [type="search"],
+  .u-gravity-form .gform_wrapper [type="tel"],
+  .u-gravity-form .gform_wrapper [type="text"],
+  .u-gravity-form .gform_wrapper [type="url"],
+  .u-gravity-form .gform_wrapper select,
+  .u-gravity-form .gform_wrapper textarea {
+    width: 400px;
+  }
+}

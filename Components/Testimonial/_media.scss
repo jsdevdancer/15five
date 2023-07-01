@@ -1,0 +1,133 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .testimonial {
+    &.mobile-hidden,
+    &.slider {
+      display: block;
+    }
+
+    &.three-sides {
+      &.left .testimonial-container {
+        .image {
+          margin-right: 0;
+          margin-left: -70px;
+        }
+
+        .background-image * {
+          border-radius: 0 4px 4px 0;
+        }
+
+        .testimonial-content {
+          padding: 40px 104px 40px 40px;
+        }
+      }
+
+      &.right .testimonial-container {
+        .image {
+          margin-right: -70px;
+          margin-left: 0;
+        }
+
+        .background-image * {
+          border-radius: 4px 0 0 4px;
+        }
+
+        .testimonial-content {
+          padding: 40px 40px 40px 104px;
+        }
+      }
+
+      .testimonial-container .testimonial-image .background-image {
+        width: 100%;
+      }
+    }
+
+    &.two-sides {
+      &.left .testimonial-container {
+        .testimonial-image {
+          margin-right: 18px;
+        }
+
+        .background-image {
+          right: -18px;
+          left: auto;
+        }
+
+        .testimonial-content {
+          padding: 40px 80px 40px 30px;
+        }
+      }
+
+      &.right .testimonial-container {
+        .testimonial-image {
+          margin-left: 18px;
+        }
+
+        .testimonial-content {
+          padding: 40px 30px 40px 80px;
+        }
+      }
+
+      .testimonial-container {
+        align-items: center;
+      }
+    }
+
+    &.background .testimonial-container {
+      background-color: $kin;
+      border-radius: 4px;
+    }
+
+    .container .testimonial-container {
+      .testimonial-image {
+        --testimonial-bg-offset: 32px;
+        width: 33.33%;
+      }
+
+      .testimonial-content {
+        width: 66.66%;
+
+        .quote {
+          font-size: 28px;
+          line-height: 42px;
+        }
+      }
+    }
+
+    .slick-dots {
+      margin: 28px 0 0;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .testimonial {
+    &.three-sides {
+      &.left .testimonial-container .testimonial-content {
+        padding: 54px 139px 54px 72px;
+      }
+
+      &.right .testimonial-container .testimonial-content {
+        padding: 54px 107px 54px 104px;
+      }
+    }
+
+    &.two-sides {
+      &.left .testimonial-container .testimonial-content {
+        padding: 54px 139px 54px 72px;
+      }
+
+      &.right .testimonial-container .testimonial-content {
+        padding: 54px 107px 54px 104px;
+      }
+    }
+  }
+}
+
+// Starting at 1200px
+@media (min-width: $breakpoint-extra-large) {
+  .testimonial .testimonial-container {
+    margin: 0 60px;
+  }
+}

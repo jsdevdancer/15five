@@ -1,0 +1,15 @@
+<section class="thank-you-hero">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col">
+        {{ renderComponent('Image', { image: custom_image ? custom_image : image }) }}
+        <h1 class="title">
+          {{ custom_title ? : title }}
+        </h1>
+        <div class="description">
+          {{ custom_description ? : description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

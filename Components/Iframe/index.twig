@@ -1,0 +1,19 @@
+{% set dark_colors = ['motion', 'tide', 'black'] %}
+{% if background_color in (dark_colors|keys) %}
+  {% set dark_focus = ' dark-bg' %}
+{% endif %}
+<section id="{{ section_id|replace({ ' ': '-', '#': '' }) }}"
+  class="iframe-section {{ background_color }}{{ dark_focus }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="h1 o-title title">
+          {{ title }}
+        </h2>
+        <div class="iframe-container">
+          {{ iframe }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

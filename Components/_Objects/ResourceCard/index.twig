@@ -1,0 +1,26 @@
+<article class="c-resource-card">
+  <a href="{{ post.link }}">
+    <div class="c-resource-card__header">
+      {% set image = post.meta('image') %}
+      {% if image %}
+        <div class="c-resource-card__image">
+          {% set image = image|merge({ is_lazy: true }) %} {# set 'is_lazy' to true #}
+          {{ renderComponent('Image', { image: image }) }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="c-resource-card__body">
+      <div class="c-resource-card__taxonomies">
+        <div class="c-resource-card__category h6">
+          {{ post.terms('content-category')|join('') }}
+        </div>
+        <div class="c-resource-card__type">
+          {{ post.terms('content-type')|join('') }}
+        </div>
+      </div>
+      <div class="c-resource-card__title">
+        {{ post.post_title }}
+      </div>
+    </div>
+  </a>
+</article>

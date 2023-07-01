@@ -1,0 +1,12 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .text-image-framed {
+    &.mobile-hidden {
+      display: block;
+    }
+
+    .images {
+      --profile-bg-offset: 32px;
+    }
+  }
+}

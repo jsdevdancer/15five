@@ -1,0 +1,75 @@
+{% if post.featured_image %}
+  {% set main_image = post.featured_image %}
+{% else %}
+  {% set main_image = post.event_on_demand_featured_image_group %}
+{% endif %}
+
+<section class="content-single-post post--video">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <a href="#"
+          class="back-button"
+          onClick="contentLibraryBackButton(event);"
+          data-href="{{ content_library_main_page.link }}">
+          {{ __('Back', 'flynt') }}
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-9 offset-lg-1 col-xl-8 offset-xl-2 col-xxl-6 offset-xxl-3">
+        <div class="row post-content">
+          <div class="col-9 meta">
+            <div class="category h6">
+              {{ post.terms('content-category')|join('') }}
+            </div>
+            <div class="type">
+              {{ post.terms('content-type')|join('') }}
+            </div>
+          </div>
+          <h1 class="col-9 title">
+            {{ post.title }}
+          </h1>
+          <div class="col-12 video__wrapper video--desktop">
+            <div class="image__wrapper">
+              <div class="background-image">
+                {{ renderComponent('Image', { image: main_image }) }}
+              </div>
+              <button class="play-button {{ image_overlay != 'false' ? image_overlay : '' }}">
+                {{ source('./assets/styles/content-single/Assets/play-button--active.svg') }}
+              </button>
+            </div>
+          </div>
+          <div class="col-9 gutenberg-content">
+            {{ post.content }}
+          </div>
+          <hr />
+          <div class="col-9 authors">
+            {% for author in post.terms('content-author') %}
+              <div class="author">
+                <div class="image">
+                  {{ renderComponent('Image', { image: author.image }) }}
+                </div>
+                <div class="name-and-position">
+                  <div class="name">
+                    {{ author.name }}
+                  </div>
+                  <div class="position">
+                    {{ author.description }}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ renderComponent('VideoModal', { video: post.gated_video_video_group }) }}
+  <aside class="tooltip__wrapper">
+    <p class="tooltip">
+      {{ post.form_success_tooltip }}
+      <span class="close">{{ source('./assets/styles/content-single/Assets/close.svg') }}</span>
+    </p>
+  </aside>
+</section>

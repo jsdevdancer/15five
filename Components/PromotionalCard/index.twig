@@ -1,0 +1,52 @@
+<section class="promotional-card {# prettier-ignore #}
+  {{ not visibility.mobile ? 'hidden-mobile' }} 
+  {{ not visibility.desktop ? 'hidden-desktop' }}
+  {{ enable_padding == 0 ? 'image--no-padding' }}
+  {{ background_color }}
+  {{ padding_size }}"
+  >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <article class="card">
+          {% set theresImage = image.desktop.one_x.old_format
+            or image.desktop.one_x.avif
+            or image.desktop.two_x.old_format
+            or image.desktop.two_x.avif
+            or image.mobile.one_x.old_format
+            or image.mobile.one_x.avif
+            or image.mobile.two_x.old_format
+            or image.mobile.two_x.avif
+            ? true
+            : false
+          %}
+          <div class="card__header {{ not theresImage ? 'no-image' }}">
+            {% if theresImage %}
+              {{ renderComponent('Image', { image: image }) }}
+            {% else %}
+              <div class="label label--motion">
+                {{ label }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="card__body">
+            <div class="title h5">
+              {{ title }}
+            </div>
+            <p class="small">
+              {{ description }}
+            </p>
+          </div>
+          <div class="card__footer">
+            <a class="button button--motion"
+              href="{{ button.url }}"
+              {{ button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+              aria-label="{{ button_aria_label }}">
+              {{ button.title }}
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

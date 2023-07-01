@@ -1,0 +1,23 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .text-image-small-cta {
+    .image picture * {
+      margin: 0;
+    }
+
+    .title {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// Starting at 992px
+@media (min-width: $breakpoint-large) {
+  .text-image-small-cta {
+    padding: 125px 0 145px;
+
+    .image {
+      margin: 0 -32px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.client-reviews {
+  padding: 0 0 16px;
+  padding-top: var(--padding-mobile-top);
+  padding-bottom: var(--padding-mobile-bottom);
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &.white {
+    background-color: $white;
+  }
+
+  &.kin-light {
+    background-color: $kin-light;
+  }
+
+  &.tide {
+    background-color: $tide1;
+
+    .title,
+    .o-kicker,
+    p,
+    .h1 {
+      color: $white;
+    }
+
+    .review {
+      background-color: $white;
+    }
+
+    .logos {
+      img {
+        filter: saturate(0%) brightness(3000%) opacity(70%);
+      }
+    }
+  }
+
+  .o-title + p {
+    max-width: 345px;
+    margin: 0 auto;
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 16px 0;
+  }
+
+  .logo {
+    display: flex;
+    flex: 0 0 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+
+    img {
+      max-width: 120px;
+    }
+
+    &:nth-child(odd) img {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    &:nth-child(even) img {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
+  .logos {
+    &.odd {
+      .logo {
+        // switch because first side-by-side item is now 1
+        &:nth-child(even) img {
+          margin-right: 0;
+          margin-left: auto;
+        }
+
+        &:nth-child(odd) img {
+          margin-right: auto;
+          margin-left: 0;
+        }
+
+        &:first-child {
+          flex: 0 0 100%;
+          margin: 0 auto;
+          img {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+
+  .reviews.margin-top {
+    margin-top: 28px;
+  }
+
+  .review {
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: left;
+    background: rgba($tide1, 0.03);
+    border-radius: 4px;
+
+    img {
+      display: block;
+      height: 24px;
+    }
+
+    .h3 {
+      padding-top: 16px;
+      margin-bottom: 40px;
+    }
+
+    div:not(.h3) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .person {
+      margin-bottom: 2px;
+      color: rgba($tide1, 0.6);
+    }
+  }
+}

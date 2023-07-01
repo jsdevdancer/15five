@@ -1,0 +1,53 @@
+// Max at 768px
+@media (max-width: $breakpoint-medium) {
+  .confetti-banner {
+    padding: 80px 0;
+    .banner-wrapper {
+      &::before,
+      &::after {
+        height: 100%;
+        content: "";
+      }
+      &::before {
+        width: 38%;
+        background: url("../Components/ConfettiBanner/Partials/confetti-left.png") no-repeat center / cover;
+      }
+      &::after {
+        display: block;
+        width: 28%;
+      }
+
+      .text-wrapper {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+
+  .thrive-hero {
+    padding: 80px 0 85px;
+    text-align: center;
+    background: url("../Components/ThriveHero/Assets/artboard.png") no-repeat center / cover;
+    &--logo-wrapper {
+      img {
+        max-width: 70%;
+      }
+      &_logo {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--content-wrapper {
+      margin-top: 60px;
+
+      &_headline {
+        font-size: 42px;
+        line-height: 48px;
+      }
+      &_description {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

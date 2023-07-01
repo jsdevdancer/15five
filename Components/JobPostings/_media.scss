@@ -1,0 +1,17 @@
+// Starting at 768px
+@media (min-width: $breakpoint-medium) {
+  .job-postings {
+    ul,
+    h3 {
+      padding-right: 0;
+      margin-bottom: 0;
+    }
+
+    .posting-item {
+      .job-item {
+        margin-bottom: 10px;
+        line-height: 38px;
+      }
+    }
+  }
+}

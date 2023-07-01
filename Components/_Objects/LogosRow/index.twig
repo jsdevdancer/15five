@@ -1,0 +1,7 @@
+<div class="logos-row">
+  {% for logo in logos %}
+    <div class="logo">
+      <img src="{{ logo.image.src }}" alt="{{ logo.image.alt }}" />
+    </div>
+  {% endfor %}
+</div>

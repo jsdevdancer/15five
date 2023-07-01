@@ -1,0 +1,49 @@
+.offices {
+  padding: 80px 0;
+  text-align: center;
+  background: $tide-light;
+
+  .title {
+    padding-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .description {
+    max-width: 613px;
+    margin: 0 auto;
+  }
+
+  .office-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 58px 0 80px;
+    column-gap: 16px;
+    row-gap: 16px;
+
+    .c-resource-card,
+    .c-resource-card:last-child {
+      width: auto;
+      margin: 0;
+
+      a {
+        width: auto;
+      }
+    }
+  }
+
+  .press {
+    &__title {
+      padding-top: 0;
+      margin-bottom: 16px;
+    }
+
+    &__description {
+      max-width: 613px;
+      margin: 0 auto;
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

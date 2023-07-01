@@ -1,0 +1,17 @@
+{% extends 'templates/_document.twig' %}
+
+{% block Content %}
+  {{ renderComponent('ContentLibraryHero') }}
+  {{ renderComponent('ContentLibraryCategories') }}
+  {{
+    renderComponent(
+      'ContentLibrarySliders',
+      {
+        is_category_page: true,
+        content_category: content_category,
+        content_category_posts: content_category_posts,
+        content_types: content_types
+      }
+    )
+  }}
+{% endblock %}

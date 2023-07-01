@@ -1,0 +1,57 @@
+<section class="podcasts-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6">
+        <div class="text-column">
+          <h1 class="h1 title">
+            {{ section_title }}
+          </h1>
+          <p class="description large">
+            {{ section_description }}
+          </p>
+          {% if podcast_links_section.title or (podcast_links_section.podcast_links|length) > 0 %}
+            <div class="podcast-links-section{{ include_form ? ' has-form' }}">
+              {% if podcast_links_section.title %}
+                <div class="podcast-links-section-title">
+                  {{ podcast_links_section.title }}
+                </div>
+              {% endif %}
+              {% if include_form %}
+                <div class="newsletter-form d-flex align-items-center justify-content-center justify-content-md-start u-height-100">
+                  {{
+                    renderComponent(
+                      'SubscriptionForm',
+                      { id: 'podcast-form', button_label: __('Subscribe', 'flynt'), pardot: pardot_url_3, nonce: nonce }
+                    )
+                  }}
+                </div>
+              {% endif %}
+              {% if (podcast_links_section.podcast_links|length) > 0 %}
+                <div class="podcast-links d-flex justify-content-center justify-content-md-start">
+                  {% for link in podcast_links_section.podcast_links %}
+                    <div class="podcast-link">
+                      <a href="{{ link.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="{{ link.url_aria_label }}">
+                        {{ renderComponent('Image', { image: link.podcast_link_logo }) }}
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="image{{
+          podcast_links_section.title or (podcast_links_section.podcast_links|length) > 0
+            ? ' has-margin'
+          }}">
+          {{ renderComponent('Image', { image: section_image }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

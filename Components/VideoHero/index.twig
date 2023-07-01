@@ -1,0 +1,20 @@
+<section class="video-hero dark-bg">
+    <div class="row">
+      <div class="col">
+        <div class="image-wrapper d-md-flex align-items-md-center u-height-100">
+          <div class="image">
+            <div class="video-hero-content d-flex">
+              <h2 class="h1 title">
+                {{ title }}
+              </h2>
+              <button class="play-button">{{ source('Assets/play-button.svg') }}</button>
+            </div>
+            <div class="picture">
+              {{ renderComponent('Image', { image: image }) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{ renderComponent('VideoModal', { video: video }) }}
+</section>

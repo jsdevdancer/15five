@@ -1,0 +1,27 @@
+<nav class="navbar__menu navbar_microsite" id="navbar__menu" aria-label="{{ __('Navigation', 'flynt') }}">
+  {% if microsite_menu %}
+    <ul role="menu">
+      {% for item in microsite_menu %}
+        <li class="navbar__menu__item"
+          role="menuitem"
+        >
+          <a class="navbar__menu__link"
+            href="{{ item.link.url }}"
+            tabindex="0"
+            {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{item.aria_label ? item.aria_label : item.title}}"
+          >
+            {{ item.link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {# Navbar Button #}
+  {% if is_mobile() %}
+    {% include 'Partials/_button.twig' with {button : nav_button} %}
+</nav>
+  {% else %}
+</nav>
+    {% include 'Partials/_button.twig'  with {button : nav_button} %}
+  {% endif %}

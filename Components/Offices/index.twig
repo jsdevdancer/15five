@@ -1,0 +1,48 @@
+<section class="offices">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="title h1">
+          {{ title }}
+        </div>
+        <div class="description">
+          {{ description }}
+        </div>
+        <div class="office-cards">
+          {% for office in offices %}
+            <article class="c-resource-card">
+              <a href="{{ office.map_url }}" target="_blank">
+                <div class="c-resource-card__header">
+                  <div class="c-resource-card__image">
+                    {{ renderComponent('Image', { image: office.image }) }}
+                  </div>
+                </div>
+                <div class="c-resource-card__body">
+                  <div class="c-resource-card__taxonomies">
+                    <div class="c-resource-card__category h6">
+                      {{ office.city }}
+                    </div>
+                    <div class="c-resource-card__type">
+                      {{ office.state }}
+                    </div>
+                  </div>
+                  <div class="c-resource-card__title">
+                    {{ office.address }}
+                  </div>
+                </div>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="press">
+          <div class="press__title h2">
+            {{ press.title }}
+          </div>
+          <div class="press__description u-wysiwyg">
+            {{ press.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

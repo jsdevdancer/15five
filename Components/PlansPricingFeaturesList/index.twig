@@ -1,0 +1,164 @@
+<section class="plans-pricing-features-list">
+  <div class="table-title-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          {% if kicker %}
+            <div class="h4 o-kicker">
+              {{ kicker }}
+            </div>
+          {% endif %}
+          <h1 class="h1 title o-title">
+            {{ title }}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plan-tabs">
+    {% for plan in plans %}
+      <div class="plan-tab {{ loop.index == 2 ? 'active' }}" tabindex="0" data-plan="{{ plan.title }}">
+        {{ plan.title }}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="table-header-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="{{ back_button.link.url }}"
+            class="back-button"
+            {{ back_button.link.target ? 'target="_blank" rel="noopener noreferrer"' }}
+            aria-label="{{ back_button.link.aria_label }}">
+            {{ back_button.link.title }}
+          </a>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                {% for plan in plans %}
+                  <th {{ loop.index == 1 and not is_mobile() ? 'colspan="2"' }}
+                    class="plan__label {{ loop.index == 2 ? 'active' }}"
+                    data-plan="{{ plan.title }}">
+                    {{ plan.label }}
+                  </th>
+                {% endfor %}
+              </tr>
+              <tr>
+                <th>
+                  <div class="current-section h2">
+                    {{ table_list[0].title }}
+                  </div>
+                </th>
+                {% for plan in plans %}
+                  <th class="plan {{ loop.index == 2 ? 'active' }}" data-plan="{{ plan.title }}">
+                    <div class="plan__header">
+                      <div class="plan__title h2">
+                        {{ plan.title }}
+                      </div>
+                      <div class="plan__price">
+                        {% if plan.price %}
+                          ${{ plan.price }}
+                        {% endif %}
+                      </div>
+                      <div class="description">
+                        {{ plan.price_description }}
+                      </div>
+                      <a class="plan__link button button--rise"
+                        href="{{ plan.button.url }}"
+                        {{ plan.button.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}
+                        aria-label="{{ plan.aria_label }}">
+                        {{ plan.button.title }}
+                      </a>
+                    </div>
+                  </th>
+                {% endfor %}
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <table>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              {% for table in table_list %}
+                <tr class="table-section-title">
+                  <td colspan="2">
+                    {{ table.title }}
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                {% for row in table.rows %}
+                  <tr {% if loop.first %} class="desktop-table-title" data-title="{{ table.title }}" {% endif %}>
+                    <td {{ row.description ? 'class="has-popover"' }}>
+                      <span>{{ row.title }}</span>
+                      {% if row.description %}
+                        <div class="description-popover {{
+                          loop.parent.loop.index == 1 and loop.index <= 2
+                            ? 'at-bottom'
+                          }}">
+                          {{ row.description }}
+                          <div class="description-popover__arrow"></div>
+                        </div>
+                      {% endif %}
+                    </td>
+                    <td data-plan="{{ plans.plan_1.title }}">
+                      {% if row.plan_1.type == 'check' %}
+                        <img src="{{ checkmark.src }}" alt="{{ __('Checkmark', 'flynt') }}" />
+                      {% elseif row.plan_1.type == 'cross' %}
+                        <img src="{{ cross.src }}" alt="{{ __('Cross', 'flynt') }}" />
+                      {% else %}
+                        {{ row.plan_1.wysiwyg }}
+                      {% endif %}
+                    </td>
+                    <td class="active" data-plan="{{ plans.plan_2.title }}">
+                      {% if row.plan_2.type == 'check' %}
+                        <img src="{{ checkmark.src }}" alt="{{ __('Checkmark', 'flynt') }}" />
+                      {% elseif row.plan_2.type == 'cross' %}
+                        <img src="{{ cross.src }}" alt="{{ __('Cross', 'flynt') }}" />
+                      {% else %}
+                        {{ row.plan_2.wysiwyg }}
+                      {% endif %}
+                    </td>
+                    <td data-plan="{{ plans.plan_3.title }}">
+                      {% if row.plan_3.type == 'check' %}
+                        <img src="{{ checkmark.src }}" alt="{{ __('Checkmark', 'flynt') }}" />
+                      {% elseif row.plan_3.type == 'cross' %}
+                        <img src="{{ cross.src }}" alt="{{ __('Cross', 'flynt') }}" />
+                      {% else %}
+                        {{ row.plan_3.wysiwyg }}
+                      {% endif %}
+                    </td>
+                    <td data-plan="{{ plans.plan_4.title }}">
+                      {% if row.plan_4.type == 'check' %}
+                        <img src="{{ checkmark.src }}" alt="{{ __('Checkmark', 'flynt') }}" />
+                      {% elseif row.plan_4.type == 'cross' %}
+                        <img src="{{ cross.src }}" alt="{{ __('Cross', 'flynt') }}" />
+                      {% else %}
+                        {{ row.plan_4.wysiwyg }}
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

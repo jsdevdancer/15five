@@ -1,0 +1,32 @@
+.product-feature-checklist {
+  padding: 10px 0;
+
+  .image {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    margin-bottom: 48px;
+  }
+
+  .check-item {
+    margin-bottom: 48px;
+
+    .icon {
+      margin-right: 16px;
+
+      svg {
+        transform: translateY(3px);
+      }
+    }
+
+    .check-item-title {
+      padding-top: 0;
+      margin-bottom: 4px;
+    }
+
+    .check-item-description {
+      @include phantom-sans-regular();
+    }
+  }
+}
